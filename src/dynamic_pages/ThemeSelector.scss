@@ -1,0 +1,188 @@
+.mode-cont {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000000a9;
+    z-index: 1111111;
+    display: grid;
+    place-content: center;
+
+    .mode-modal {
+        padding: 1rem;
+        min-width: 10rem;
+        background: var(--sub-background);
+        border-radius: 7px;
+
+        .title {
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .mode-list {
+            display: flex;
+            gap: 1rem;
+
+            .mode {
+                position: relative;
+                width: 3rem;
+                aspect-ratio: 1 / 1;
+                background: var(--background);
+                border-radius: 7px;
+                overflow: hidden;
+                border: 2px solid var(--sub-outline);
+                
+                &:not(.active) {
+                    cursor: pointer;
+                }
+
+                &.active {
+                    pointer-events: none;
+                }
+
+                i.active {
+                    user-select: none;
+                    position: absolute;
+                    inset: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: grid;
+                    place-content: center;
+                    z-index: 11;
+                    color: white;
+                    background: #00000080;
+                    backdrop-filter: blur(2px);
+                    font-size: 1.5rem;
+                    font-weight: normal;
+                    transition: opacity 300ms;
+                }
+
+                i:not(.active){
+                    opacity: 0;
+                }
+
+                &::after {
+                    content: '';
+                    width: 1.2rem;
+                    aspect-ratio: 3.5 / 1;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    margin: .5rem;
+                    background: var(--accent);
+                    border-radius: 7px;
+                }
+
+                &::before {
+                    content: 'Aa';
+                    position: absolute;
+                    bottom: 0;
+                    margin: .5rem;
+                    color: var(--text);
+                    font-weight: 500;
+                    letter-spacing: 1px;
+                }
+            }
+
+            .mode.default {
+                background: #0E0E0E;
+
+                &::after {
+                    background: #FFA452;
+                }
+
+                &::before {
+                    color: #FFFFFF;
+                }
+            }
+
+            .mode.dark-green {
+                background: #262626;
+
+                &::after {
+                    background: #58ff66;
+                }
+
+                &::before {
+                    color: #FFFFFF;
+                }
+            }
+
+            .mode.deepblue {
+                background: #0a0a2b;
+
+                &::after {
+                    background: #5877ff;
+                }
+
+                &::before {
+                    color: #FFFFFF;
+                }
+            }
+
+            .mode.white {
+                background: #f3f3f3;
+
+                &::after {
+                    background: #e92c8a;
+                }
+
+                &::before {
+                    color: #1d1d1d;
+                }
+            }
+
+            .mode.white-2 {
+                background: #CDCDCD;
+
+                &::after {
+                    background: #5223ff;
+                }
+
+                &::before {
+                    color: #0A0A0A;
+                }
+            }
+
+            .mode.pinky {
+                background: #F0AAD8;
+
+                &::after {
+                    background: #0A0A0A;
+                }
+
+                &::before {
+                    color: #0A0A0A;
+                }
+            }
+        }
+
+
+        .bottom-bar {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            margin-top: 1.8rem;
+            button {
+                background: var(--accent);
+                color: white;
+                border: 0;
+                cursor: pointer;
+                padding: .5rem 1rem;
+                border-radius: 5px;
+                font-size: .9rem;
+                font-family: var(--font);
+                font-weight: 500;
+                letter-spacing: 1px;
+
+                &:hover {
+                    filter: brightness(.9);
+                }
+            }
+        }
+    }
+}
