@@ -1,9 +1,11 @@
 "use client";
-import Nav from "@/core_components/Nav";
+// import Nav from "@/core_components/Nav";
 import Sidebar from "@/core_components/Sidebar";
 import StatsPanel from "@/dynamic_pages/StatsPanel";
 import ThemeSelector from "@/dynamic_pages/ThemeSelector";
+import dynamic from "next/dynamic";
 import React, { useState } from "react";
+const Nav = dynamic(() => import("@/core_components/Nav"), { ssr: false });
 
 export default function RootClientWrapper() {
   const [showSearch, setShowSearch] = useState(false);
