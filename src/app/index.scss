@@ -1,0 +1,116 @@
+:root {
+    --background: #0E0E0E;
+    --sub-background: #161616;
+    --sub-outline: #1C1C1C;
+  
+    --accent: #fd8d2b;
+    --light-accent: #FFA452;
+    --sub-accent: #5297FF;
+  
+    --text: #FFFFFF;
+    --card-border: #FFFFFF;
+    --font: 'Poppins', sans-serif;
+  
+    --swiper-theme-color: var(--light-accent) !important;
+    --swiper-pagination-bullet-inactive-color: var(--text) !important;
+  }
+  
+[data-theme="white"] {
+    --background: #FFFFFF;
+    --sub-background: #f7f7f7;
+    --sub-outline: #eeeeee;
+
+    --accent: #ff7700;
+    --light-accent: #ff8215;
+    --sub-accent: #5297FF;
+
+    --text: #0E0E0E;
+    --card-border: var(--accent);
+}
+
+[data-theme="white-2"] {
+    --background: #CDCDCD;
+    --sub-background: #e4e4e4;
+    --sub-outline: #b6b6b6;
+
+    --accent: #4340ff;
+    --light-accent: #6f6dff;
+    --sub-accent: #4340ff;
+
+    --text: #0E0E0E;
+    --card-border: var(--accent);
+}
+
+[data-theme="dark-green"] {
+    --background: #242424;
+    --sub-background: #282934;
+    --sub-outline: #393a4b;
+
+    --accent: #33c017;
+    --light-accent: #33c017;
+    --sub-accent: #77aeff;
+
+    --text: #FFFFFF;
+    --card-border: #FFFFFF;
+}
+
+[data-theme="deepblue"] {
+    --background: #0a0a2b;
+    --sub-background: #1b1b47;
+    --sub-outline: #262664;
+
+    --accent: #7790ff;
+    --light-accent: #6b86ff;
+    --sub-accent: #4a6bff;
+
+    --text: #FFFFFF;
+    --card-border: #FFFFFF;
+}
+
+[data-theme="pinky"] {
+    --background: #F0AAD8;
+    --sub-background: #efbadc;
+    --sub-outline: #f2a0d5;
+
+    --accent: #9e0d6e;
+    --light-accent: #532243;
+    --sub-accent: #5e1c48;
+
+    --text: #0A0A0A;
+    --card-border: #db42a8;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px; 
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
