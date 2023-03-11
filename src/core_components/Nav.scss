@@ -1,0 +1,124 @@
+.desktop-nav {
+    position: fixed;
+    top: 0;
+    left: 4.5rem;
+    right: 0;
+
+    margin: 1rem;
+    border-radius: 10px;
+    min-height: 4rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    background: var(--sub-background);
+    border: 2px solid var(--sub-outline);
+    padding: 0rem .6rem;
+
+    z-index: 111111111;
+
+    transition: transform 300ms, margin 300ms;
+
+    
+
+
+    .nav-logo {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 1.6rem;
+        letter-spacing: 3px;
+        margin: .75rem;
+        margin-right: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: .3rem;
+        text-decoration: none;
+
+        .logo {
+            width: 2.2rem;
+            image-rendering: optimizeQuality;
+            filter: invert(0.5);
+            mix-blend-mode: luminosity;
+        }
+
+        & > * {
+            transition: filter 600ms;
+        }
+
+        .glow {
+            filter: drop-shadow(0px 0px 10px #ffffff) brightness(1.4) contrast(1.1) hue-rotate(-20deg);
+        }
+    }
+
+    .right-cont {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.6rem;
+        width: 100%;
+    }
+
+    .nav-btn {
+        font-size: .95rem;
+        // font-weight: 600;
+        letter-spacing: .9px;
+        cursor: pointer;
+        user-select: none;
+
+        i {
+            font-size: 1.5rem;
+            display: grid;
+            place-content: center;
+        }
+
+        &:hover {
+            color: var(--accent);
+        }
+
+        &:active {
+            transform: scale(.9);
+        }
+    }
+
+    .login-btn {
+        background: var(--sub-accent);
+        padding: .5rem 1rem;
+        min-width: 3.5rem;
+        display: grid;
+        place-content: center;
+        border-radius: 5px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        cursor: pointer;
+        user-select: none;
+        color: white;
+
+        &:hover {
+            filter: brightness(.95);
+        }
+
+        &:active {
+            transform: scale(.9);
+        }
+    }
+    
+}
+
+.desktop-nav.hide {
+    margin: 0rem;
+    border-radius: 0px;
+    border: 0;
+
+    background: var(--sub-background);
+    padding: 0rem .7rem 0rem .4rem;
+}
+
+
+@media screen and (max-width: 925px) {
+    .desktop-nav {
+        display: none !important;
+    }
+}

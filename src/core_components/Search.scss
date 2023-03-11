@@ -1,0 +1,106 @@
+.inputBox {
+    position: relative;
+    margin: auto;
+    width: calc(100% - 20rem);
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999999999999999;
+
+    .touchBlocker {
+        position: fixed;
+        inset: 0;
+        
+    }
+
+    .searchResults {
+        z-index: 11111111;
+        position: absolute;
+        width: calc(100%);
+        background: var(--sub-outline);
+        top: 2.6rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
+        padding: .5rem 0rem;
+        max-height: 25rem;
+        overflow-y: auto;
+        border-bottom-right-radius: 7px;
+        border-bottom-left-radius: 7px;
+
+        .item {
+            cursor: pointer;
+            border-radius: 5px;
+            padding: .5rem 1rem;
+            background: var(--sub-outline);
+            user-select: none;
+
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .cover {
+                aspect-ratio: 1 / 1;
+                width: 2.2rem;
+                background-size: cover;
+                background-position: center;
+                border-radius: 4px;
+                background-color: var(--sub-background);
+            }
+
+            &:hover {
+                filter: brightness(1.2);
+            }
+        }
+    }
+
+    i {
+        z-index: 111111111;
+        position: absolute;
+        color: var(--text);
+        opacity: .5;
+
+        &.ri-search-line {
+            left: .8rem;
+        }
+
+        &.ri-close-line {
+            right: .8rem;
+            font-size: 1.2rem;
+        }
+    }
+    input {
+        z-index: 11111111;
+        width: 100%;
+        max-width: 30rem;
+        background: transparent;
+        border: 0;
+        background: var(--sub-outline);
+        font-size: 1rem;
+        font-weight: 400;
+        font-family: var(--font);
+        padding: .5rem 2.5rem;
+        border-radius: 7px;
+        filter: contrast(.9);
+        color: var(--text);
+        letter-spacing: 1px;
+
+        &:focus-within {
+            outline: 0;
+            filter: brightness(1.5);
+        }
+
+        &::placeholder {
+            color: var(--text);
+            opacity: .3;
+            letter-spacing: 1px;
+        }
+    }
+
+    .searchInputMode {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
