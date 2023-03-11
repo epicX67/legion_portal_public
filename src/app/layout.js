@@ -1,8 +1,8 @@
 import Pwa from "./Pwa";
 
 export const metadata = {
-  title: "LEGiON",
-  description: "LEGiON Platforms",
+  title: "LEGiON Portal",
+  description: "LEGiON Portal",
   manifest: "/manifest.json",
   themeColor: "#CCFFAD",
   icons: {
