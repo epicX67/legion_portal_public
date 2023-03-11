@@ -1,5 +1,6 @@
 "use client";
 import Nav from "@/core_components/Nav";
+import StatsPanel from "@/dynamic_pages/StatsPanel";
 import ThemeSelector from "@/dynamic_pages/ThemeSelector";
 import React, { useState } from "react";
 
@@ -27,6 +28,16 @@ export default function RootClientWrapper() {
         }}
       />
       <ThemeSelector show={showMode} toggle={setShowMode} />
+      <StatsPanel
+        // games={games}
+        games={[]}
+        type={stat}
+        localType={localStat}
+        setLocalType={setLocalStat}
+        state={showStats}
+        setState={setShowStats}
+        // isEmbed={isEmbed}
+      />
     </>
   );
 }

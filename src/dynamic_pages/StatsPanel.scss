@@ -1,0 +1,143 @@
+@keyframes revealSearch {
+    0%{
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.search-panel, .stats-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - 14rem);
+    min-height: 100vh;
+    
+    z-index: 11111;
+    padding: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #161616b2;
+    backdrop-filter: blur(10px);
+
+    input {
+        font-family: var(--font);
+        font-size: 1rem;
+        padding: 1rem;
+        width: 100%;
+        max-width: 700px;
+        background: #00000080;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        border: 2px solid transparent;
+        border-bottom: 0;
+        color: white;
+        outline: none;
+        animation: revealSearch 400ms ease;
+
+
+        &:focus {
+            border: 2px solid var(--accent);
+            border-bottom: 0;
+        }
+    }
+
+    .resultList {
+        width: 100%;
+        max-width: 700px;
+        padding: 1rem;
+        background: #0000003f;
+        border: 2px solid transparent;
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+        gap: 1rem;
+
+        display: flex;
+        flex-direction: column;
+
+        height: auto;
+        max-height: 50vh;
+        overflow-y: auto;
+        animation: revealSearch 400ms ease;
+
+
+        .resultCard {
+            width: calc(100% - 1rem);
+            min-height: 4rem;
+            border-radius: 7px;
+            background: var(--sub-background);
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            padding: .5rem;
+            text-decoration: none;
+            color: var(--text);
+            animation: revealSearch 400ms ease;
+
+            .card-logo {
+                width: 4rem;
+                aspect-ratio: 1 / 1;
+                border-radius: 7px;
+                background-size: cover;
+            }
+
+            .card-title {
+                padding: 0;
+                font-size: 1.3rem;
+                font-weight: 600;
+            }
+        }
+
+        .resultCardNotFound {
+            height: 10rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            animation: revealSearch 400ms ease;
+            color: white;
+
+            i {
+                font-size: 5rem;
+            }
+
+            .card-title {
+                font-size: 1rem;
+                font-weight: 200;
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    button {
+        background: transparent;
+        border: 0;
+        font-family: var(--font);
+        color: white;
+        letter-spacing: 1px;
+        padding: .5rem 1rem;
+        margin-top: 1rem;
+        border-radius: 7px;
+        cursor: pointer;
+        animation: revealSearch 400ms ease;
+
+        &:hover {
+            background: var(--accent);
+            color: var(--background);
+        }
+    }
+}
+
+@media screen and (max-width: 925px) {
+    .search-panel {
+        width: calc(100% - 4.2rem);
+        padding-left: 2.1rem;
+        padding-right: 2.1rem;
+    }
+}
