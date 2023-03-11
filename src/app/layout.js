@@ -2,7 +2,7 @@ import Pwa from "./Pwa";
 import "./index.scss";
 import "./main.scss";
 import "remixicon/fonts/remixicon.css";
-import Nav from "@/core_components/Nav";
+import RootClientWrapper from "./RootClientWrapper";
 
 export const metadata = {
   title: "LEGiON Portal",
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Nav />
+        <RootClientWrapper />
         {children}
         <Pwa />
       </body>

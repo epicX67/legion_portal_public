@@ -116,7 +116,7 @@ export default function Nav({
           className="nav-btn"
           title="Site Theme"
         >
-          <i className="bx bx-palette"></i>
+          <i className="ri-palette-line"></i>
         </div>
         <div className="login-btn">Login</div>
       </div>
