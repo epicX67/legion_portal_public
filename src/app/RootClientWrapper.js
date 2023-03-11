@@ -1,5 +1,6 @@
 "use client";
 import Nav from "@/core_components/Nav";
+import Sidebar from "@/core_components/Sidebar";
 import StatsPanel from "@/dynamic_pages/StatsPanel";
 import ThemeSelector from "@/dynamic_pages/ThemeSelector";
 import React, { useState } from "react";
@@ -26,6 +27,15 @@ export default function RootClientWrapper() {
           //     navigate(`/game/${shuffle(games)[0].name}`);
           //   }
         }}
+      />
+      <Sidebar
+        setStat={setStat}
+        setLocalStat={setLocalStat}
+        statsToggle={setShowStats}
+        searchToggle={setShowSearch}
+        themeToggle={setShowMode}
+        // isEmbed={isEmbed}
+        games={[]}
       />
       <ThemeSelector show={showMode} toggle={setShowMode} />
       <StatsPanel

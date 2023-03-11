@@ -1,0 +1,78 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 3.5rem;
+    background: var(--sub-background);
+    z-index: 111111111;
+
+    padding: .5rem;
+    padding-top: 1.6rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    overflow-y: hidden;
+
+    transition: width 280ms ease, padding 280ms ease;
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0rem 1rem;
+        background: var(--sub-background);
+        border-radius: 5px;
+        cursor: pointer;
+        i {
+            font-size: 1.4rem;
+            color: var(--text);
+        }
+
+
+
+        p {
+          width: 100%;
+          white-space: nowrap;
+          overflow-x: hidden;
+          font-weight: 200;
+          letter-spacing: .9px;
+          font-size: .9rem;
+          color: var(--text);
+        //    word-break: keep-all;
+        }
+
+        [data-theme*="white"] p {
+            font-weight: 600 !important;
+        }
+        
+        [data-theme*="pinky"] p {
+            font-weight: 600 !important;
+        }
+
+        &:hover{
+            filter: brightness(1.2);
+        }
+    }
+    
+    
+    &:hover {
+        width: 14rem;
+        overflow-y: auto;
+    }
+}
+
+[data-theme*="white"] .sidebar-item p{
+    font-weight: 600 !important;
+}
+
+[data-theme*="pinky"] .sidebar-item p{
+    font-weight: 600 !important;
+}
+
+@media screen and (max-width: 925px) {
+    .sidebar {
+        display: none !important;
+    }
+}
