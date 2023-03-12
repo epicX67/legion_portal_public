@@ -1,10 +1,18 @@
-.content.category {
+.CardSetTypeA.category {
+    margin-top: 1.5rem;
+    
     .card-list{
         display: flex;
-        gap: .5rem;
+        overflow-x: auto;
+        gap: 1rem;
+        width: 100%;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
 
         .content-card-btn {
-            width: max-content;
+            // width: 100%;
             min-width: 7rem;
             padding: 1rem;
             background: var(--sub-accent);
@@ -15,6 +23,7 @@
             user-select: none;
             cursor: pointer;
             color: white;
+            white-space: nowrap;
             
 
             &:hover {
