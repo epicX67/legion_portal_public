@@ -282,9 +282,9 @@ export default function Play({ games, game }) {
                 height="180"
                 src="https://www.youtube.com/embed/uvb00oaa3k8"
                 title="YouTube video player"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
+                allowFullScreen={true}
               ></iframe>
             </div>
             <div className="categories">
