@@ -37,7 +37,7 @@ export default function PortableRowTypeA({
                 <div className="info">The Online Pool Game</div>
                 <div
                   className="playBtn"
-                  onClick={handleItemClick(key, `/game/${item.name}`)}
+                  onClick={handleItemClick(`/game/${item.name.toLowerCase()}`)}
                 >
                   Play
                 </div>
