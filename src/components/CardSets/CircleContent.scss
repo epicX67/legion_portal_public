@@ -1,0 +1,80 @@
+
+
+.circle .content-card {
+    width: 10rem;
+    border-radius: 100px;
+    aspect-ratio: 1 / 1;
+
+    display: grid;
+    place-content: center;
+
+    &::before {
+        border-radius: 100px;
+    }
+
+    &::after {
+        background: rgba(0, 0, 0, 0.829);
+        border-radius: 100px;
+    }
+
+    &:hover, &:active {
+        outline: 4px solid var(--card-border);
+        transform: scale(1.02);
+        box-shadow: 0px 10px 20px 15px rgba(187, 187, 187, 0.123);
+        // background-size: 110%;
+
+        .card-info, &::after {
+            opacity: 1;
+        }
+
+        .card-info {
+            transform: translateX(0px);
+        }
+    }
+
+
+    .card-info {
+        font-size: 1.5rem;
+        font-weight: 600;
+        z-index: 11;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 300ms, transform 300ms;
+    }
+}
+
+@media screen and (max-width: 652px) {
+    .circle.content {
+        width: calc(100% - 2rem);
+
+        .content-card {
+            width: 6rem;
+        }
+       
+        & > p {
+            font-size: 1.5rem;
+        }
+    
+    }
+
+    .circle .content-card {
+        &:hover {
+            outline: 4px solid var(--card-border);
+            transform: scale(1.02);
+            box-shadow: 0px 10px 20px 15px rgba(187, 187, 187, 0.123);
+            // background-size: 110%;
+
+            .card-info, &::after {
+                opacity: 1;
+            }
+
+            .card-info {
+                transform: translateX(0px);
+            }
+        }
+
+        .card-info {
+            font-size: 1rem;
+        }
+    }
+}

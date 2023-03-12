@@ -1,0 +1,38 @@
+.content.category {
+    .card-list{
+        display: flex;
+        gap: .5rem;
+
+        .content-card-btn {
+            width: max-content;
+            min-width: 7rem;
+            padding: 1rem;
+            background: var(--sub-accent);
+            border-radius: 7px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.2rem;
+            user-select: none;
+            cursor: pointer;
+            color: white;
+            
+
+            &:hover {
+                filter: brightness(.9);
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 430px) {
+    .content.category {
+        .card-list{
+            .content-card-btn {
+                padding: .8rem;
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}

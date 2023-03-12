@@ -1,0 +1,47 @@
+.siteDesc {
+    margin: 1rem;
+    padding: 1rem;
+    margin-bottom: 0rem;
+    width: calc(100% - 4rem);
+    background: var(--sub-background);
+    border-radius: 7px;
+
+    h1 {
+        color: var(--text);
+        margin: 0;
+        padding: 0;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    h2, pre {
+        color: var(--text);
+        margin-top: .2rem;
+        padding: 0;
+        font-size: .9rem;
+        font-weight: 400;
+        opacity: .8;
+        letter-spacing: 1.3px;
+        line-height: 2rem;
+    }
+
+    button {
+        cursor: pointer;
+        border-radius: 0;
+        padding: 0;
+        font-family: var(--font);
+        color: var(--accent);
+        background: transparent;
+        border: none;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 1rem;
+
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+}

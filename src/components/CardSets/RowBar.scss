@@ -1,0 +1,68 @@
+.rowBar {
+    width: calc(100% - 4.4rem);
+    padding: .5rem 1.2rem;
+    margin: 2rem 0rem;
+    height: 3rem;
+    background: var(--light-accent);
+    color: var(--background);
+    border-radius: 7px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    // Using static color
+    background: #CB6CE6;
+    color: white;
+
+    .fCont {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    i {
+        font-size: 2rem;
+    }
+
+    .title {
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+
+    .badges {
+        background: rgba(255, 255, 255, 0.13);
+        border: 2px solid rgba(255, 255, 255, 0.445);
+        border-radius: 100px;
+        padding: .2rem .6rem;
+        font-size: .7rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        user-select: none;
+    }
+
+    .pillBtn {
+        cursor: pointer;
+        background: var(--text);
+        color: var(--background);
+        padding: .5rem 1.2rem;
+        border-radius: 100px;
+        font-weight: 700;
+        font-size: .9rem;
+        transition: background 300ms, color 300ms;
+
+        // Using static color
+        background: white;
+        color: black;
+
+        &:hover {
+            color: var(--text);
+            background: var(--background);
+
+            // Using static color
+            color: white;
+            background: black;
+        }
+    }
+}

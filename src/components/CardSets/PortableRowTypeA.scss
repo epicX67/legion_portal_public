@@ -1,0 +1,117 @@
+.portableRow {
+    width: calc(100% - 2.4rem);
+    margin: 2rem 0rem;
+    background: var(--light-accent);
+    color: var(--background);
+    border-radius: 7px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+
+    // Using static color
+    background: var(--sub-background);
+    color: white;
+
+
+
+
+    .header {
+        width: calc(100% - 2rem);
+        height: 3.5rem;
+        background: var(--sub-outline);
+        border-radius: inherit;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 0rem 1rem;
+
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        i {
+            font-size: 1.5rem;
+        }
+
+        .title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+    }
+
+    .scrollWrapper {
+        overflow-x: auto;
+        width: calc(100% - 2rem);
+        padding: 0rem 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .card-list {
+        gap: 1rem;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .card {
+        aspect-ratio: 3 / 4;
+        width: 10rem;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        // padding: 1rem;
+        border-radius: 7px;
+
+
+        .cover {
+            aspect-ratio: 1 / 1;
+            width: 100%;
+            background: var(--sub-outline);
+            border-radius: inherit;
+            background-size: contain;
+            background-position: center;
+        }
+
+        .bCont {
+            margin-top: .2rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--accent);
+        }
+
+        .info {
+            font-size: .8rem;
+            letter-spacing: .9px;
+            color: var(--text);
+        }
+
+        .playBtn {
+            cursor: pointer;
+            background: #92E95F;
+            color: black;
+            font-weight: 700;
+            width: min-content;
+            padding: .3rem 1rem;
+            border-radius: 100px;
+            margin: .7rem 0rem;
+            margin-bottom: 0rem;
+            min-width: 3rem;
+            display: grid;
+            place-content: center;
+            transition: transform 300ms ease;
+
+            &:hover {
+                transform: translateY(-.2rem);
+            }
+        }
+    }
+}
