@@ -1,8 +1,8 @@
 .portableRow {
-    width: calc(100% - 2.4rem);
-    margin: 2rem 0rem;
+    width: 100%;
     background: var(--light-accent);
     color: var(--background);
+    background: red;
     border-radius: 7px;
 
     display: flex;
@@ -43,13 +43,15 @@
     }
 
     .scrollWrapper {
-        overflow-x: auto;
-        width: calc(100% - 2rem);
         padding: 0rem 1rem;
         padding-bottom: 1rem;
+        width: calc(100% - 2rem);
     }
 
     .card-list {
+        overflow-x: auto;
+        width: 100%;
+        display: flex;
         gap: 1rem;
         &::-webkit-scrollbar {
             display: none;
@@ -58,7 +60,7 @@
 
     .card {
         aspect-ratio: 3 / 4;
-        width: 10rem;
+        min-width: 10rem;
         display: flex;
         flex-direction: column;
         gap: .5rem;

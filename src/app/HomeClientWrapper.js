@@ -1,4 +1,5 @@
 "use client";
+import PortableRowTypeA from "@/components/CardSets/PortableRowTypeA";
 import RowBar from "@/components/CardSets/RowBar";
 import { filterByValue, shuffle } from "@/res/data";
 import dynamic from "next/dynamic";
@@ -41,6 +42,7 @@ export default function HomeClientWrapper({ games }) {
     <div className="homePage">
       <CardSetTypeA title="Featured" data={contents[0]} />
       <RowBar />
+      <PortableRowTypeA title="Popular" data={contents[15]} />
     </div>
   );
 }
