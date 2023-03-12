@@ -89,9 +89,7 @@ export default function Play({ games, game }) {
     if (!favourites) {
       setYourFavourite(false);
     } else {
-      const isThisYourFavourite = favourites.find(
-        (item) => item === found.name
-      );
+      const isThisYourFavourite = favourites.find((item) => item === game.name);
       setYourFavourite(isThisYourFavourite ? true : false);
     }
 

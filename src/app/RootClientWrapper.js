@@ -7,13 +7,12 @@ import dynamic from "next/dynamic";
 import React, { useState } from "react";
 const Nav = dynamic(() => import("@/core_components/Nav"), { ssr: false });
 
-export default function RootClientWrapper() {
+export default function RootClientWrapper({ games }) {
   const [showSearch, setShowSearch] = useState(false);
   const [showStats, setShowStats] = useState(false);
   const [stat, setStat] = useState("");
   const [localStat, setLocalStat] = useState("");
   const [showMode, setShowMode] = useState(false);
-  const [games, setGames] = useState([]);
 
   return (
     <>
@@ -41,8 +40,7 @@ export default function RootClientWrapper() {
       />
       <ThemeSelector show={showMode} toggle={setShowMode} />
       <StatsPanel
-        // games={games}
-        games={[]}
+        games={games}
         type={stat}
         localType={localStat}
         setLocalType={setLocalStat}

@@ -37,7 +37,7 @@ export default function StatsPanel({
             <a
               onClick={() => {
                 setState(false);
-                router.push(`/game/${item.name}`);
+                router.push(`/game/${item.name.toLowerCase()}`);
               }}
               key={key}
               className="resultCard"
