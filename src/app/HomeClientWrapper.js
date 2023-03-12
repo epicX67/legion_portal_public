@@ -1,4 +1,5 @@
 "use client";
+import RowBar from "@/components/CardSets/RowBar";
 import { filterByValue, shuffle } from "@/res/data";
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
@@ -39,6 +40,7 @@ export default function HomeClientWrapper({ games }) {
   return (
     <div className="homePage">
       <CardSetTypeA title="Featured" data={contents[0]} />
+      <RowBar />
     </div>
   );
 }
