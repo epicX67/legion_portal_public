@@ -51,7 +51,7 @@ export default function Search({ games = [], isEmbed }) {
               <div
                 key={index}
                 className="item"
-                onClick={handleItemClick(`/game/${item.name}`)}
+                onClick={handleItemClick(`/game/${item.name.toLowerCase()}`)}
               >
                 <div
                   style={{
