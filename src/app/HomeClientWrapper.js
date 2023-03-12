@@ -1,11 +1,15 @@
 "use client";
-import PortableRowTypeA from "@/components/CardSets/PortableRowTypeA";
+import Categories from "@/components/CardSets/Categories";
 import RowBar from "@/components/CardSets/RowBar";
-import { filterByValue, shuffle } from "@/res/data";
+import { categories, filterByValue, shuffle } from "@/res/data";
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
 const CardSetTypeA = dynamic(
   () => import("@/components/CardSets/CardSetTypeA"),
+  { ssr: false }
+);
+const PortableRowTypeA = dynamic(
+  () => import("@/components/CardSets/PortableRowTypeA"),
   { ssr: false }
 );
 
@@ -43,6 +47,7 @@ export default function HomeClientWrapper({ games }) {
       <CardSetTypeA title="Featured" data={contents[0]} />
       <RowBar />
       <PortableRowTypeA title="Popular" data={contents[15]} />
+      <Categories title="Categories" data={categories} />
     </div>
   );
 }
