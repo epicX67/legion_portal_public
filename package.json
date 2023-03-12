@@ -9,10 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "13.2.1",
+    "next": "^13.2.4",
     "next-pwa": "^5.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-indiana-drag-scroll": "^3.0.3-alpha",
     "react-use-scroll-direction": "^0.1.0",
     "remixicon": "^2.5.0",
     "sass": "^1.59.2"

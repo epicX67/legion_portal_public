@@ -13,6 +13,20 @@ import heroGameTitle from "./plundur/title.png";
 // import "https://epicX67.github.io" from "./"https://epicX67.github.io".html";
 const loadingAnimation = null;
 
+export const flags = {
+  Featured:
+    "https://cdn.discordapp.com/attachments/961665882671677493/1084479034227970058/featured.png",
+  "Most played":
+    "https://cdn.discordapp.com/attachments/961665882671677493/1084479034488008704/mostPlayed.png",
+  Trending:
+    "https://cdn.discordapp.com/attachments/961665882671677493/1084479035595304980/trending.png",
+  "Top rated":
+    "https://cdn.discordapp.com/attachments/961665882671677493/1084479035297517568/topRated.png",
+  New: "https://cdn.discordapp.com/attachments/961665882671677493/1084479034869682317/new.png",
+  Updated:
+    "https://media.discordapp.net/attachments/961665882671677493/1084479035956006932/updated.png?width=870&height=402",
+};
+
 export const categories = [
   {
     title: "Action",
