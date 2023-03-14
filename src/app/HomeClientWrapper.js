@@ -1,7 +1,8 @@
 "use client";
 import Categories from "@/components/CardSets/Categories";
+import Collections from "@/components/CardSets/Collections";
 import RowBar from "@/components/CardSets/RowBar";
-import { categories, filterByValue, shuffle } from "@/res/data";
+import { categories, collections, filterByValue, shuffle } from "@/res/data";
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
 const CardSetTypeA = dynamic(
@@ -58,6 +59,7 @@ export default function HomeClientWrapper({ games }) {
       <Categories title="Categories" data={categories} />
       <CardSetTypeB title="Most Popular" data={contents[1]} />
       <CardSetTypeSuperWide title="Big Shot Games" data={contents[12]} />
+      <Collections title="Collections" data={collections} />
     </div>
   );
 }

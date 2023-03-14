@@ -1,7 +1,6 @@
 .collections {
-    width: calc(100% - 2rem);
-    margin: 1rem;
-    margin-top: 0rem;
+    width: 100%;
+    margin-top: 2rem;
 
     display: flex;
     flex-direction: column;
@@ -38,7 +37,7 @@
 
         .collection-card {
             position: relative;
-            width: 14rem;
+            min-width: 14rem;
             aspect-ratio: 1 / 1 !important;
             background: var(--sub-background);
             border-radius: 7px;
