@@ -12,6 +12,10 @@ const CardSetTypeB = dynamic(
   () => import("@/components/CardSets/CardSetTypeB"),
   { ssr: false }
 );
+const CardSetTypeSuperWide = dynamic(
+  () => import("@/components/CardSets/CardSetTypeSuperWide"),
+  { ssr: false }
+);
 const PortableRowTypeA = dynamic(
   () => import("@/components/CardSets/PortableRowTypeA"),
   { ssr: false }
@@ -53,6 +57,7 @@ export default function HomeClientWrapper({ games }) {
       <PortableRowTypeA title="Popular" data={contents[15]} />
       <Categories title="Categories" data={categories} />
       <CardSetTypeB title="Most Popular" data={contents[1]} />
+      <CardSetTypeSuperWide title="Big Shot Games" data={contents[12]} />
     </div>
   );
 }

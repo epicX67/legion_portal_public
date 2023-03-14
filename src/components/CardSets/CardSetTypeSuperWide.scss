@@ -1,0 +1,12 @@
+.content.wide {
+    margin-top: 2rem;
+
+    .card-list {
+        gap: 1rem;
+    }
+}
+
+.content.wide .content-card {
+    min-width: 35rem;
+    aspect-ratio: 23 / 7;
+}
