@@ -3,11 +3,11 @@ import { useScrollContainer } from "react-indiana-drag-scroll";
 import { useRouter } from "next/navigation";
 import "./Collections.scss";
 
-export default function CardSetTypeB({ title, data = [], call = () => {} }) {
+export default function Collections({ title, data = [], call = () => {} }) {
   const scrollContainer = useScrollContainer();
   const router = useRouter();
 
-  const handleItemClick = (name) => () => {
+  const handleItemClick = (name) => {
     router.push(`/collection/${name}`);
     // Any required functions for specific page
     call();
