@@ -21,6 +21,10 @@ const CardSetTypeCircle = dynamic(
   () => import("@/components/CardSets/CardSetTypeCircle"),
   { ssr: false }
 );
+const CardSetTypeSquare = dynamic(
+  () => import("@/components/CardSets/CardSetTypeSquare"),
+  { ssr: false }
+);
 const PortableRowTypeA = dynamic(
   () => import("@/components/CardSets/PortableRowTypeA"),
   { ssr: false }
@@ -65,6 +69,8 @@ export default function HomeClientWrapper({ games }) {
       <CardSetTypeSuperWide title="Big Shot Games" data={contents[12]} />
       <Collections title="Collections" data={collections} />
       <CardSetTypeCircle title="Legacy Franchises" data={contents[2]} />
+      <CardSetTypeA title="Noteworthy Games" data={contents[3]} />
+      <CardSetTypeSquare title="Entertaining Games" data={contents[4]} />
     </div>
   );
 }
