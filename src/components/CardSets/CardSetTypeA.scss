@@ -1,4 +1,4 @@
-.CardSetTypeA {
+.CardSetTypeA, .content {
     width: 100%;
     // margin: 1rem;
     margin-top: 0rem;
@@ -44,7 +44,7 @@
 
 }
 
-.CardSetTypeA-card {
+.CardSetTypeA-card, .content-card {
     position: relative;
     min-width: 14rem;
     aspect-ratio: 16 / 9;
@@ -152,7 +152,7 @@
 
 
 @media screen and (max-width: 652px) {
-    .CardSetTypeA {
+    .CardSetTypeA, .content {
         width: calc(100% - 2rem);
 
         .CardSetTypeA-card {
@@ -165,7 +165,7 @@
     
     }
 
-    .CardSetTypeA-card {
+    .CardSetTypeA-card, .content-card {
         &:hover {
             outline: 4px solid var(--card-border);
             transform: scale(1.02);

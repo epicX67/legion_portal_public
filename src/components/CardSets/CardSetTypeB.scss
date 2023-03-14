@@ -1,14 +1,14 @@
 .content.vertical {
+    margin-top: 2rem;
     
-
     .card-list {
         display: flex;
-        gap: .5rem;
+        gap: 1rem;
     }
 
     .content-card {
-        width: unset;
-        height: 17rem;
+        min-width: 10rem;
+        
         aspect-ratio: 3 / 4;
 
         background-size: auto 120%;

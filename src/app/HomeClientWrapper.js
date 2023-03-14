@@ -8,6 +8,10 @@ const CardSetTypeA = dynamic(
   () => import("@/components/CardSets/CardSetTypeA"),
   { ssr: false }
 );
+const CardSetTypeB = dynamic(
+  () => import("@/components/CardSets/CardSetTypeB"),
+  { ssr: false }
+);
 const PortableRowTypeA = dynamic(
   () => import("@/components/CardSets/PortableRowTypeA"),
   { ssr: false }
@@ -48,6 +52,7 @@ export default function HomeClientWrapper({ games }) {
       <RowBar />
       <PortableRowTypeA title="Popular" data={contents[15]} />
       <Categories title="Categories" data={categories} />
+      <CardSetTypeB title="Most Popular" data={contents[1]} />
     </div>
   );
 }
