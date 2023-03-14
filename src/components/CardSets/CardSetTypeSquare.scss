@@ -1,7 +1,9 @@
-
+.content.square {
+    margin-top: 2rem;
+}
 
 .square .content-card {
-    width: 10rem;
+    min-width: 10rem;
     aspect-ratio: 1 / 1;
 
     &::after {
