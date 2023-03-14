@@ -1,7 +1,9 @@
-
+.content.circle {
+    margin-top: 2rem;
+}
 
 .circle .content-card {
-    width: 10rem;
+    min-width: 10rem;
     border-radius: 100px;
     aspect-ratio: 1 / 1;
 
