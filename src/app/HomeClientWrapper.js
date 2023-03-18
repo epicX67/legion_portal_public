@@ -6,6 +6,7 @@ import SiteDesc from "@/components/SiteDesc";
 import { categories, collections, filterByValue, shuffle } from "@/res/data";
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
+import { useRouter } from "next/navigation";
 const CardSetTypeA = dynamic(
   () => import("@/components/CardSets/CardSetTypeA"),
   { ssr: false }
@@ -44,6 +45,7 @@ const CardSetTypeGridC = dynamic(
 );
 
 export default function HomeClientWrapper({ games }) {
+  const router = useRouter();
   const contents = useMemo(
     () => [
       shuffle(filterByValue("row", "Row 1", games)),
@@ -75,7 +77,13 @@ export default function HomeClientWrapper({ games }) {
   return (
     <div className="homePage">
       <CardSetTypeA title="Featured" data={contents[0]} />
-      <RowBar />
+      <RowBar
+        action={() => {
+          if (games.length > 0) {
+            router.push(`/game/${shuffle(games)[0].name.toLowerCase()}`);
+          }
+        }}
+      />
       <PortableRowTypeA title="Popular" data={contents[15]} />
       <Categories title="Categories" data={categories} />
       <CardSetTypeB title="Most Popular" data={contents[1]} />
