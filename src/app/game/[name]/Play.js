@@ -1,13 +1,30 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import "./Play.scss";
 
 import { useRouter } from "next/navigation";
-import { data, categories, filterByValue, shuffle } from "@/res/data";
-import logo from "@/res/logo.png";
+import { categories, filterByValue, shuffle } from "@/res/data";
 import SplashGameScreen from "@/components/SplashGameScreen";
 import LoadingPanel from "@/components/LoadingPanel";
+import dynamic from "next/dynamic";
+
+const CardSetTypeA = dynamic(
+  () => import("@/components/CardSets/CardSetTypeA"),
+  { ssr: false }
+);
+const CardSetTypeSuperWide = dynamic(
+  () => import("@/components/CardSets/CardSetTypeSuperWide"),
+  { ssr: false }
+);
+const CardSetTypeCircle = dynamic(
+  () => import("@/components/CardSets/CardSetTypeCircle"),
+  { ssr: false }
+);
+const CardSetTypeSquare = dynamic(
+  () => import("@/components/CardSets/CardSetTypeSquare"),
+  { ssr: false }
+);
 
 export default function Play({ games, game }) {
   const [fullscreen, setFullscreen] = useState(false);
@@ -249,26 +266,26 @@ export default function Play({ games, game }) {
             </div>
           </div>
 
-          {/* <Content
+          <CardSetTypeA
             call={() => resetPlayState()}
             title="Recommended For You"
             data={content1}
           />
-          <SquareContent
+          <CardSetTypeSquare
             call={() => resetPlayState()}
             title="Legacy Games"
             data={content2}
           />
-          <CircleContent
+          <CardSetTypeCircle
             call={() => resetPlayState()}
             title="Action Games"
             data={content3}
           />
-          <WideContent
+          <CardSetTypeSuperWide
             call={() => resetPlayState()}
             title="Big Shot Games"
             data={content4}
-          /> */}
+          />
 
           <div
             style={{ display: `${gameInfo.description ? "block" : "none"}` }}
