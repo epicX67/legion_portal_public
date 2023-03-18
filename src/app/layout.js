@@ -3,6 +3,7 @@ import "./index.scss";
 import "./main.scss";
 import "remixicon/fonts/remixicon.css";
 import RootClientWrapper from "./RootClientWrapper";
+import Footer from "@/core_components/Footer";
 
 export const metadata = {
   title: "LEGiON Portal",
@@ -35,6 +36,7 @@ export default async function RootLayout({ children }) {
       <body>
         <RootClientWrapper games={games} />
         {children}
+        <Footer />
         <Pwa />
       </body>
     </html>

@@ -1,0 +1,50 @@
+footer {
+    // margin-left: 4.5rem;
+    // width: calc(100% - 4.5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
+    // background: red;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    background: var(--sub-background);
+    width: calc(100% - 2rem);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 7px;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 0rem;
+
+        img {
+            width: 3.5rem;
+            height: auto;
+        }
+
+        .logo-name {
+            font-weight: 700;
+            font-size: 2.2rem;
+        }
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        
+        & > div {
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
