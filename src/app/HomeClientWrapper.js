@@ -71,6 +71,13 @@ export default function HomeClientWrapper({ games }) {
       <CardSetTypeCircle title="Legacy Franchises" data={contents[2]} />
       <CardSetTypeA title="Noteworthy Games" data={contents[3]} />
       <CardSetTypeSquare title="Entertaining Games" data={contents[4]} />
+      <CardSetTypeA title="Party Games" data={contents[5]} />
+      <CardSetTypeA title="Top Rated Games" data={contents[6]} />
+      <CardSetTypeSquare title="Classic Games" data={contents[7]} />
+      <CardSetTypeA title="Trending Games" data={contents[8]} />
+      <CardSetTypeA title="Adventure Games" data={contents[9]} />
+      <CardSetTypeA title="Newly Popular" data={contents[10]} />
+      <CardSetTypeSquare title="Player favorites" data={contents[11]} />
     </div>
   );
 }
