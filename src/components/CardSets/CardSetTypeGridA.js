@@ -3,7 +3,7 @@ import { useScrollContainer } from "react-indiana-drag-scroll";
 import { useRouter } from "next/navigation";
 import "./CardSetTypeGridA.scss";
 
-export default function CardSetTypeA({
+export default function CardSetTypeGridA({
   title,
   data = [],
   circle = false,
@@ -28,24 +28,21 @@ export default function CardSetTypeA({
           extraWide && "extraWide"
         }`}
       >
-        {data.map(
-          (item, key) =>
-            item.wideImage && (
-              <div
-                key={key}
-                className="grid-card"
-                style={{
-                  backgroundImage: "url(" + item.squareImage + ")",
-                  borderRadius: circle ? "500px" : "7px",
-                }}
-                onClick={handleItemClick(`/game/${item.name.toLowerCase()}`)}
-              >
-                <div className="titleHolder">
-                  <div className="title">{item.name}</div>
-                </div>
-              </div>
-            )
-        )}
+        {data.map((item, key) => (
+          <div
+            key={key}
+            className="grid-card"
+            style={{
+              backgroundImage: "url(" + item.squareImage + ")",
+              borderRadius: circle ? "500px" : "7px",
+            }}
+            onClick={handleItemClick(`/game/${item.name.toLowerCase()}`)}
+          >
+            <div className="titleHolder">
+              <div className="title">{item.name}</div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
