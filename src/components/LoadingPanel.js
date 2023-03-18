@@ -20,7 +20,11 @@ export default function LoadingPanel({ showGame }) {
   return (
     !disable && (
       <div className={`loading-panel ${hide && "hide"}`}>
-        <img className="loadingImage" src={loadingIcon} alt="Loading"></img>
+        <img
+          className="loadingImage"
+          src="https://cdn.discordapp.com/attachments/961665882671677493/1086699640948260954/loading.svg"
+          alt="Loading"
+        ></img>
       </div>
     )
   );
