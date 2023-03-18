@@ -29,6 +29,18 @@ const PortableRowTypeA = dynamic(
   () => import("@/components/CardSets/PortableRowTypeA"),
   { ssr: false }
 );
+const CardSetTypeGridA = dynamic(
+  () => import("@/components/CardSets/CardSetTypeGridA"),
+  { ssr: false }
+);
+const CardSetTypeGridB = dynamic(
+  () => import("@/components/CardSets/CardSetTypeGridB"),
+  { ssr: false }
+);
+const CardSetTypeGridC = dynamic(
+  () => import("@/components/CardSets/CardSetTypeGridC"),
+  { ssr: false }
+);
 
 export default function HomeClientWrapper({ games }) {
   const contents = useMemo(
@@ -78,6 +90,39 @@ export default function HomeClientWrapper({ games }) {
       <CardSetTypeA title="Adventure Games" data={contents[9]} />
       <CardSetTypeA title="Newly Popular" data={contents[10]} />
       <CardSetTypeSquare title="Player favorites" data={contents[11]} />
+      <CardSetTypeGridB
+        title="Good Games 1"
+        data={contents[15]}
+        circle={true}
+      />
+      <CardSetTypeGridB
+        title="Good Games 2"
+        data={contents[17]}
+        circle={false}
+      />
+      <CardSetTypeGridB
+        title="Good Games 2 Wide"
+        data={contents[18]}
+        circle={false}
+        extraWide={true}
+      />
+      <CardSetTypeGridA
+        title="Good Games 3"
+        data={contents[19]}
+        circle={true}
+      />
+      <CardSetTypeGridA
+        title="Good Games 4"
+        data={contents[20]}
+        circle={false}
+      />
+      <CardSetTypeGridA
+        title="Good Games 4 wide"
+        data={contents[21]}
+        circle={false}
+        extraWide={true}
+      />
+      <CardSetTypeGridC title="Mega Column" data={contents[16]} />
     </div>
   );
 }
