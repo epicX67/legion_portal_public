@@ -255,8 +255,8 @@
         }
     }
 
-    .content {
-        display: none;
+    .content, .CardSetTypeA {
+        display: none !important;
     }
 
     .gameDesc {
