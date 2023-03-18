@@ -3,11 +3,14 @@
 import Sidebar from "@/core_components/Sidebar";
 import StatsPanel from "@/dynamic_pages/StatsPanel";
 import ThemeSelector from "@/dynamic_pages/ThemeSelector";
+import { shuffle } from "@/res/data";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 const Nav = dynamic(() => import("@/core_components/Nav"), { ssr: false });
 
 export default function RootClientWrapper({ games }) {
+  const router = useRouter();
   const [showSearch, setShowSearch] = useState(false);
   const [showStats, setShowStats] = useState(false);
   const [stat, setStat] = useState("");
@@ -24,9 +27,9 @@ export default function RootClientWrapper({ games }) {
         themeToggle={setShowMode}
         games={games}
         randomGame={() => {
-          //   if (games.length > 0) {
-          //     navigate(`/game/${shuffle(games)[0].name}`);
-          //   }
+          if (games.length > 0) {
+            router.push(`/game/${shuffle(games)[0].name.toLowerCase()}`);
+          }
         }}
       />
       <Sidebar
