@@ -11,6 +11,7 @@ export default function Sidebar({
   statsToggle,
   games,
   isEmbed,
+  randomGame,
 }) {
   const router = useRouter();
 
@@ -29,14 +30,7 @@ export default function Sidebar({
         <i className="ri-home-7-line"></i>
         <p>Home</p>
       </div>
-      <div
-        onClick={() => {
-          if (games.length > 0) {
-            router.push(`/game/${shuffle(games)[0].name}`);
-          }
-        }}
-        className="sidebar-item"
-      >
+      <div onClick={() => randomGame()} className="sidebar-item">
         <i className="ri-bell-line"></i>
         <p>Random Game</p>
       </div>

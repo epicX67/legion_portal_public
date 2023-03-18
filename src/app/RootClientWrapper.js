@@ -38,8 +38,12 @@ export default function RootClientWrapper({ games }) {
         statsToggle={setShowStats}
         searchToggle={setShowSearch}
         themeToggle={setShowMode}
-        // isEmbed={isEmbed}
-        games={[]}
+        randomGame={() => {
+          if (games.length > 0) {
+            router.push(`/game/${shuffle(games)[0].name.toLowerCase()}`);
+          }
+        }}
+        games={games}
       />
       <ThemeSelector show={showMode} toggle={setShowMode} />
       <StatsPanel
