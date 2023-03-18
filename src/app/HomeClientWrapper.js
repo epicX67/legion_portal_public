@@ -2,6 +2,7 @@
 import Categories from "@/components/CardSets/Categories";
 import Collections from "@/components/CardSets/Collections";
 import RowBar from "@/components/CardSets/RowBar";
+import SiteDesc from "@/components/SiteDesc";
 import { categories, collections, filterByValue, shuffle } from "@/res/data";
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
@@ -123,6 +124,7 @@ export default function HomeClientWrapper({ games }) {
         extraWide={true}
       />
       <CardSetTypeGridC title="Mega Column" data={contents[16]} />
+      <SiteDesc />
     </div>
   );
 }
