@@ -14,8 +14,8 @@ export default function Hero({ data }) {
     slidesToScroll: 1,
     arrows: false,
     // fade: true,
-    // autoplaySpeed: 3000,
-    // autoplay: true,
+    autoplaySpeed: 3000,
+    autoplay: true,
   };
 
   const [show, setShow] = useState(false);
