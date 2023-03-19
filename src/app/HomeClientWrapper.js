@@ -7,6 +7,7 @@ import { categories, collections, filterByValue, shuffle } from "@/res/data";
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
 import { useRouter } from "next/navigation";
+import Hero from "@/components/Hero";
 const CardSetTypeA = dynamic(
   () => import("@/components/CardSets/CardSetTypeA"),
   { ssr: false }
@@ -74,8 +75,14 @@ export default function HomeClientWrapper({ games }) {
     [games]
   );
 
+  const heroGames = useMemo(
+    () => filterByValue("featured (Y or N)", "Y", games),
+    [games]
+  );
+
   return (
     <div className="homePage">
+      <Hero data={heroGames} />
       <CardSetTypeA title="Featured" data={contents[0]} />
       <RowBar
         action={() => {
