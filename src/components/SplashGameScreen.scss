@@ -131,3 +131,10 @@
 .splash-game-screen.hide {
     animation: hideLoading 900ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
 }
+
+@media screen and (max-width: 652px) {
+    .loadingCont {
+        gap: .5rem !important;
+    }
+
+}

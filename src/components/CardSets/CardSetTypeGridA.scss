@@ -399,3 +399,10 @@
         grid-template-columns: repeat(12, 15rem);
     }
 }
+
+@media screen and (max-width: 652px) {
+    .grid-set3 {
+        gap: .5rem !important;
+    }
+
+}

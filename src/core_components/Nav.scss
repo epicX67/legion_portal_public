@@ -108,17 +108,51 @@
 }
 
 .desktop-nav.hide {
-    margin: 0rem;
-    border-radius: 0px;
-    border: 0;
+    margin: 1rem !important;
+    border-radius: 10px !important;
+    border: 2px solid var(--sub-outline) !important;
 
-    background: var(--sub-background);
-    padding: 0rem .7rem 0rem .4rem;
+    background: var(--sub-background) !important;
+    padding: 0rem !important;
 }
-
 
 @media screen and (max-width: 925px) {
     .desktop-nav {
-        display: none !important;
+        left: 0rem;
+    }
+}
+
+
+@media screen and (max-width: 652px) {
+    .desktop-nav.hide {
+        margin: 0rem;
+        border-radius: 0px;
+        border: 0;
+    
+        background: var(--sub-background);
+        padding: 0rem .7rem 0rem .4rem;
+    }
+
+    .desktop-nav {
+        left: 0rem;
+        padding: 0;
+        .nav-logo, .nav-btn, .login-btn {
+            display: none;
+        }
+
+        .inputBox {
+            margin: 0;
+            margin: auto;
+            width: calc(100% - .5rem);
+            height: 2.5rem;
+            font-size: 1.5rem;
+            
+
+            input {
+                padding-left: 3rem;
+                height: 2.5rem;
+                font-size: 1.1rem;
+            }
+        }
     }
 }
