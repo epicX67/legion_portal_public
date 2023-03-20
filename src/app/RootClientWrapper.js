@@ -1,4 +1,5 @@
 "use client";
+import MobileNav from "@/core_components/MobileNav";
 // import Nav from "@/core_components/Nav";
 import Sidebar from "@/core_components/Sidebar";
 import StatsPanel from "@/dynamic_pages/StatsPanel";
@@ -25,6 +26,22 @@ export default function RootClientWrapper({ games }) {
         statsToggle={setShowStats}
         searchToggle={setShowSearch}
         themeToggle={setShowMode}
+        games={games}
+        randomGame={() => {
+          if (games.length > 0) {
+            router.push(`/game/${shuffle(games)[0].name.toLowerCase()}`);
+          }
+        }}
+      />
+      <MobileNav
+        setStat={setStat}
+        setLocalStat={setLocalStat}
+        statsToggle={setShowStats}
+        searchToggle={setShowSearch}
+        themeToggle={setShowMode}
+        theme={showMode}
+        showSearch={showSearch}
+        localStat={localStat}
         games={games}
         randomGame={() => {
           if (games.length > 0) {
