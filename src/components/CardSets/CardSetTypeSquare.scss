@@ -32,17 +32,20 @@
 }
 
 @media screen and (max-width: 652px) {
-    .square.content {
+    .content.square  {
 
-        .content-card {
-            width: 6rem;
-        }
-       
         & > p {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
         }
     
     }
+
+    .square .content-card {
+        min-width: 7rem;
+    }
+   
+    
 
     .square .content-card {
         &:hover {

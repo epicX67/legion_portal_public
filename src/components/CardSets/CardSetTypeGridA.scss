@@ -401,6 +401,30 @@
 }
 
 @media screen and (max-width: 652px) {
+    .grid {
+        width: 100%;
+        margin-top: 1rem;
+        // background: red;
+    
+        & > p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+    }
+
+    .grid-set1 {
+        grid-template-columns: repeat(12, 4rem) !important;
+        grid-template-rows: 4rem 4rem !important;
+        gap: 1rem;
+    }
+
+    .grid-set2 {
+        grid-template-columns: repeat(12, 4rem) !important;
+        grid-template-rows: 4rem 4rem 4rem !important;
+        gap: 1rem;
+    }
+
     .grid-set3 {
         gap: .5rem !important;
     }

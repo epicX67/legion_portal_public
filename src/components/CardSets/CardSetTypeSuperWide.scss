@@ -10,3 +10,10 @@
     min-width: 35rem;
     aspect-ratio: 23 / 7;
 }
+
+@media screen and (max-width: 652px) {
+    .content.wide .content-card {
+        min-width: 25rem;
+        aspect-ratio: 23 / 7;
+    }
+}

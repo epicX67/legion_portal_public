@@ -46,17 +46,20 @@
 }
 
 @media screen and (max-width: 652px) {
-    .circle.content {
+    .content.circle  {
 
-        .content-card {
-            width: 6rem;
-        }
-       
         & > p {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
         }
     
     }
+
+    .circle .content-card {
+        min-width: 7rem;
+    }
+   
+    
 
     .circle .content-card {
         &:hover {
