@@ -108,12 +108,12 @@
 }
 
 .desktop-nav.hide {
-    margin: 1rem !important;
-    border-radius: 10px !important;
-    border: 2px solid var(--sub-outline) !important;
+    margin: 0rem !important;
+    border-radius: 0px !important;
+    border: 2px solid transparent !important;
 
     background: var(--sub-background) !important;
-    padding: 0rem !important;
+    // padding: 0rem !important;
 }
 
 @media screen and (max-width: 925px) {
@@ -125,12 +125,12 @@
 
 @media screen and (max-width: 652px) {
     .desktop-nav.hide {
-        margin: 0rem;
-        border-radius: 0px;
-        border: 0;
+        margin: 1rem !important;
+        border-radius: 10px !important;
+        border: 2px solid var(--sub-outline) !important;
     
-        background: var(--sub-background);
-        padding: 0rem .7rem 0rem .4rem;
+        background: var(--sub-background) !important;
+        padding: 0rem !important;
     }
 
     .desktop-nav {
