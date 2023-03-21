@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./Hero.scss";
 import HeroCard from "./HeroCard";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Hero({ data }) {
   const settings = {
@@ -19,12 +20,19 @@ export default function Hero({ data }) {
   };
 
   const [show, setShow] = useState(false);
+  const router = useRouter();
 
   return (
     <div>
       <Slider className="heroSlider" {...settings}>
         {data.map((item, key) => (
-          <HeroCard key={key} item={item} show={show} setShow={setShow} />
+          <HeroCard
+            onPlay={() => router.push(`/game/${item.name.toLowerCase()}`)}
+            key={key}
+            item={item}
+            show={show}
+            setShow={setShow}
+          />
         ))}
       </Slider>
     </div>

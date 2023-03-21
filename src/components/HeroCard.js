@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import HeroVideo from "./HeroVideo";
 
-export default function HeroCard({ key, item }) {
+export default function HeroCard({ key, item, onPlay }) {
   const [show, setShow] = useState(false);
   return (
     <div
@@ -31,7 +31,7 @@ export default function HeroCard({ key, item }) {
       <div className="game-info">
         {/* <div className="name">{item.name}</div> */}
         <div className="info">{item.featuredDesc}</div>
-        <div className="play-btn">
+        <div onClick={onPlay} className="play-btn">
           <i className="ri-play-fill"></i>
           <div>Play</div>
         </div>
