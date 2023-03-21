@@ -104,6 +104,7 @@
         width: 5rem;
         padding: .7rem 1rem;
         padding-right: 1.4rem;
+        cursor: pointer;
 
         i {
             font-size: 1.8rem;
@@ -112,6 +113,11 @@
         font-weight: 700;
         font-size: 1.2rem;
         letter-spacing: 1px;
+        transition: background 300ms;
+
+        &:hover {
+            background: var(--background);
+        }
     }
 }
 
