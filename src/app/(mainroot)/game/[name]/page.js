@@ -17,6 +17,29 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }) {
+  const games = await getGames();
+  const game = getGame(games, params);
+
+  return {
+    title: game.name,
+    icons: [{ url: game.squareImage }],
+    robots: {
+      index: false,
+      follow: true,
+      nocache: true,
+      googleBot: {
+        index: true,
+        follow: false,
+        noimageindex: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+  };
+}
+
 function getGame(games, params) {
   const gameName = params.name.toLowerCase().trim();
   const ret = games.find(
