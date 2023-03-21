@@ -36,6 +36,7 @@ export default function Play({ games, game }) {
   //loading states
   const [initiateLoading, setInitiateLoading] = useState(false);
   const [disableSplash, setDisableSplash] = useState(false);
+  const [autoFullScreen, setAutoFullScreen] = useState(false);
   const [showGame, setShowGame] = useState(false);
   const [yourFavourite, setYourFavourite] = useState(false);
 
@@ -177,18 +178,35 @@ export default function Play({ games, game }) {
               hide={initiateLoading}
               disable={disableSplash}
               initiateLoading={setInitiateLoading}
+              setAutoFullScreen={setAutoFullScreen}
             />
             {disableSplash && !showGame && (
-              <LoadingPanel showGame={setShowGame} />
+              <LoadingPanel
+                showGame={setShowGame}
+                setAutoFullScreen={setAutoFullScreen}
+                autoFullScreen={autoFullScreen}
+                toggleFullscreen={toggleFullscreen}
+              />
             )}
 
             {disableSplash && (
-              <iframe
-                title={gameInfo.name}
-                src={gameInfo.link}
-                className="game fullscreen"
-                allowFullScreen={true}
-              ></iframe>
+              <>
+                {fullscreen && (
+                  <div
+                    className="mobile-back-btn"
+                    onClick={() => toggleFullscreen(true)}
+                  >
+                    <i className="ri-arrow-left-s-line"></i>
+                    <img src="https://cdn.discordapp.com/attachments/961665882671677493/1084136104409714688/logo.png"></img>
+                  </div>
+                )}
+                <iframe
+                  title={gameInfo.name}
+                  src={gameInfo.link}
+                  className="game fullscreen"
+                  allowFullScreen={true}
+                ></iframe>
+              </>
             )}
 
             <div

@@ -14,6 +14,14 @@
     }
 }
 
+.mobile-play-button {
+    display: none;
+}
+
+.desktop-play-button {
+    display: block;
+}
+
 .splash-game-screen {
     position: absolute;
     inset: 0;
@@ -135,6 +143,14 @@
 @media screen and (max-width: 652px) {
     .loadingCont {
         gap: .5rem !important;
+    }
+
+    .mobile-play-button {
+        display: block;
+    }
+    
+    .desktop-play-button {
+        display: none;
     }
 
 }

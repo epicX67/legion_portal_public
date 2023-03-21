@@ -4,6 +4,7 @@ import "./SplashGameScreen.scss";
 export default function SplashGameScreen({
   game,
   initiateLoading,
+  setAutoFullScreen,
   hide,
   disable,
 }) {
@@ -27,10 +28,17 @@ export default function SplashGameScreen({
           className="logo"
         ></div>
         <button
+          className="mobile-play-button"
           onClick={() => {
-            // navigate(`/game/${game.name}`, { replace: true });
-            // setHide(true);
-            // setDisable(true);
+            setAutoFullScreen(true);
+            initiateLoading(true);
+          }}
+        >
+          Play Now
+        </button>
+        <button
+          className="desktop-play-button"
+          onClick={() => {
             initiateLoading(true);
           }}
         >

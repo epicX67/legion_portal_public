@@ -2,7 +2,12 @@ import React, { useEffect, useState } from "react";
 import loadingIcon from "../res/loading.svg";
 import "./LoadingPanel.scss";
 
-export default function LoadingPanel({ showGame }) {
+export default function LoadingPanel({
+  showGame,
+  setAutoFullScreen,
+  autoFullScreen,
+  toggleFullscreen,
+}) {
   const [hide, setHide] = useState(false);
   const [disable, setDisable] = useState(false);
 
@@ -10,6 +15,10 @@ export default function LoadingPanel({ showGame }) {
     setTimeout(() => {
       window.scrollTo(0, 0);
       setHide(true);
+      if (autoFullScreen) {
+        setAutoFullScreen(false);
+        toggleFullscreen(true);
+      }
       setTimeout(() => {
         setDisable(true);
         showGame(true);
