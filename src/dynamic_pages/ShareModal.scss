@@ -9,6 +9,12 @@
     display: grid;
     place-content: center;
 
+    .modal-touch-blocker {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+    }
+
     .share-modal {
         padding: 1rem;
         min-width: 10rem;
@@ -25,7 +31,7 @@
 
         .mode-list {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
             gap: 1rem;
 
             * {
@@ -35,13 +41,33 @@
             }
         }
 
+        textarea {
+            margin-top: 2rem;
+            width: calc(100% - 1rem);
+            resize: none;
+            background: var(--sub-outline);
+            border-radius: 7px;
+            border: none;
+            color: var(--text);
+            padding: .5rem;
+            font-weight: 500;
+            font-size: .8rem;
+            line-break: anywhere;
+        }
+
 
         .bottom-bar {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: flex-end;
-            margin-top: 1.8rem;
+            margin-top: .7rem;
+            gap: 1rem;
+
+            .copyToClipboard {
+                width: 100%;
+            }
+
             button {
                 background: var(--accent);
                 color: white;

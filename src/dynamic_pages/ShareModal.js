@@ -14,21 +14,36 @@ import {
   TwitterIcon,
   WhatsappIcon,
 } from "react-share";
+import { useEffect, useState } from "react";
 
 export default function ShareModal({ show, toggle, url }) {
+  const [isCopied, setIsCopied] = useState(false);
+
+  useEffect(() => {
+    if (isCopied) {
+      setTimeout(() => {
+        setIsCopied(false);
+      }, 2000);
+    }
+  }, [isCopied]);
+
   return (
     show && (
       <div className="share-cont">
+        <div
+          className="modal-touch-blocker"
+          onClick={() => toggle(!show)}
+        ></div>
         <div className="share-modal">
           <div className="title">Share</div>
           <div className="mode-list">
-            <EmailShareButton
+            {/* <EmailShareButton
               url={url}
               subject="Check this game"
               body="Try this game"
             >
               <EmailIcon round={true} />
-            </EmailShareButton>
+            </EmailShareButton> */}
             <FacebookShareButton url={url}>
               <FacebookIcon round={true} />
             </FacebookShareButton>
@@ -45,7 +60,17 @@ export default function ShareModal({ show, toggle, url }) {
               <WhatsappIcon round={true} />
             </WhatsappShareButton>
           </div>
+          <textarea type={"text"} readOnly={true} value={url} />
           <div className="bottom-bar">
+            <button
+              className="copyToClipboard"
+              onClick={() => {
+                navigator.clipboard.writeText(url);
+                setIsCopied(true);
+              }}
+            >
+              {isCopied ? "Copied" : "Copy to Clipboard"}
+            </button>
             <button onClick={() => toggle(!show)}>Close</button>
           </div>
         </div>
