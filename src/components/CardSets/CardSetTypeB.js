@@ -23,9 +23,12 @@ export default function CardSetTypeB({ title, data = [], call = () => {} }) {
               <div
                 key={key}
                 className="content-card CardSetTypeB-card"
-                style={{ backgroundImage: "url(" + item.tallImage + ")" }}
                 onClick={handleItemClick(`/game/${item.name.toLowerCase()}`)}
               >
+                <div
+                  className="image"
+                  style={{ backgroundImage: "url(" + item.tallImage + ")" }}
+                ></div>
                 <div className="card-info">{item.name}</div>
               </div>
             )

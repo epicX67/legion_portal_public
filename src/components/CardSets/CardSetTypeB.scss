@@ -7,15 +7,26 @@
     }
 
     .content-card {
+        position: relative;
         min-width: 10rem;
         
         aspect-ratio: 3 / 4;
 
-        background-size: auto 120%;
+        background-size: auto 100%;
         background-repeat: no-repeat;
         
 
         justify-content: flex-end;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .image {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: transform 700ms;
+        }
 
 
         .card-info {
@@ -42,11 +53,13 @@
 
         &::after {
             background: linear-gradient(to top, black, transparent);
-            opacity: 1;
+            opacity: 0;
         }
 
         &:hover {
-            background-size: auto 130%;
+            .image {
+                transform: scale(1.05);
+            }
 
             .card-info, &::after {
                 opacity: 1;
