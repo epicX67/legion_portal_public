@@ -26,7 +26,7 @@ export default function PortableRowTypeB({
               <div
                 key={key}
                 className="cover"
-                style={{ backgroundImage: "url(" + item.squareImage + ")" }}
+                style={{ backgroundImage: "url(" + item.wideImage + ")" }}
               ></div>
               <div className="bCont">
                 <div
