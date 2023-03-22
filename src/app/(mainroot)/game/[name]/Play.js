@@ -3,11 +3,12 @@
 import React, { useEffect, useMemo, useState } from "react";
 import "./Play.scss";
 
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { categories, filterByValue, shuffle } from "@/res/data";
 import SplashGameScreen from "@/components/SplashGameScreen";
 import LoadingPanel from "@/components/LoadingPanel";
 import dynamic from "next/dynamic";
+import ShareModal from "@/dynamic_pages/ShareModal";
 
 const CardSetTypeA = dynamic(
   () => import("@/components/CardSets/CardSetTypeA"),
@@ -32,6 +33,7 @@ export default function Play({ games, game }) {
   // const [loadingGame, setLoadingGame] = useState({});
   const [err, setErr] = useState(false);
   const router = useRouter();
+  const pathName = usePathname();
 
   //loading states
   const [initiateLoading, setInitiateLoading] = useState(false);
@@ -170,179 +172,190 @@ export default function Play({ games, game }) {
     }
   };
   return (
-    <div className="play">
-      <div className={`play-cont ${fullscreen && "fullscreen"}`}>
-        <div className="game-cont">
-          <div className="game-wrapper">
-            <SplashGameScreen
-              game={gameInfo}
-              hide={initiateLoading}
-              disable={disableSplash}
-              initiateLoading={setInitiateLoading}
-              setAutoFullScreen={setAutoFullScreen}
-            />
-            {disableSplash && !showGame && (
-              <LoadingPanel
-                showGame={setShowGame}
+    <>
+      <div className="play">
+        <div className={`play-cont ${fullscreen && "fullscreen"}`}>
+          <div className="game-cont">
+            <div className="game-wrapper">
+              <SplashGameScreen
+                game={gameInfo}
+                hide={initiateLoading}
+                disable={disableSplash}
+                initiateLoading={setInitiateLoading}
                 setAutoFullScreen={setAutoFullScreen}
-                autoFullScreen={autoFullScreen}
-                toggleFullscreen={toggleFullscreen}
               />
-            )}
-
-            {disableSplash && (
-              <>
-                {fullscreen && (
-                  <div
-                    className="mobile-back-btn"
-                    onClick={() => toggleFullscreen(true)}
-                  >
-                    <i className="ri-arrow-left-s-line"></i>
-                    <img src="https://cdn.discordapp.com/attachments/961665882671677493/1084136104409714688/logo.png"></img>
-                  </div>
-                )}
-                <iframe
-                  title={gameInfo.name}
-                  src={gameInfo.link}
-                  className="game fullscreen"
-                  allowFullScreen={true}
-                ></iframe>
-              </>
-            )}
-
-            <div
-              // style={{ display: "none" }}
-              className="play-down-bar"
-            >
-              <div className="expander">
-                <div className="pill"></div>
-              </div>
-              <div className="lCont">
-                <div
-                  className="play-logo"
-                  style={{ backgroundImage: `url('${gameInfo.squareImage}')` }}
-                ></div>
-                <div className="play-info">{gameInfo.name}</div>
-              </div>
-
-              {disableSplash && (
-                <p className="legionStamp">
-                  <span>
-                    <img
-                      src="https://cdn.discordapp.com/attachments/961665882671677493/1084136104409714688/logo.png"
-                      alt=""
-                    />
-                    LEGiON
-                  </span>
-                  Portal
-                </p>
+              {disableSplash && !showGame && (
+                <LoadingPanel
+                  showGame={setShowGame}
+                  setAutoFullScreen={setAutoFullScreen}
+                  autoFullScreen={autoFullScreen}
+                  toggleFullscreen={toggleFullscreen}
+                />
               )}
 
-              <div className="play-actions">
-                <i
-                  onClick={() => {
-                    toggleFullscreen(false);
-                    router.back();
-                  }}
-                  className="ri-arrow-left-s-line"
-                  title="Go Back"
-                ></i>
-                <i
-                  onClick={() => {
-                    setShowShareModal(true);
-                  }}
-                  className="ri-share-line"
-                  title="Share"
-                ></i>
-                {yourFavourite ? (
-                  <i
-                    onClick={() => {
-                      makeFavourite(gameInfo.name, false);
+              {disableSplash && (
+                <>
+                  {fullscreen && (
+                    <div
+                      className="mobile-back-btn"
+                      onClick={() => toggleFullscreen(true)}
+                    >
+                      <i className="ri-arrow-left-s-line"></i>
+                      <img src="https://cdn.discordapp.com/attachments/961665882671677493/1084136104409714688/logo.png"></img>
+                    </div>
+                  )}
+                  <iframe
+                    title={gameInfo.name}
+                    src={gameInfo.link}
+                    className="game fullscreen"
+                    allowFullScreen={true}
+                  ></iframe>
+                </>
+              )}
+
+              <div
+                // style={{ display: "none" }}
+                className="play-down-bar"
+              >
+                <div className="expander">
+                  <div className="pill"></div>
+                </div>
+                <div className="lCont">
+                  <div
+                    className="play-logo"
+                    style={{
+                      backgroundImage: `url('${gameInfo.squareImage}')`,
                     }}
-                    style={{ color: "#E886B5" }}
-                    className="ri-heart-2-fill"
-                    title="Remove from favorites"
-                  ></i>
-                ) : (
-                  <i
-                    onClick={() => {
-                      makeFavourite(gameInfo.name, true);
-                    }}
-                    className="ri-heart-2-line"
-                    title="Add to favorites"
-                  ></i>
+                  ></div>
+                  <div className="play-info">{gameInfo.name}</div>
+                </div>
+
+                {disableSplash && (
+                  <p className="legionStamp">
+                    <span>
+                      <img
+                        src="https://cdn.discordapp.com/attachments/961665882671677493/1084136104409714688/logo.png"
+                        alt=""
+                      />
+                      LEGiON
+                    </span>
+                    Portal
+                  </p>
                 )}
 
-                {/* <i
+                <div className="play-actions">
+                  <i
+                    onClick={() => {
+                      toggleFullscreen(false);
+                      router.back();
+                    }}
+                    className="ri-arrow-left-s-line"
+                    title="Go Back"
+                  ></i>
+                  {!fullscreen && (
+                    <i
+                      onClick={() => {
+                        setShowShareModal(true);
+                      }}
+                      className="ri-share-line"
+                      title="Share"
+                    ></i>
+                  )}
+                  {yourFavourite ? (
+                    <i
+                      onClick={() => {
+                        makeFavourite(gameInfo.name, false);
+                      }}
+                      style={{ color: "#E886B5" }}
+                      className="ri-heart-2-fill"
+                      title="Remove from favorites"
+                    ></i>
+                  ) : (
+                    <i
+                      onClick={() => {
+                        makeFavourite(gameInfo.name, true);
+                      }}
+                      className="ri-heart-2-line"
+                      title="Add to favorites"
+                    ></i>
+                  )}
+
+                  {/* <i
                   onClick={() => goto(gameInfo.url)}
                   className="bx bxs-window-alt"
                 ></i> */}
 
-                <i
-                  onClick={() => toggleFullscreen(true)}
-                  className={`ri-fullscreen-line ${!showGame && "disabled"}`}
-                  title="Fullscreen"
-                ></i>
-                <i
-                  onClick={() => toggleFullscreen(true)}
-                  className="bx ri-fullscreen-exit-line"
-                  title="Exit Fullscreen"
-                ></i>
+                  <i
+                    onClick={() => toggleFullscreen(true)}
+                    className={`ri-fullscreen-line ${!showGame && "disabled"}`}
+                    title="Fullscreen"
+                  ></i>
+                  <i
+                    onClick={() => toggleFullscreen(true)}
+                    className="bx ri-fullscreen-exit-line"
+                    title="Exit Fullscreen"
+                  ></i>
+                </div>
               </div>
             </div>
-          </div>
 
-          <CardSetTypeA
-            call={() => resetPlayState()}
-            title="Recommended For You"
-            data={content1}
-          />
-          <CardSetTypeSquare
-            call={() => resetPlayState()}
-            title="Legacy Games"
-            data={content2}
-          />
-          <CardSetTypeCircle
-            call={() => resetPlayState()}
-            title="Action Games"
-            data={content3}
-          />
-          <CardSetTypeSuperWide
-            call={() => resetPlayState()}
-            title="Big Shot Games"
-            data={content4}
-          />
+            <CardSetTypeA
+              call={() => resetPlayState()}
+              title="Recommended For You"
+              data={content1}
+            />
+            <CardSetTypeSquare
+              call={() => resetPlayState()}
+              title="Legacy Games"
+              data={content2}
+            />
+            <CardSetTypeCircle
+              call={() => resetPlayState()}
+              title="Action Games"
+              data={content3}
+            />
+            <CardSetTypeSuperWide
+              call={() => resetPlayState()}
+              title="Big Shot Games"
+              data={content4}
+            />
 
-          <div
-            style={{ display: `${gameInfo.description ? "block" : "none"}` }}
-            className="gameDesc"
-          >
-            <div id="playdesc"></div>
-            <div id="videoSection">
-              <h3>Videos</h3>
-              <iframe
-                width="320"
-                height="180"
-                src="https://www.youtube.com/embed/uvb00oaa3k8"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen={true}
-              ></iframe>
-            </div>
-            <div className="categories">
-              {categories.map((item, key) => (
-                <div
-                  onClick={() => router.push(`/category/${item.title}`)}
-                  key={key}
-                >
-                  {item.title}
-                </div>
-              ))}
+            <div
+              style={{ display: `${gameInfo.description ? "block" : "none"}` }}
+              className="gameDesc"
+            >
+              <div id="playdesc"></div>
+              <div id="videoSection">
+                <h3>Videos</h3>
+                <iframe
+                  width="320"
+                  height="180"
+                  src="https://www.youtube.com/embed/uvb00oaa3k8"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen={true}
+                ></iframe>
+              </div>
+              <div className="categories">
+                {categories.map((item, key) => (
+                  <div
+                    onClick={() => router.push(`/category/${item.title}`)}
+                    key={key}
+                  >
+                    {item.title}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <ShareModal
+        show={showShareModal}
+        toggle={setShowShareModal}
+        url={"https://legion-portal.vercel.app" + pathName}
+      />
+    </>
   );
 }
