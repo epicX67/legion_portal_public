@@ -3,7 +3,7 @@ body {
     color: var(--text);
     // overflow-x: hidden;
     max-width: 100vw;
-    margin-left: 5.5rem;
+    margin-left: 5.5rem !important;
     margin-top: 6rem;
     margin-right: 1rem;
     // text-align: right;
@@ -11,12 +11,12 @@ body {
 
 @media screen and (max-width: 925px) {
     body {
-        margin-left: 1rem;
+        margin-left: 1rem !important;
     }
 }
 
 @media screen and (max-width: 652px) {
     body {
-        margin-bottom: 5.8rem;
+        margin-bottom: 5.8rem !important;
     }
 }
