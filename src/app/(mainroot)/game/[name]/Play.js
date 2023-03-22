@@ -39,6 +39,7 @@ export default function Play({ games, game }) {
   const [autoFullScreen, setAutoFullScreen] = useState(false);
   const [showGame, setShowGame] = useState(false);
   const [yourFavourite, setYourFavourite] = useState(false);
+  const [showShareModal, setShowShareModal] = useState(false);
 
   const resetPlayState = () => {
     setInitiateLoading(false);
@@ -245,6 +246,13 @@ export default function Play({ games, game }) {
                   }}
                   className="ri-arrow-left-s-line"
                   title="Go Back"
+                ></i>
+                <i
+                  onClick={() => {
+                    setShowShareModal(true);
+                  }}
+                  className="ri-share-line"
+                  title="Share"
                 ></i>
                 {yourFavourite ? (
                   <i
