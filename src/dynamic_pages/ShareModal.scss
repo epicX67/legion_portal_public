@@ -1,0 +1,63 @@
+.share-cont {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000000a9;
+    z-index: 1111111;
+    display: grid;
+    place-content: center;
+
+    .share-modal {
+        padding: 1rem;
+        min-width: 10rem;
+        background: var(--sub-background);
+        border-radius: 7px;
+
+        .title {
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .mode-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+
+            * {
+                border-radius: 100px;
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+
+
+        .bottom-bar {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            margin-top: 1.8rem;
+            button {
+                background: var(--accent);
+                color: white;
+                border: 0;
+                cursor: pointer;
+                padding: .5rem 1rem;
+                border-radius: 5px;
+                font-size: .9rem;
+                font-family: var(--font);
+                font-weight: 500;
+                letter-spacing: 1px;
+
+                &:hover {
+                    filter: brightness(.9);
+                }
+            }
+        }
+    }
+}
