@@ -25,17 +25,18 @@ export default function CardSetTypeSquare({
         {data.map(
           (item, key) =>
             item.squareImage && (
-              <div
-                key={key}
-                className="CardSetTypeA-card content-card"
-                style={{ backgroundImage: "url(" + item.squareImage + ")" }}
-                onClick={handleItemClick(`/game/${item.name.toLowerCase()}`)}
-              >
-                {Object.keys(flags).includes(item.flag) && (
-                  <img src={flags[item.flag]} alt="flag" />
-                )}
+              <div key={key}>
+                <div
+                  className="CardSetTypeA-card content-card"
+                  style={{ backgroundImage: "url(" + item.squareImage + ")" }}
+                  onClick={handleItemClick(`/game/${item.name.toLowerCase()}`)}
+                >
+                  {Object.keys(flags).includes(item.flag) && (
+                    <img src={flags[item.flag]} alt="flag" />
+                  )}
 
-                <div className="card-info">{item.name}</div>
+                  <div className="card-info">{item.name}</div>
+                </div>
               </div>
             )
         )}

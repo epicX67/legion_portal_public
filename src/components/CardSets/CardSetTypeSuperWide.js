@@ -25,17 +25,18 @@ export default function CardSetTypeSuperWide({
         {data.map(
           (item, key) =>
             item.wideImage && (
-              <div
-                key={key}
-                className="content-card"
-                style={{ backgroundImage: "url(" + item.wideImage + ")" }}
-                onClick={handleItemClick(`/game/${item.name.toLowerCase()}`)}
-              >
-                {Object.keys(flags).includes(item.flag) && (
-                  <img src={flags[item.flag]} alt="flag" />
-                )}
+              <div key={key}>
+                <div
+                  className="content-card"
+                  style={{ backgroundImage: "url(" + item.wideImage + ")" }}
+                  onClick={handleItemClick(`/game/${item.name.toLowerCase()}`)}
+                >
+                  {Object.keys(flags).includes(item.flag) && (
+                    <img src={flags[item.flag]} alt="flag" />
+                  )}
 
-                <div className="card-info">{item.name}</div>
+                  <div className="card-info">{item.name}</div>
+                </div>
               </div>
             )
         )}

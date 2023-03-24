@@ -29,17 +29,18 @@ export default function CardSetTypeGridA({
         }`}
       >
         {data.map((item, key) => (
-          <div
-            key={key}
-            className="grid-card"
-            style={{
-              backgroundImage: "url(" + item.squareImage + ")",
-              borderRadius: circle ? "500px" : "7px",
-            }}
-            onClick={handleItemClick(`/game/${item.name.toLowerCase()}`)}
-          >
-            <div className="titleHolder">
-              <div className="title">{item.name}</div>
+          <div className="grid-card-wrapper" key={key}>
+            <div
+              className="grid-card"
+              style={{
+                backgroundImage: "url(" + item.squareImage + ")",
+                borderRadius: circle ? "500px" : "7px",
+              }}
+              onClick={handleItemClick(`/game/${item.name.toLowerCase()}`)}
+            >
+              <div className="titleHolder">
+                <div className="title">{item.name}</div>
+              </div>
             </div>
           </div>
         ))}

@@ -35,46 +35,7 @@
         width: max-content;
         gap: 1rem;
 
-   
-
-        .grid-card {
-            position: relative;
-            background-position: center !important;
-            background-size: cover !important;
-            transition: transform 300ms ease;
-            cursor: pointer;
-            overflow: hidden;
-
-            &:hover {
-                transform: scale(1.1);
-                .titleHolder {
-                    opacity: 1;
-                }
-            }
-
-            .titleHolder {
-                font-weight: 600;
-                opacity: 0;
-                position: absolute;
-                inset: 0;
-                text-align: center;
-
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
-
-                padding: 0rem 1rem;
-                padding-bottom: .5rem;
-                box-shadow: inset 0px -20px 30px rgba(0, 0, 0, 0.589);
-                transition: opacity 300ms;
-                word-break: break-all;
-                text-shadow: 0px 3px 5px black;
-            }
-
-            &:hover {
-                transform: scale(1.05);
-            }
-        
+        .grid-card-wrapper {
             &:nth-child(1) {
                 grid-column: 1 / span 2;
                 grid-row: 1 / 3;
@@ -136,6 +97,47 @@
                 grid-row: 2 / span 1;
             }
         }
+
+        .grid-card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-position: center !important;
+            background-size: cover !important;
+            transition: transform 300ms ease;
+            cursor: pointer;
+            overflow: hidden;
+
+            &:hover {
+                transform: scale(1.1);
+                .titleHolder {
+                    opacity: 1;
+                }
+            }
+
+            .titleHolder {
+                font-weight: 600;
+                opacity: 0;
+                position: absolute;
+                inset: 0;
+                text-align: center;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                padding: 0rem 1rem;
+                padding-bottom: .5rem;
+                box-shadow: inset 0px -20px 30px rgba(0, 0, 0, 0.589);
+                transition: opacity 300ms;
+                word-break: break-all;
+                text-shadow: 0px 3px 5px black;
+            }
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
     }  
 
 
@@ -164,46 +166,7 @@
         width: max-content;
         gap: 1rem;
 
-      
-
-        .grid-card {
-            position: relative;
-            background-position: center !important;
-            background-size: cover !important;
-            transition: transform 300ms ease;
-            cursor: pointer;
-
-            &:hover {
-                transform: scale(1.05);
-            }
-
-            overflow: hidden;
-
-            &:hover {
-                .titleHolder {
-                    opacity: 1;
-                }
-            }
-
-            .titleHolder {
-                font-weight: 600;
-                opacity: 0;
-                position: absolute;
-                inset: 0;
-                text-align: center;
-
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
-
-                padding: 0rem 1rem;
-                padding-bottom: .5rem;
-                box-shadow: inset 0px -20px 30px rgba(0, 0, 0, 0.589);
-                transition: opacity 300ms;
-                word-break: break-all;
-                text-shadow: 0px 3px 5px black;
-            }
-        
+        .grid-card-wrapper {
             &:nth-child(1) {
                 grid-column: 1 / span 2;
                 grid-row: 1 / 3;
@@ -281,41 +244,17 @@
                 grid-row: 1 / span 2;
             }
         }
-        
-    }
 
-    .grid-set3 {
-        padding: 3rem 1rem;
-        padding-top: 1.2rem;
-        margin: -1rem;
-        padding-bottom: 3rem;
-        overflow-y: unset;
-        max-width: 100%;
-        overflow-x: auto;
-        margin-bottom: -1rem;
-        padding-left: 1rem !important;
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
-
-        display: grid;
-        grid-gap: 10px;
-        padding: 10px;
-        
-        grid-template-columns: repeat(11, 1fr);
-        grid-template-rows: repeat(7, 1fr);
-        aspect-ratio: 11 / 7;
-        width: 100%;
-        gap: 1rem;
+      
 
         .grid-card {
             position: relative;
+            width: 100%;
+            height: 100%;
             background-position: center !important;
             background-size: cover !important;
             transition: transform 300ms ease;
             cursor: pointer;
-            background: var(--sub-background);
 
             &:hover {
                 transform: scale(1.05);
@@ -347,7 +286,36 @@
                 word-break: break-all;
                 text-shadow: 0px 3px 5px black;
             }
+        }
+        
+    }
 
+    .grid-set3 {
+        padding: 3rem 1rem;
+        padding-top: 1.2rem;
+        margin: -1rem;
+        padding-bottom: 3rem;
+        overflow-y: unset;
+        max-width: 100%;
+        overflow-x: auto;
+        margin-bottom: -1rem;
+        padding-left: 1rem !important;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        display: grid;
+        grid-gap: 10px;
+        padding: 10px;
+        
+        grid-template-columns: repeat(11, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        aspect-ratio: 11 / 7;
+        width: 100%;
+        gap: 1rem;
+
+        .grid-card-wrapper {
             &:nth-child(1) {
                 grid-column: 2 / span 3;
                 grid-row: 1 / span 3;
@@ -387,6 +355,48 @@
             &:nth-child(10) {
                 grid-column: 8 / span 2;
                 grid-row: 6 / span 2;
+            }
+        }
+
+        .grid-card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-position: center !important;
+            background-size: cover !important;
+            transition: transform 300ms ease;
+            cursor: pointer;
+            background: var(--sub-background);
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            overflow: hidden;
+
+            &:hover {
+                .titleHolder {
+                    opacity: 1;
+                }
+            }
+
+            .titleHolder {
+                font-weight: 600;
+                opacity: 0;
+                position: absolute;
+                inset: 0;
+                text-align: center;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                padding: 0rem 1rem;
+                padding-bottom: .5rem;
+                box-shadow: inset 0px -20px 30px rgba(0, 0, 0, 0.589);
+                transition: opacity 300ms;
+                word-break: break-all;
+                text-shadow: 0px 3px 5px black;
             }
         }  
     }
