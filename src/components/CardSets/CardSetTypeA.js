@@ -21,9 +21,8 @@ export default function CardSetTypeA({ title, data = [], call = () => {} }) {
         {data.map(
           (item, key) =>
             item.wideImage && (
-              <div>
+              <div key={key}>
                 <div
-                  key={key}
                   className="CardSetTypeA-card"
                   style={{ backgroundImage: "url(" + item.wideImage + ")" }}
                   onClick={handleItemClick(`/game/${item.name.toLowerCase()}`)}
