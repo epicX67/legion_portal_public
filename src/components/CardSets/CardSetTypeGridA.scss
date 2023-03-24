@@ -439,4 +439,12 @@
         gap: .5rem !important;
     }
 
+    .circle {
+        gap: .5rem;
+    }
+
+    .extraWide {
+        grid-template-columns: repeat(12, 10rem) !important;
+    }
+
 }
