@@ -90,13 +90,20 @@
         }
 
         button {
-            border: 0;
-            background: #92E95F;
-            border-radius: 13px;
-            font-size: 1.8vmax;
-            font-weight: 800;
-            letter-spacing: 2px;
-            padding: 1.5vmax 1.8vmax;
+            width: fit-content;
+            background: linear-gradient(to bottom, rgb(39, 255, 46), rgb(9, 137, 17));
+            outline: 2px solid var(--exp);
+            outline-offset: 2px;
+            border-radius: 100px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            color: white;
+            border: none;
+            letter-spacing: 1px;
+            font-size: clamp(.8rem, 1.7vmax, 1.4rem);
+            padding: clamp(.3rem, 1vmax, .5rem) clamp(.2rem, 2vmax, 1.5rem);
             line-height: 1.8vmax;
             transition: transform 300ms ease;
             cursor: pointer;
@@ -109,6 +116,10 @@
             &:active {
                 transform: scale(1.05);
             }
+        }
+
+        .mobile-play-button {
+            display: none;
         }
 
          p {
