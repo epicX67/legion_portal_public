@@ -26,9 +26,8 @@ export default function PortableRowTypeA({
       <div className="scrollWrapper">
         <div className="card-list" ref={scrollContainer.ref}>
           {data.map((item, key) => (
-            <div className="card">
+            <div key={key} className="card">
               <div
-                key={key}
                 className="cover"
                 style={{ backgroundImage: "url(" + item.squareImage + ")" }}
               ></div>
