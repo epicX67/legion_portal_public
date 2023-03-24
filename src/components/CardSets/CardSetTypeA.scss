@@ -38,10 +38,6 @@
 
     }
 
-    .card-list.dragging > * {
-        pointer-events: none;
-    }
-
 }
 
 .CardSetTypeA-card, .content-card {
@@ -50,7 +46,7 @@
     aspect-ratio: 16 / 9;
     background: var(--sub-background);
     border-radius: 7px;
-    outline: 4px solid transparent;
+    outline: 2px solid transparent;
     text-decoration: none;
     color: white;
 
@@ -71,7 +67,7 @@
     //box-shadow: 0px 10px 20px var(--accent);
 
 
-    transition: outline 300ms, transform 300ms, box-shadow 300ms, background-size 700ms;
+    transition: outline 100ms, transform 300ms, box-shadow 300ms, background-size 700ms;
 
     img {
         width: 5rem;
