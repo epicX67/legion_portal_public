@@ -188,14 +188,14 @@
         }
     
     
-        .game-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+        // .game-list {
+        //     display: grid;
+        //     grid-template-columns: 1fr 1fr;
 
-            .content-card {
-                width: calc(100% - 2rem);
-            }
-        }
+        //     .content-card {
+        //         width: calc(100% - 2rem);
+        //     }
+        // }
     }
 }
 
