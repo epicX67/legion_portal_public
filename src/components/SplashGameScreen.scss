@@ -157,11 +157,11 @@
     }
 
     .mobile-play-button {
-        display: block;
+        display: block !important;
     }
     
     .desktop-play-button {
-        display: none;
+        display: none !important;
     }
 
 }
