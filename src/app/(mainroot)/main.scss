@@ -6,7 +6,12 @@ body {
     margin-left: 5.5rem !important;
     margin-top: 6rem;
     margin-right: 1rem;
+    scroll-behavior: smooth;
     // text-align: right;
+}
+
+* {
+    scroll-behavior: smooth;
 }
 
 .tooltip {

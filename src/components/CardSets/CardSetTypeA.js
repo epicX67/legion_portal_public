@@ -4,7 +4,12 @@ import { useRouter } from "next/navigation";
 import { flags } from "@/res/data";
 import "./CardSetTypeA.scss";
 
-export default function CardSetTypeA({ title, data = [], call = () => {} }) {
+export default function CardSetTypeA({
+  title,
+  data = [],
+  call = () => {},
+  id = "id_" + Date.now(),
+}) {
   const scrollContainer = useScrollContainer();
   const router = useRouter();
 
@@ -16,8 +21,25 @@ export default function CardSetTypeA({ title, data = [], call = () => {} }) {
 
   return (
     <div className="CardSetTypeA">
-      <p>{title}</p>
-      <div ref={scrollContainer.ref} className="card-list">
+      <div className="titleBar">
+        <p>{title}</p>
+        <div className="actions">
+          <i
+            className="ri-arrow-left-s-line"
+            onClick={() => {
+              document.getElementById(id).scrollLeft -= 200;
+            }}
+          ></i>
+          <i
+            className="ri-arrow-right-s-line"
+            onClick={() => {
+              document.getElementById(id).scrollLeft += 200;
+            }}
+          ></i>
+          <div>See More</div>
+        </div>
+      </div>
+      <div id={id} ref={scrollContainer.ref} className="card-list">
         {data.map(
           (item, key) =>
             item.wideImage && (
