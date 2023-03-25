@@ -13,7 +13,7 @@ export default function Categories({ title, data = [] }) {
 
   return (
     <div className="CardSetTypeA category">
-      <p>{title}</p>
+      <div className="title">{title}</div>
       <div className="card-list" ref={scrollContainer.ref}>
         {data.map((item, key) => (
           <div

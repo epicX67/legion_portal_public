@@ -1,12 +1,11 @@
 .CardSetTypeA.category {
     margin-top: 1.5rem;
 
-    & > p {
+    .title {
         font-size: 1.5rem;
         font-weight: 600;
         letter-spacing: 1px;
-        margin-bottom: 1rem;
-        margin-top: .5rem;
+        margin-bottom: .5rem;
     }
     
     .card-list{
@@ -41,9 +40,16 @@
     }
 }
 
+@media screen and (max-width: 652px) {
+    .category {
+        .title {
+            font-size: 1.2rem !important;
+        }
+    }
+}
 
 @media screen and (max-width: 430px) {
-    .content.category {
+    .category {
         .card-list{
             .content-card-btn {
                 padding: .8rem;
