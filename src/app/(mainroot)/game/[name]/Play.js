@@ -179,19 +179,13 @@ export default function Play({ games, game }) {
             <div className="game-wrapper">
               <SplashGameScreen
                 game={gameInfo}
-                hide={initiateLoading}
                 disable={disableSplash}
-                initiateLoading={setInitiateLoading}
+                setDisableSplash={setDisableSplash}
+                autoFullScreen={autoFullScreen}
                 setAutoFullScreen={setAutoFullScreen}
+                toggleFullscreen={toggleFullscreen}
+                showGame={setShowGame}
               />
-              {disableSplash && !showGame && (
-                <LoadingPanel
-                  showGame={setShowGame}
-                  setAutoFullScreen={setAutoFullScreen}
-                  autoFullScreen={autoFullScreen}
-                  toggleFullscreen={toggleFullscreen}
-                />
-              )}
 
               {disableSplash && (
                 <>

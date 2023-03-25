@@ -1,19 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SplashGameScreen.scss";
 
 export default function SplashGameScreen({
   game,
-  initiateLoading,
-  setAutoFullScreen,
-  hide,
   disable,
+  setDisableSplash,
+  autoFullScreen,
+  setAutoFullScreen,
+  toggleFullscreen,
+  showGame,
 }) {
   // const [hide, setHide] = useState(false);
   // const [disable, setDisable] = useState(false);
   // const navigate = useNavigate();
+  const [animating, setAnimating] = useState(false);
 
-  return disable ? null : (
-    <div className={`splash-game-screen ${hide && "hide"}`}>
+  const startGame = () => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+      if (autoFullScreen) {
+        setAutoFullScreen(false);
+        toggleFullscreen(true);
+      }
+      setTimeout(() => {
+        setDisableSplash(true);
+        showGame(true);
+      }, 700);
+    }, 5000);
+  };
+
+  return (
+    <div className={`splash-game-screen ${disable && "hide"}`}>
       {/* <div
         className="loadingIframe"
         dangerouslySetInnerHTML={{ __html: url }}
@@ -25,21 +42,25 @@ export default function SplashGameScreen({
         ></div>
         <div
           style={{ backgroundImage: `url('${game.squareImage}')` }}
-          className="logo"
+          className={`logo ${animating && "startAnima"}`}
         ></div>
         <button
-          className="mobile-play-button"
+          className={`mobile-play-button play-btn ${animating && "hide"}`}
           onClick={() => {
             setAutoFullScreen(true);
-            initiateLoading(true);
+            // initiateLoading(true);
+            setAnimating(true);
+            startGame();
           }}
         >
           Play Now
         </button>
         <button
-          className="desktop-play-button"
+          className={`desktop-play-button play-btn ${animating && "hide"}`}
           onClick={() => {
-            initiateLoading(true);
+            // initiateLoading(true);
+            setAnimating(true);
+            startGame();
           }}
         >
           Play Now
