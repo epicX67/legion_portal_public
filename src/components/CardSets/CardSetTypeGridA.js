@@ -9,6 +9,7 @@ export default function CardSetTypeGridA({
   circle = false,
   extraWide = false,
   call = () => {},
+  id = "id_" + Date.now() + Math.random(),
 }) {
   const scrollContainer = useScrollContainer();
   const router = useRouter();
@@ -21,8 +22,30 @@ export default function CardSetTypeGridA({
 
   return (
     <div className="grid">
-      <p>{title}</p>
+      <div className="titleBar">
+        <p>{title}</p>
+        <div className="actions">
+          <i
+            className="ri-arrow-left-s-line"
+            onClick={() => {
+              document.getElementById(id).classList.add("smoothScroll");
+              document.getElementById(id).scrollLeft -= 200;
+              document.getElementById(id).classList.remove("smoothScroll");
+            }}
+          ></i>
+          <i
+            className="ri-arrow-right-s-line"
+            onClick={() => {
+              document.getElementById(id).classList.add("smoothScroll");
+              document.getElementById(id).scrollLeft += 200;
+              document.getElementById(id).classList.remove("smoothScroll");
+            }}
+          ></i>
+          <div>See More</div>
+        </div>
+      </div>
       <div
+        id={id}
         ref={scrollContainer.ref}
         className={`grid-set1 ${circle && "circle"} ${
           extraWide && "extraWide"

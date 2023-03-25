@@ -7,13 +7,57 @@
     gap: .5rem;
     
 
-    & > p {
-        font-size: 1.5rem;
-        font-weight: 600;
-        letter-spacing: 1px;
-        margin-bottom: 1rem;
-        margin-top: .5rem;
+    .titleBar {
+        display: flex;
+        align-items: center;
+
+        & > p {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            margin-top: .5rem;
+        }
+
+        .actions {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            i {
+                padding: .5rem;
+                background: var(--sub-background);
+                display: grid;
+                place-content: center;
+                border-radius: 100px;
+                font-weight: bolder;
+                font-size: 1.5rem;
+                transition: transform 200ms, color 200ms, background 200ms;
+          
+                &:hover {
+                  transform: scale(1.1);
+                  background: var(--text);
+                  color: var(--background);
+                }
+          
+                &:active {
+                  transform: scale(.7);
+                }
+              }
+
+              div {
+                cursor: pointer;
+                font-weight: 600;
+                color: var(--sub-accent);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+              }
+        }
     }
+
 
     .card-list {
         display: flex;

@@ -3,7 +3,12 @@ import { useScrollContainer } from "react-indiana-drag-scroll";
 import { useRouter } from "next/navigation";
 import "./Collections.scss";
 
-export default function Collections({ title, data = [], call = () => {} }) {
+export default function Collections({
+  title,
+  data = [],
+  call = () => {},
+  id = "id_" + Date.now() + Math.random(),
+}) {
   const scrollContainer = useScrollContainer();
   const router = useRouter();
 
@@ -15,8 +20,29 @@ export default function Collections({ title, data = [], call = () => {} }) {
 
   return (
     <div className="collections">
-      <p>{title}</p>
-      <div ref={scrollContainer.ref} className="card-list">
+      <div className="titleBar">
+        <p>{title}</p>
+        <div className="actions">
+          <i
+            className="ri-arrow-left-s-line"
+            onClick={() => {
+              document.getElementById(id).classList.add("smoothScroll");
+              document.getElementById(id).scrollLeft -= 200;
+              document.getElementById(id).classList.remove("smoothScroll");
+            }}
+          ></i>
+          <i
+            className="ri-arrow-right-s-line"
+            onClick={() => {
+              document.getElementById(id).classList.add("smoothScroll");
+              document.getElementById(id).scrollLeft += 200;
+              document.getElementById(id).classList.remove("smoothScroll");
+            }}
+          ></i>
+          <div>See More</div>
+        </div>
+      </div>
+      <div id={id} ref={scrollContainer.ref} className="card-list">
         {data.map((item, key) => (
           <div key={key} className="collection-card">
             <div
