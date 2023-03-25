@@ -21,7 +21,7 @@ export default function CardSetTypeGridB({
 
   return (
     <div className="grid">
-      <p>{title}</p>
+      <p className="title">{title}</p>
       <div
         ref={scrollContainer.ref}
         className={`grid-set3 ${circle && "circle"} ${

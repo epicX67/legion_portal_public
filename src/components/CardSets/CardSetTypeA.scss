@@ -10,13 +10,14 @@
     .titleBar {
         display: flex;
         align-items: center;
+        margin-bottom: 0rem;
+        margin-top: .5rem;
+        line-height: 0rem;
 
         & > p {
             font-size: 1.5rem;
             font-weight: 600;
             letter-spacing: 1px;
-            margin-bottom: 1rem;
-            margin-top: .5rem;
         }
 
         .actions {
@@ -33,6 +34,8 @@
                 border-radius: 100px;
                 font-weight: bolder;
                 font-size: 1.5rem;
+                width: 1.6rem;
+                height: 1.6rem;
                 transition: transform 200ms, color 200ms, background 200ms;
           
                 &:hover {
@@ -198,9 +201,26 @@
             width: 10rem;
         }
        
-        & > p {
+        & > p, .title {
             font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+        }
+
+        .titleBar {
+            & > p {
+                font-size: 1.2rem;
+            }
+    
+            .actions {
+                i {
+                    font-size: 1.1rem;
+                    width: 1.2rem;
+                    height: 1.2rem;
+                  }
+    
+                div {
+                    font-size: .9rem;
+                }
+            }
         }
     
     }

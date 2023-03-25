@@ -23,7 +23,7 @@ export default function CardSetTypeGridB({
   return (
     <div className="grid">
       <div className="titleBar">
-        <p>{title}</p>
+        <p className="title">{title}</p>
         <div className="actions">
           <i
             className="ri-arrow-left-s-line"

@@ -22,7 +22,7 @@ export default function CardSetTypeA({
   return (
     <div className="CardSetTypeA">
       <div className="titleBar">
-        <p>{title}</p>
+        <p className="title">{title}</p>
         <div className="actions">
           <i
             className="ri-arrow-left-s-line"

@@ -22,7 +22,7 @@ export default function CardSetTypeCircle({
   return (
     <div className="content circle">
       <div className="titleBar">
-        <p>{title}</p>
+        <p className="title">{title}</p>
         <div className="actions">
           <i
             className="ri-arrow-left-s-line"
