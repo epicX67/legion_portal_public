@@ -7,7 +7,7 @@ export default function CardSetTypeB({
   title,
   data = [],
   call = () => {},
-  id = "id_" + Date.now(),
+  id = "id_" + Date.now() + Math.random(),
 }) {
   const scrollContainer = useScrollContainer();
   const router = useRouter();
@@ -42,7 +42,7 @@ export default function CardSetTypeB({
           <div>See More</div>
         </div>
       </div>
-      <div ref={scrollContainer.ref} className="card-list">
+      <div id={id} ref={scrollContainer.ref} className="card-list">
         {data.map(
           (item, key) =>
             item.tallImage && (
