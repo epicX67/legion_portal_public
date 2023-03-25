@@ -2,17 +2,20 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import "./Search.scss";
+import { categories } from "@/res/data";
 
 export default function Search({ games = [], isEmbed }) {
   const [searchStr, setSearchStr] = useState("");
   const [searchMode, setSearchMode] = useState(false);
   const [findGames, setFindGames] = useState([]);
+  const [findCategory, setFindCategory] = useState([]);
   const router = useRouter();
 
   useEffect(() => {
     const nSearch = searchStr.toLowerCase().trim();
     if (nSearch === "") {
       setFindGames([]);
+      setFindCategory([]);
       return;
     }
 
@@ -20,7 +23,12 @@ export default function Search({ games = [], isEmbed }) {
       item.name.toLowerCase().includes(nSearch)
     );
 
+    const f2 = categories.filter((item) =>
+      item.title.toLowerCase().includes(nSearch)
+    );
+
     setFindGames(f1);
+    setFindCategory(f2);
   }, [searchStr]);
 
   const handleItemClick = (url) => () => {
@@ -42,14 +50,29 @@ export default function Search({ games = [], isEmbed }) {
         type="text"
         name="search"
         placeholder="search"
-        className={`${findGames.length > 0 && searchMode && "searchInputMode"}`}
+        className={`${
+          (findGames.length > 0 || findCategory.length > 0) &&
+          searchMode &&
+          "searchInputMode"
+        }`}
       ></input>
-      {searchMode && findGames.length > 0 && (
+      {searchMode && (findGames.length > 0 || findCategory.length > 0) && (
         <>
           <div className="searchResults">
+            {findCategory.map((item, index) => (
+              <div
+                key={"category_" + index}
+                className="item"
+                onClick={handleItemClick(`/category/${item.title}`)}
+              >
+                <i className="ri-pages-line iconCover"></i>
+
+                <div className="title">{item.title}</div>
+              </div>
+            ))}
             {findGames.map((item, index) => (
               <div
-                key={index}
+                key={"game_" + index}
                 className="item"
                 onClick={handleItemClick(`/game/${item.name.toLowerCase()}`)}
               >
