@@ -83,6 +83,23 @@
         }
     }
 
+    // For tooltips
+    .random-btn::after {
+        content: 'Try Random Game';
+    }
+
+    .fevorite-btn::after{
+        content: 'Your Favourites';
+    }
+
+    .recent-btn::after{
+        content: 'Recently Played';
+    }
+
+    .theme-btn::after {
+        content: 'Change Theme';
+    }
+
     .login-btn {
         background: var(--sub-accent);
         padding: .5rem 1rem;

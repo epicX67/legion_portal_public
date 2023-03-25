@@ -92,29 +92,29 @@ export default function Nav({
         </div> */}
         <div
           onClick={() => randomGame()}
-          className="nav-btn"
-          title="Try Random Game"
+          className="nav-btn tooltip random-btn"
+          // title="Try Random Game"
         >
           <i className="ri-exchange-funds-line"></i>
         </div>
         <div
           onClick={() => openLocalStat("favourites")}
-          className="nav-btn"
-          title="Your Favourites"
+          className="nav-btn tooltip fevorite-btn"
+          // title="Your Favourites"
         >
           <i className="ri-heart-2-fill"></i>
         </div>
         <div
           onClick={() => openLocalStat("recents")}
-          className="nav-btn"
-          title="Recently Played"
+          className="nav-btn tooltip recent-btn"
+          // title="Recently Played"
         >
           <i className="ri-history-line"></i>
         </div>
         <div
           onClick={() => themeToggle(true)}
-          className="nav-btn"
-          title="Site Theme"
+          className="nav-btn tooltip theme-btn"
+          // title="Site Theme"
         >
           <i className="ri-palette-line"></i>
         </div>
