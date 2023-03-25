@@ -134,6 +134,19 @@
 
 }
 
+@media screen and (max-width: 925px) {
+    .stats-panel {
+        width: calc(100% - 4rem);
+        padding-top: 0rem;
+        margin-left: 0rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #161616b2;
+    }
+}
+
     // .resultList {
     //     width: 100%;
     //     max-width: 700px;
