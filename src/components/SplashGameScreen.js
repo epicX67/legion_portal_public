@@ -5,8 +5,6 @@ export default function SplashGameScreen({
   game,
   disable,
   setDisableSplash,
-  autoFullScreen,
-  setAutoFullScreen,
   toggleFullscreen,
   showGame,
 }) {
@@ -15,11 +13,10 @@ export default function SplashGameScreen({
   // const navigate = useNavigate();
   const [animating, setAnimating] = useState(false);
 
-  const startGame = () => {
+  const startGame = (fullscreen) => {
     setTimeout(() => {
       window.scrollTo(0, 0);
-      if (autoFullScreen) {
-        setAutoFullScreen(false);
+      if (fullscreen) {
         toggleFullscreen(true);
       }
       setTimeout(() => {
@@ -47,10 +44,9 @@ export default function SplashGameScreen({
         <button
           className={`mobile-play-button play-btn ${animating && "hide"}`}
           onClick={() => {
-            setAutoFullScreen(true);
             // initiateLoading(true);
             setAnimating(true);
-            startGame();
+            startGame(true);
           }}
         >
           Play Now
@@ -60,7 +56,7 @@ export default function SplashGameScreen({
           onClick={() => {
             // initiateLoading(true);
             setAnimating(true);
-            startGame();
+            startGame(false);
           }}
         >
           Play Now
