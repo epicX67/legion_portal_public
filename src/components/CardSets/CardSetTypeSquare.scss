@@ -6,9 +6,6 @@
     min-width: 10rem;
     aspect-ratio: 1 / 1;
 
-    &::after {
-        background: rgba(0, 0, 0, 0.829);
-    }
 
     &:hover, &:active {
         outline: 4px solid var(--card-border);
