@@ -26,13 +26,17 @@ export default function CardSetTypeB({
           <i
             className="ri-arrow-left-s-line"
             onClick={() => {
+              document.getElementById(id).classList.add("smoothScroll");
               document.getElementById(id).scrollLeft -= 200;
+              document.getElementById(id).classList.remove("smoothScroll");
             }}
           ></i>
           <i
             className="ri-arrow-right-s-line"
             onClick={() => {
+              document.getElementById(id).classList.add("smoothScroll");
               document.getElementById(id).scrollLeft += 200;
+              document.getElementById(id).classList.remove("smoothScroll");
             }}
           ></i>
           <div>See More</div>
