@@ -9,6 +9,36 @@ body {
     // text-align: right;
 }
 
+.tooltip {
+    position: relative;
+    &:hover {
+        &::after {
+            opacity: 1;
+            transition: opacity 200ms;
+        }
+    }
+
+    &::after {
+        pointer-events: none;
+        opacity: 0;
+        position: absolute;
+        top: 2.2rem;
+        left: 50%;
+        width: auto;
+        transform: translateX(-50%);
+        z-index: 1111111111111;
+        background: var(--sub-background);
+        border: 2px solid var(--sub-outline);
+        color: var(--text);
+        font-size: .7rem;
+        padding: .2rem .5rem;
+        font-weight: 600;
+        border-radius: 6px;
+        white-space: nowrap;
+        transition: opacity 200ms 0ms;
+    }
+}
+
 @media screen and (max-width: 925px) {
     body {
         margin-left: 1rem !important;
