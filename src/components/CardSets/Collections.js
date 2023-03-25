@@ -26,7 +26,7 @@ export default function Collections({ title, data = [], call = () => {} }) {
 
             <div className="title">{item.name}</div>
             <button onClick={() => handleItemClick(item.name)}>
-              <i className="ri-list-check-2"></i> See collection
+              <i className="ri-play-fill"></i> See collection
             </button>
           </div>
         ))}
