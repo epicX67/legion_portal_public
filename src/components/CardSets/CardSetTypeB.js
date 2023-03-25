@@ -3,7 +3,12 @@ import { useScrollContainer } from "react-indiana-drag-scroll";
 import { useRouter } from "next/navigation";
 import "./CardSetTypeB.scss";
 
-export default function CardSetTypeB({ title, data = [], call = () => {} }) {
+export default function CardSetTypeB({
+  title,
+  data = [],
+  call = () => {},
+  id = "id_" + Date.now(),
+}) {
   const scrollContainer = useScrollContainer();
   const router = useRouter();
 
@@ -15,7 +20,24 @@ export default function CardSetTypeB({ title, data = [], call = () => {} }) {
 
   return (
     <div className="content CardSetTypeB vertical">
-      <p>{title}</p>
+      <div className="titleBar">
+        <p>{title}</p>
+        <div className="actions">
+          <i
+            className="ri-arrow-left-s-line"
+            onClick={() => {
+              document.getElementById(id).scrollLeft -= 200;
+            }}
+          ></i>
+          <i
+            className="ri-arrow-right-s-line"
+            onClick={() => {
+              document.getElementById(id).scrollLeft += 200;
+            }}
+          ></i>
+          <div>See More</div>
+        </div>
+      </div>
       <div ref={scrollContainer.ref} className="card-list">
         {data.map(
           (item, key) =>
