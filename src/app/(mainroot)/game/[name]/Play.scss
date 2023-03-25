@@ -168,6 +168,32 @@
                 }
             }
 
+            // For tooltips
+            .tooltip::after {
+                top: 3.2rem;
+                font-family: var(--font);
+            }
+            .back-btn::after {
+                content: 'Try Random Game';
+            }
+
+            .share-btn::after {
+                content: 'Share'
+            }
+
+            .rfevorite-btn::after {
+                content: 'Remove from favorites'
+            }
+
+            .afevorite-btn::after {
+                content: 'Add to favorites'
+            }
+
+            .fullscreen-btn::after {
+                content: 'Fullscreen'
+            }
+
+
             .disabled {
                 pointer-events: none;
                 opacity: .2;

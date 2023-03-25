@@ -249,16 +249,16 @@ export default function Play({ games, game }) {
                       toggleFullscreen(false);
                       router.back();
                     }}
-                    className="ri-arrow-left-s-line"
-                    title="Go Back"
+                    className="ri-arrow-left-s-line tooltip back-btn"
+                    // title="Go Back"
                   ></i>
                   {!fullscreen && (
                     <i
                       onClick={() => {
                         setShowShareModal(true);
                       }}
-                      className="ri-share-line"
-                      title="Share"
+                      className="ri-share-line tooltip share-btn"
+                      // title="Share"
                     ></i>
                   )}
                   {yourFavourite ? (
@@ -267,16 +267,16 @@ export default function Play({ games, game }) {
                         makeFavourite(gameInfo.name, false);
                       }}
                       style={{ color: "#E886B5" }}
-                      className="ri-heart-2-fill"
-                      title="Remove from favorites"
+                      className="ri-heart-2-fill tooltip rfevorite-btn"
+                      // title="Remove from favorites"
                     ></i>
                   ) : (
                     <i
                       onClick={() => {
                         makeFavourite(gameInfo.name, true);
                       }}
-                      className="ri-heart-2-line"
-                      title="Add to favorites"
+                      className="ri-heart-2-line tooltip afevorite-btn"
+                      // title="Add to favorites"
                     ></i>
                   )}
 
@@ -287,8 +287,10 @@ export default function Play({ games, game }) {
 
                   <i
                     onClick={() => toggleFullscreen(true)}
-                    className={`ri-fullscreen-line ${!showGame && "disabled"}`}
-                    title="Fullscreen"
+                    className={`ri-fullscreen-line tooltip fullscreen-btn ${
+                      !showGame && "disabled"
+                    }`}
+                    // title="Fullscreen"
                   ></i>
                   <i
                     onClick={() => toggleFullscreen(true)}
