@@ -193,8 +193,7 @@
 }
 
 .splash-game-screen.hide {
-    // opacity: 0;
-    animation: hideLoading 900ms 1 cubic-bezier(0.46, 0.03, 0.52, 0.96) forwards;
+    display: none;
 }
 
 @media screen and (max-width: 652px) {
