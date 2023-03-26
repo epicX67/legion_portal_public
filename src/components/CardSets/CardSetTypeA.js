@@ -3,6 +3,7 @@ import { useScrollContainer } from "react-indiana-drag-scroll";
 import { useRouter } from "next/navigation";
 import { flags } from "@/res/data";
 import "./CardSetTypeA.scss";
+import VideoCont from "./VideoCont";
 
 export default function CardSetTypeA({
   title,
@@ -50,12 +51,16 @@ export default function CardSetTypeA({
               <div key={key}>
                 <div
                   className="CardSetTypeA-card"
-                  style={{ backgroundImage: "url(" + item.wideImage + ")" }}
                   onClick={handleItemClick(`/game/${item.name.toLowerCase()}`)}
-                  onDrag={(e) => {
-                    e.stopPropagation();
-                  }}
                 >
+                  <div className="bgCont">
+                    <VideoCont />
+                    <div
+                      style={{ backgroundImage: "url(" + item.wideImage + ")" }}
+                      className="imageCont"
+                    ></div>
+                  </div>
+
                   {Object.keys(flags).includes(item.flag) && (
                     <img src={flags[item.flag]} alt="flag" />
                   )}

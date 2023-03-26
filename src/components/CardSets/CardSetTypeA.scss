@@ -95,9 +95,6 @@
     outline-offset: 4px;
     text-decoration: none;
     color: white;
-
-    background-position: center;
-    background-size: cover;
     // overflow: hidden;
 
     display: flex;
@@ -114,6 +111,33 @@
 
 
     transition: outline 100ms, transform 300ms, box-shadow 300ms, background-size 700ms;
+
+    .bgCont {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        .imageCont {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            border-radius: inherit;
+            z-index: 1;
+        }
+
+        .videoCont {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            border-radius: inherit;
+            overflow: hidden;
+        }
+    }
+
 
     img {
         width: 5rem;
