@@ -53,10 +53,6 @@ export default function CardSetTypeCircle({
                   style={{ backgroundImage: "url(" + item.circleImage + ")" }}
                   onClick={handleItemClick(`/game/${item.name.toLowerCase()}`)}
                 >
-                  {Object.keys(flags).includes(item.flag) && (
-                    <img src={flags[item.flag]} alt="flag" />
-                  )}
-
                   <div className="card-info">{item.name}</div>
                 </div>
               </div>
