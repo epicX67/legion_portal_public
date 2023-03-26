@@ -41,35 +41,43 @@ export default function CategoryClientWrapper({ params, games = [] }) {
 
     window.scrollTo(0, 0);
   }, [params]);
+  let x = 1;
 
   return (
-    <div className="games-container">
-      <div
-        className="games-hero"
-        style={
-          collectionBackground && {
-            backgroundImage: `url('${collectionBackground}')`,
+    <div className="collection-main">
+      <div className="collection-hero">
+        <div
+          className="bg"
+          style={
+            collectionBackground && {
+              backgroundImage: `url('${collectionBackground}')`,
+            }
           }
-        }
-      >
+        ></div>
+        <p className="subtitle">Collection</p>
         <p className="title">{collectionName}</p>
       </div>
 
-      <div className="game-list">
+      <div className="collections">
         {data.map(
           (item, key) =>
             tagFound(item.category ? item.category.split(",") : []) && (
-              <div
-                key={key}
-                className="CardSetTypeA-card"
-                style={{
-                  backgroundImage: "url(" + item.wideImage + ")",
-                }}
-                onClick={() =>
-                  handleItemClick(`/game/${item.name.toLowerCase()}`)
-                }
-              >
-                <div className="card-info">{item.name}</div>
+              <div key={key} className="collection">
+                <div className="serial">{x++}.</div>
+                <div
+                  style={{
+                    backgroundImage: "url(" + item.wideImage + ")",
+                  }}
+                  className="card-cover"
+                ></div>
+                <div
+                  className="card-info"
+                  onClick={() =>
+                    handleItemClick(`/game/${item.name.toLowerCase()}`)
+                  }
+                >
+                  {item.name}
+                </div>
               </div>
             )
         )}
