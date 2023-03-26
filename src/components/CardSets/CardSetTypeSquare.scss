@@ -8,7 +8,7 @@
 
 
     &:hover, &:active {
-        outline: 4px solid var(--card-border);
+        outline: 3px solid var(--card-border);
         transform: scale(1.02);
         box-shadow: 0px 10px 20px 15px rgba(187, 187, 187, 0.123);
         // background-size: 110%;
@@ -46,7 +46,7 @@
 
     .square .content-card {
         &:hover {
-            outline: 4px solid var(--card-border);
+            outline: 3px solid var(--card-border);
             transform: scale(1.02);
             box-shadow: 0px 10px 20px 15px rgba(187, 187, 187, 0.123);
             // background-size: 110%;
