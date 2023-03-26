@@ -186,6 +186,7 @@
         }
         .card-info, &::after {
             opacity: 1;
+            pointer-events: none;
         }
 
         .card-info {
