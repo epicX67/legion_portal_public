@@ -185,7 +185,7 @@
         .actions {
             width: 100%;
             padding: 0rem 1rem;;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
     
             .action {
                 width: 2.8rem;
@@ -195,10 +195,11 @@
         }
     
         .collections {
-            width: calc(100% - 2rem);
+            width: calc(100% - 1rem);
             display: flex;
             flex-direction: column;
             gap: 1rem;
+            padding: 0;
     
             .row {
                 display: grid;
