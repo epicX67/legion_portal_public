@@ -42,6 +42,16 @@ export default function CategoryClientWrapper({ params, games = [] }) {
     window.scrollTo(0, 0);
   }, [params]);
   let x = 1;
+  const total = useMemo(() => {
+    return data.filter((item, key) =>
+      tagFound(item.category ? item.category.split(",") : [])
+    ).length;
+  }, [collectionTarget]);
+  const firstGame = useMemo(() => {
+    return data.find((item, key) =>
+      tagFound(item.category ? item.category.split(",") : [])
+    );
+  }, [collectionTarget]);
 
   return (
     <div className="collection-main">
@@ -54,15 +64,44 @@ export default function CategoryClientWrapper({ params, games = [] }) {
             }
           }
         ></div>
-        <p className="subtitle">Collection</p>
+        <p className="subtitle">Collection ● {total} Games Total</p>
         <p className="title">{collectionName}</p>
+        <p className="desc">
+          But also the leap into electronic typesetting, remaining essentially
+          unchanged. It was popularised in the 1960s with the release of
+          Letraset sheets containing Lorem Ipsum passages, and more recently wit
+        </p>
+      </div>
+
+      <div className="actions">
+        <div
+          className="action"
+          onClick={() =>
+            handleItemClick(`/game/${firstGame.name.toLowerCase()}`)
+          }
+        >
+          <i className="ri-play-fill"></i>
+        </div>
+        <div className="action">
+          <i className="ri-heart-fill"></i>
+        </div>
+        <div className="pill-action">Share</div>
       </div>
 
       <div className="collections">
+        <div className="header row">
+          <div className="column">#</div>
+          <div className="column">Game</div>
+          <div className="column c-name"></div>
+          <div className="column c-desc">Description</div>
+          <div className="column c-rating">Rating</div>
+          <div className="column c-score">Score</div>
+          <div className="column c-play">Play Game</div>
+        </div>
         {data.map(
           (item, key) =>
             tagFound(item.category ? item.category.split(",") : []) && (
-              <div key={key} className="collection">
+              <div key={key} className="collection row">
                 <div className="serial">{x++}.</div>
                 <div
                   style={{
@@ -71,12 +110,23 @@ export default function CategoryClientWrapper({ params, games = [] }) {
                   className="card-cover"
                 ></div>
                 <div
-                  className="card-info"
+                  className="card-info c-name"
                   onClick={() =>
                     handleItemClick(`/game/${item.name.toLowerCase()}`)
                   }
                 >
                   {item.name}
+                </div>
+                <div className="c-desc">3D Pirate Game</div>
+                <div className="c-rating">4.5/5</div>
+                <div className="c-score">860/865</div>
+                <div
+                  className="pill-action c-play"
+                  onClick={() =>
+                    handleItemClick(`/game/${item.name.toLowerCase()}`)
+                  }
+                >
+                  Play
                 </div>
               </div>
             )
