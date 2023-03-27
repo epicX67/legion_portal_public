@@ -15,6 +15,7 @@
 
     background: var(--sub-background);
     border: 2px solid var(--sub-outline);
+    backdrop-filter: var(--blur);
     padding: 0rem .6rem;
 
     z-index: 111111111;
@@ -39,9 +40,20 @@
 
         .logo {
             width: 2.2rem;
+            height: 2.2rem;
             image-rendering: optimizeQuality;
-            filter: invert(0.5);
-            mix-blend-mode: luminosity;
+            background-image: url("https://cdn.discordapp.com/attachments/961665882671677493/1084136104409714688/logo.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            border: 0;
+            outline: none;
+            // filter: invert(0.5);
+            // mix-blend-mode: luminosity;
+        }
+
+        .logo-name {
+            color: white;
         }
 
         & > * {
@@ -133,6 +145,23 @@
     background: var(--sub-background) !important;
     // padding: 0rem !important;
 }
+
+[data-theme="dark-green"],
+[data-theme="deepblue"],
+[data-theme="pinky"] {
+    .logo {
+        background-image: url("https://cdn.discordapp.com/attachments/961665882671677493/1089985518164529162/logo_white.png") !important;
+    }
+}
+
+[data-theme="pinky"],
+[data-theme="white"],
+[data-theme="white-2"] {
+    .logo-name {
+        color: black !important;
+    }
+}
+
 
 @media screen and (max-width: 925px) {
     .desktop-nav {

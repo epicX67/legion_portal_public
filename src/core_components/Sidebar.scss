@@ -5,6 +5,7 @@
     left: 0;
     width: 3.5rem;
     background: var(--sub-background);
+    backdrop-filter: var(--blur);
     z-index: 111111111;
 
     padding: .5rem;
@@ -22,7 +23,7 @@
         align-items: center;
         gap: 1rem;
         padding: 0rem 1rem;
-        background: var(--sub-background);
+        background: transparent;
         border-radius: 5px;
         cursor: pointer;
         i {
@@ -52,6 +53,7 @@
         }
 
         &:hover{
+            background: var(--sub-background);
             filter: brightness(1.2);
         }
     }

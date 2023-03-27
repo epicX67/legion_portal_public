@@ -7,6 +7,9 @@ const modes = [
     name: "default",
   },
   {
+    name: "dark-orange",
+  },
+  {
     name: "dark-green",
   },
   {

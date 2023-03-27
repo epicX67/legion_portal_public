@@ -59,11 +59,7 @@ export default function Nav({
   return (
     <div className={`desktop-nav ${hide && "hide"}`}>
       <a onClick={() => router.push("/")} className="nav-logo">
-        <img
-          className={`logo ${glow && "glow"}`}
-          src="https://cdn.discordapp.com/attachments/961665882671677493/1084136104409714688/logo.png"
-          alt=""
-        />
+        <div className={`logo ${glow && "glow"}`} alt="" />
         <div className={`logo-name ${glow && "glow"}`}>LEGiON</div>
       </a>
       <div className="right-cont">

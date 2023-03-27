@@ -26,6 +26,8 @@
         .mode-list {
             display: flex;
             gap: 1rem;
+            flex-wrap: wrap;
+            max-width: 325px;
 
             .mode {
                 position: relative;
@@ -89,6 +91,18 @@
             }
 
             .mode.default {
+                background: #1D1D1D;
+
+                &::after {
+                    background: #ffb502;
+                }
+
+                &::before {
+                    color: #FFFFFF;
+                }
+            }
+
+            .mode.dark-orange {
                 background: #0E0E0E;
 
                 &::after {
