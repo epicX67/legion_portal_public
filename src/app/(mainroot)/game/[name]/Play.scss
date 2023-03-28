@@ -401,8 +401,132 @@
     }
 }
 
-.gameDesc {
+.gameDescMain {
+    display: flex;
     margin-top: 1rem;
+    gap: 1rem;
+
+    .adsCont {
+        min-width: 15rem;
+        height: auto;
+        
+        .titleBar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: .5rem 0rem;
+
+            .title {
+                font-weight: 700;
+                letter-spacing: 1px;
+                color: var(--text);
+            }
+
+            .action {
+                font-size: .9rem;
+                font-weight: 500;
+                color: var(--sub-accent);
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .ads {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+    }
+
+    .gameInfo {
+        color: var(--text);
+        .subTitle {
+            font-weight: 600;
+            font-size: .9rem;
+        }
+
+        .title {
+            color: var(--text);
+            font-size: 1.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1rem 0rem;
+
+            .pill-action {
+                border-radius: 100px;
+                background: #1373E6;
+                color: white;
+                padding: .4rem 2rem;
+                font-weight: 600;
+                width: fit-content;
+                cursor: pointer;
+                transition: transform 200ms, color 200ms, background 200ms;
+                
+                &:hover {
+                    transform: scale(1.1);
+                    // background: var(--text);
+                    // color: var(--background);
+                }
+
+                &:active {
+                    transform: scale(.97);
+                }   
+            }
+        }
+
+        .infoSet {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            margin-bottom: 2rem;
+
+            .row {
+                display: flex;
+                gap: 1rem;
+
+                .key {
+                    opacity: .7;
+                    min-width: 9rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
+
+                .value {
+                    display: flex;
+                    align-items: center;
+                    font-weight: 500;
+
+                    .bar {
+                        position: relative;
+                        width: 6rem;
+                        background: var(--exp);
+                        border-radius: 100px;
+                        overflow: hidden;
+                        
+                        .size {
+                            width: 10%;
+                            height: .7rem;
+                            background: linear-gradient(to right, rgb(255, 117, 53), rgb(241, 32, 213));
+                            border-radius: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.gameDesc {
     margin-bottom: -1rem;
     padding: 1rem;
     width: calc(100% - 2rem);
@@ -524,4 +648,15 @@
         }
     }
 
+    .gameDescMain {
+        flex-direction: column;
+        gap: 2rem;
+
+        .adsCont {
+            .ads {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+    }
 }

@@ -9,6 +9,8 @@ import SplashGameScreen from "@/components/SplashGameScreen";
 import LoadingPanel from "@/components/LoadingPanel";
 import dynamic from "next/dynamic";
 import ShareModal from "@/dynamic_pages/ShareModal";
+import ReactStars from "react-rating-stars-component";
+import AdsCard from "@/components/Card/AdsCard";
 
 const CardSetTypeA = dynamic(
   () => import("@/components/CardSets/CardSetTypeA"),
@@ -43,11 +45,20 @@ export default function Play({ games, game }) {
   const [yourFavourite, setYourFavourite] = useState(false);
   const [showShareModal, setShowShareModal] = useState(false);
 
+  const legionAds = useMemo(
+    () => shuffle(filterByValue("row", "Row 1", games), 3),
+    []
+  );
+
   const resetPlayState = () => {
     setInitiateLoading(false);
     setDisableSplash(false);
     setShowGame(false);
     // window.scrollTo(0, 0);
+  };
+
+  const ratingChanged = (newRating) => {
+    console.log(newRating);
   };
 
   //Recommended card states
@@ -315,33 +326,128 @@ export default function Play({ games, game }) {
               title="Big Shot Games"
               data={content4}
             />
-
-            <div
-              style={{ display: `${gameInfo.description ? "block" : "none"}` }}
-              className="gameDesc"
-            >
-              <div id="playdesc"></div>
-              <div id="videoSection">
-                <h3>Videos</h3>
-                <iframe
-                  width="320"
-                  height="180"
-                  src="https://www.youtube.com/embed/uvb00oaa3k8"
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen={true}
-                ></iframe>
-              </div>
-              <div className="categories">
-                {categories.map((item, key) => (
-                  <div
-                    onClick={() => router.push(`/category/${item.title}`)}
-                    key={key}
-                  >
-                    {item.title}
+            <div className="gameDescMain">
+              <div
+                style={{
+                  display: `${gameInfo.description ? "block" : "none"}`,
+                }}
+                className="gameDesc"
+              >
+                <div className="gameInfo">
+                  <div className="subTitle">{`Games > Action Game`}</div>
+                  <div className="title">{gameInfo.name}</div>
+                  <div className="actions">
+                    <div
+                      className="pill-action"
+                      onClick={() => {
+                        setShowShareModal(true);
+                      }}
+                    >
+                      Share
+                    </div>
+                    <div
+                      className="pill-action"
+                      onClick={() => {
+                        router.push(`/embed/${gameInfo.name.toLowerCase()}`);
+                      }}
+                    >
+                      Embed
+                    </div>
                   </div>
-                ))}
+                  <div className="infoSet">
+                    <div className="row">
+                      <div className="key">Rating</div>
+                      <div className="value">
+                        <ReactStars
+                          value={4.5}
+                          count={5}
+                          onChange={ratingChanged}
+                          size={18}
+                          isHalf={true}
+                          emptyIcon={<i className="ri-star-s-line"></i>}
+                          halfIcon={<i className="ri-star-half-line"></i>}
+                          fullIcon={<i className="ri-star-s-fill"></i>}
+                          activeColor="#ffd700"
+                        />
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="key">Legion Score</div>
+                      <div className="value">
+                        <div className="bar">
+                          <div
+                            style={{ width: `${(75 / 100) * 100}%` }}
+                            className="size"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="key">Released</div>
+                      <div className="value">2020</div>
+                    </div>
+                    <div className="row">
+                      <div className="key">Developer</div>
+                      <div className="value">LEGiON Platforms</div>
+                    </div>
+                    <div className="row">
+                      <div className="key">Last Updated</div>
+                      <div className="value">2022</div>
+                    </div>
+                    <div className="row">
+                      <div className="key">Technology</div>
+                      <div className="value">HTML5, ThreeJS</div>
+                    </div>
+                    <div className="row">
+                      <div className="key">Platforms</div>
+                      <div className="value">Browser, Mobile</div>
+                    </div>
+                    <div className="row">
+                      <div className="key">Classification</div>
+                      <div className="value">Game</div>
+                    </div>
+                  </div>
+                </div>
+                <div id="playdesc"></div>
+                <div id="videoSection">
+                  <h3>Videos</h3>
+                  <iframe
+                    width="320"
+                    height="180"
+                    src="https://www.youtube.com/embed/uvb00oaa3k8"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen={true}
+                  ></iframe>
+                </div>
+                <div className="categories">
+                  {categories.map((item, key) => (
+                    <div
+                      onClick={() => router.push(`/category/${item.title}`)}
+                      key={key}
+                    >
+                      {item.title}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="adsCont">
+                <div className="titleBar">
+                  <div className="title">LEGiON Ads</div>
+                  <div className="action">About Ads</div>
+                </div>
+                <div className="ads">
+                  {legionAds.map((item, key) => (
+                    <AdsCard
+                      key={key}
+                      item={item}
+                      onAdClick={() =>
+                        router.push(`/game/${item.name.toLowerCase()}`)
+                      }
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
