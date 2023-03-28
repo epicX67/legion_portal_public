@@ -118,28 +118,28 @@ export default function HomeClientWrapper({ games }) {
       />
       <CardSetTypeGridB
         title="Good Games 2"
-        data={contents[17]}
+        data={contents[15]}
         circle={false}
       />
       <CardSetTypeGridB
         title="Good Games 2 Wide"
-        data={contents[18]}
+        data={contents[15]}
         circle={false}
         extraWide={true}
       />
       <CardSetTypeGridA
         title="Good Games 3"
-        data={contents[19]}
+        data={contents[13]}
         circle={true}
       />
       <CardSetTypeGridA
         title="Good Games 4"
-        data={contents[20]}
+        data={contents[14]}
         circle={false}
       />
       <CardSetTypeGridA
         title="Good Games 4 wide"
-        data={contents[21]}
+        data={contents[13]}
         circle={false}
         extraWide={true}
       />

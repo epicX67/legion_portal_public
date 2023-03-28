@@ -72,7 +72,7 @@
         padding-top: 1.2rem;
         margin: -1rem;
         padding-bottom: 3rem;
-        margin-bottom: -2rem;
+        margin-bottom: 1rem;
         overflow-y: unset;
         max-width: 100%;
         overflow-x: auto;
@@ -479,7 +479,7 @@
         }
 
         .titleBar {
-            margin-top: 2.5rem;
+            margin-top: 1rem;
             margin-bottom: 1.5rem;
             & > p {
                 font-size: 1.2rem !important;
@@ -505,16 +505,19 @@
         grid-template-columns: repeat(12, 4rem) !important;
         grid-template-rows: 4rem 4rem !important;
         gap: 1rem;
+        margin-bottom: 1rem !important;
     }
 
     .grid-set2 {
         grid-template-columns: repeat(12, 4rem) !important;
         grid-template-rows: 4rem 4rem 4rem !important;
         gap: 1rem;
+        margin-bottom: 1rem !important;
     }
 
     .grid-set3 {
         gap: .5rem !important;
+        margin-bottom: 1rem !important;
     }
 
     .circle {
