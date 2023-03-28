@@ -59,7 +59,7 @@ export default function Nav({
   return (
     <div className={`desktop-nav ${hide && "hide"}`}>
       <a onClick={() => router.push("/")} className="nav-logo">
-        <div className={`logo ${glow && "glow"}`} alt="" />
+        <div className={`logo-ico ${glow && "glow"}`} alt="" />
         <div className={`logo-name ${glow && "glow"}`}>LEGiON</div>
       </a>
       <div className="right-cont">
