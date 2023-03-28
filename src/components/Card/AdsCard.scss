@@ -1,0 +1,56 @@
+.ads-card {
+    min-width: 14rem;
+    background: var(--sub-background);
+    border-radius: 7px;
+    outline: 4px solid transparent;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: .5rem;
+    user-select: none;
+    border: 2px solid var(--sub-outline);
+
+
+    .cover {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        background: var(--sub-outline);
+        border-radius: inherit;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .bCont {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .title {
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: var(--text);
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .info {
+        font-size: .8rem;
+        letter-spacing: .9px;
+        font-weight: 600;
+        color: var(--accent);
+    }
+}
+
+@media screen and (max-width: 652px) {
+    .ads-card {
+        min-width: calc(100% - 1rem);
+    }
+
+}
