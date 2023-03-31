@@ -38,7 +38,7 @@ export default function SplashGameScreen({
           className="bg"
         ></div>
         <div
-          style={{ backgroundImage: `url('${game.squareImage}') !important` }}
+          style={{ backgroundImage: `url('${game.squareImage}')` }}
           className={`logo ${animating && "startAnima"}`}
         ></div>
         <button
