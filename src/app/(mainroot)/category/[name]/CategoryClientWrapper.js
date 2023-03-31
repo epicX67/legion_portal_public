@@ -48,22 +48,31 @@ export default function CategoryClientWrapper({ params, games = [] }) {
 
     window.scrollTo(0, 0);
   }, [params]);
+  const total = useMemo(() => {
+    return data.filter(
+      (item, key) =>
+        tagFound(item.category ? item.category.split(",") : []) ||
+        subCategories.includes(params.name.replaceAll("%20", " "))
+    ).length;
+  }, [params]);
 
   return (
     <div className="games-container">
-      <div
-        className="games-hero"
-        style={
-          categoryBackground && {
-            backgroundImage: `url('${categoryBackground}')`,
+      <div className="category-hero">
+        <div
+          className="bg"
+          style={
+            categoryBackground && {
+              backgroundImage: `url('${categoryBackground}')`,
+            }
           }
-        }
-      >
+        ></div>
         <p className="title">
           {categoryName}
           {categoryName.indexOf("Games") === -1 ? " Games" : null}
         </p>
-        <p className="sub-title">{categoryInfo}</p>
+        <p className="subtitle">Category ● {total} Games Total</p>
+        <p className="desc">{categoryInfo}</p>
       </div>
 
       <div className="game-list">
