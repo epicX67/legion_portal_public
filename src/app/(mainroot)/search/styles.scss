@@ -84,6 +84,7 @@
 
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
 
     .box {
@@ -173,5 +174,9 @@
     .searchPageContainer {
         margin-top: -5rem;
         min-height: calc(100vh - 21rem);
+    }
+
+    .resultsBox {
+        justify-content: unset;
     }
 }
