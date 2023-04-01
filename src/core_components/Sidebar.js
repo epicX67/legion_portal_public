@@ -30,21 +30,19 @@ export default function Sidebar({
         <i className="ri-home-7-line"></i>
         <p>Home</p>
       </div>
-      <div onClick={() => randomGame()} className="sidebar-item">
-        <i className="ri-bell-line"></i>
-        <p>Random Game</p>
-      </div>
-      {/* <div
+      <div
         onClick={() => {
-          searchToggle(true);
-          statsToggle(false);
-          themeToggle(false);
+          router.push("/search");
         }}
         className="sidebar-item"
       >
         <i className="ri-search-line"></i>
         <p>Search</p>
-      </div> */}
+      </div>
+      <div onClick={() => randomGame()} className="sidebar-item">
+        <i className="ri-bell-line"></i>
+        <p>Random Game</p>
+      </div>
       <div onClick={() => openStat("Most played")} className="sidebar-item">
         <i className="ri-trophy-line"></i>
         <p>Most played</p>
