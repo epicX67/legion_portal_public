@@ -18,6 +18,11 @@
 
     transition: width 280ms ease, padding 280ms ease;
 
+    /* width */
+    &::-webkit-scrollbar {
+        width: 5px; 
+    }
+
     div {
         display: flex;
         align-items: center;
