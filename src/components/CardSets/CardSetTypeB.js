@@ -8,6 +8,7 @@ export default function CardSetTypeB({
   data = [],
   call = () => {},
   id = "id_" + Date.now() + Math.random(),
+  sectionName = "",
 }) {
   const scrollContainer = useScrollContainer();
   const router = useRouter();
@@ -39,7 +40,9 @@ export default function CardSetTypeB({
               document.getElementById(id).classList.remove("smoothScroll");
             }}
           ></i>
-          <div>See More</div>
+          <div onClick={() => router.push(`/section/${sectionName}`)}>
+            See More
+          </div>
         </div>
       </div>
       <div id={id} ref={scrollContainer.ref} className="card-list">

@@ -3,7 +3,13 @@ import Categories from "@/components/CardSets/Categories";
 import Collections from "@/components/CardSets/Collections";
 import RowBar from "@/components/CardSets/RowBar";
 import SiteDesc from "@/components/SiteDesc";
-import { categories, collections, filterByValue, shuffle } from "@/res/data";
+import {
+  categories,
+  collections,
+  filterByValue,
+  sections,
+  shuffle,
+} from "@/res/data";
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
 import { useRouter } from "next/navigation";
@@ -78,6 +84,10 @@ export default function HomeClientWrapper({ games }) {
     ],
     [games]
   );
+  const getSectionData = (sectionName) => {
+    const section = sections.find((item) => item.name === sectionName);
+    return filterByValue(section.target, section.value, games);
+  };
 
   const heroGames = useMemo(
     () => filterByValue("featured (Y or N)", "Y", games),
@@ -87,7 +97,11 @@ export default function HomeClientWrapper({ games }) {
   return (
     <div className="homePage">
       <Hero data={heroGames} />
-      <CardSetTypeA title="Featured" data={contents[0]} />
+      <CardSetTypeA
+        title="Featured"
+        data={getSectionData("featured")}
+        sectionName="featured"
+      />
       <RowBar
         action={() => {
           if (games.length > 0) {
@@ -97,20 +111,64 @@ export default function HomeClientWrapper({ games }) {
       />
       <PortableRowTypeA title="Popular" data={contents[15]} />
       <Categories title="Categories" data={categories} />
-      <CardSetTypeB title="Most Popular" data={contents[1]} />
+      <CardSetTypeB
+        title="Most Popular"
+        data={getSectionData("most popular")}
+        sectionName="most popular"
+      />
       <CardSetTypeSuperWide title="Big Shot Games" data={contents[12]} />
       <PortableRowTypeB title="Popular" data={contents[15]} />
       <Collections title="Collections" data={collections} />
-      <CardSetTypeCircle title="Legacy Franchises" data={contents[2]} />
-      <CardSetTypeA title="Noteworthy Games" data={contents[3]} />
-      <CardSetTypeSquare title="Entertaining Games" data={contents[4]} />
-      <CardSetTypeA title="Party Games" data={contents[5]} />
-      <CardSetTypeA title="Top Rated Games" data={contents[6]} />
-      <CardSetTypeSquare title="Classic Games" data={contents[7]} />
-      <CardSetTypeA title="Trending Games" data={contents[8]} />
-      <CardSetTypeA title="Adventure Games" data={contents[9]} />
-      <CardSetTypeA title="Newly Popular" data={contents[10]} />
-      <CardSetTypeSquare title="Player favorites" data={contents[11]} />
+      <CardSetTypeCircle
+        title="Legacy Franchises"
+        data={getSectionData("legacy franchises")}
+        sectionName="legacy franchises"
+      />
+      <CardSetTypeA
+        title="Noteworthy Games"
+        data={getSectionData("noteworthy")}
+        sectionName="noteworthy"
+      />
+      <CardSetTypeSquare
+        title="Entertaining Games"
+        data={getSectionData("entertaining")}
+        sectionName="entertaining"
+      />
+      <CardSetTypeA
+        title="Party Games"
+        data={getSectionData("party")}
+        sectionName="party"
+      />
+      <CardSetTypeA
+        title="Top Rated Games"
+        data={getSectionData("top rated")}
+        sectionName="top rated"
+      />
+      <CardSetTypeSquare
+        title="Classic Games"
+        data={getSectionData("classic")}
+        sectionName="classic"
+      />
+      <CardSetTypeA
+        title="Trending Games"
+        data={getSectionData("trending")}
+        sectionName="trending"
+      />
+      <CardSetTypeA
+        title="Adventure Games"
+        data={getSectionData("adventure")}
+        sectionName="adventure"
+      />
+      <CardSetTypeA
+        title="Newly Popular"
+        data={getSectionData("newly popular")}
+        sectionName="newly popular"
+      />
+      <CardSetTypeSquare
+        title="Player favorites"
+        data={getSectionData("player fevorites")}
+        sectionName="player fevorites"
+      />
       <CardSetTypeGridB
         title="Good Games 1"
         data={contents[15]}

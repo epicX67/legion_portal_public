@@ -1,7 +1,6 @@
 "use client";
 import { useScrollContainer } from "react-indiana-drag-scroll";
 import { useRouter } from "next/navigation";
-import { flags } from "@/res/data";
 import "./CardSetTypeCircle.scss";
 
 export default function CardSetTypeCircle({
@@ -9,6 +8,7 @@ export default function CardSetTypeCircle({
   data = [],
   call = () => {},
   id = "id_" + Date.now() + Math.random(),
+  sectionName = "",
 }) {
   const scrollContainer = useScrollContainer();
   const router = useRouter();
@@ -40,7 +40,9 @@ export default function CardSetTypeCircle({
               document.getElementById(id).classList.remove("smoothScroll");
             }}
           ></i>
-          <div>See More</div>
+          <div onClick={() => router.push(`/section/${sectionName}`)}>
+            See More
+          </div>
         </div>
       </div>
       <div id={id} ref={scrollContainer.ref} className="card-list">
