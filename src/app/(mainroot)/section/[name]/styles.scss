@@ -1,0 +1,183 @@
+.games-container {
+    min-height: 100vh;
+    margin-top: 6.5rem;
+    // margin-left: 4.5rem;
+    // width: calc(100% - 4.5rem);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    .section-hero {
+        position: relative;
+        background: linear-gradient(to bottom, #52121dd0, #52121dd0);
+        width: calc(100% - 2rem);
+        min-height: 15rem;
+        padding: 1rem;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: 0px 50px 200px #52121dd0;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .bg {
+            position: absolute;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            inset: 0;
+            z-index: -1;
+        }
+
+        .subtitle {
+            text-transform: uppercase;
+            font-weight: 800;
+            opacity: .8;
+            margin: 0;
+            padding: 0;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .title {
+            margin: 0;
+            padding: 0;
+            font-size: 3.4rem;
+            font-weight: 700;
+            color: white;
+            text-transform: capitalize;
+        }
+
+        .route {
+            color: white;
+            padding: 0;
+            margin: 0;
+            font-size: .9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .desc {
+            color: white;
+            font-weight: 300;
+            font-size: .9rem;
+            line-height: 1.7rem;
+            max-width: 70ch;
+        }
+    }
+
+
+    .game-list {
+        width: calc(100% - 2rem);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: auto;
+        gap: 1rem;
+        padding: 1rem;
+    }
+}
+
+.CardSetTypeA-card {
+    position: relative;
+    min-width: 14rem;
+    aspect-ratio: 16 / 9;
+    background: var(--sub-background);
+    border-radius: 7px;
+    outline: 4px solid transparent;
+    text-decoration: none;
+    color: white;
+
+    background-position: center;
+    background-size: cover;
+    // overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1rem;
+
+    cursor: pointer;
+    user-select: none;
+
+
+    //box-shadow: 0px 10px 20px var(--accent);
+
+
+    transition: outline 300ms, transform 300ms, box-shadow 300ms, background-size 700ms;
+
+    img {
+        width: 5rem;
+        position: absolute;
+        top: .3rem;
+        left: -.3rem;
+        z-index: 11;
+        transition: opacity 200ms ease;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        border-radius: 7px;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.288), transparent, rgba(0, 0, 0, 0.342));
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        border-radius: 7px;
+        background: rgba(0, 0, 0, 0.411);
+        opacity: 0;
+
+        transition: opacity 300ms;
+    }
+
+    &:hover, &:active {
+        overflow: hidden;
+        outline: 4px solid var(--card-border);
+        transform: scale(1.02);
+        box-shadow: 0px 10px 20px 15px rgba(187, 187, 187, 0.123);
+
+        img {
+            opacity: 0;
+        }
+        .card-info, &::after {
+            opacity: 1;
+        }
+
+        .card-info {
+            transform: translateX(0px);
+        }
+
+        
+    }
+
+
+    .card-info {
+        font-size: 1.5rem;
+        font-weight: 600;
+        z-index: 11;
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: opacity 300ms, transform 300ms;
+    }
+}
+
+

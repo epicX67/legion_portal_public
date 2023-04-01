@@ -155,6 +155,74 @@ export const collections = [
   },
 ];
 
+export const sections = [
+  {
+    name: "featured",
+    target: "row",
+    value: "Row 1",
+  },
+  {
+    name: "Section 2",
+    target: "row",
+    value: "Row 2",
+  },
+  {
+    name: "Section 3",
+    target: "row",
+    value: "Row 3",
+  },
+  {
+    name: "Section 4",
+    target: "row",
+    value: "Row 4",
+  },
+  {
+    name: "Section 5",
+    target: "row",
+    value: "Row 5",
+  },
+  {
+    name: "Section 6",
+    target: "row",
+    value: "Row 6",
+  },
+  {
+    name: "Section 7",
+    target: "row",
+    value: "Row 7",
+  },
+  {
+    name: "Section 8",
+    target: "row",
+    value: "Row 8",
+  },
+  {
+    name: "Section 9",
+    target: "row",
+    value: "Row 9",
+  },
+  {
+    name: "Section 10",
+    target: "row",
+    value: "Row 10",
+  },
+  {
+    name: "Section 11",
+    target: "row",
+    value: "Row 11",
+  },
+  {
+    name: "Section 12",
+    target: "row",
+    value: "Row 12",
+  },
+  {
+    name: "Section 13",
+    target: "row",
+    value: "Row 13",
+  },
+];
+
 // credit :: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 export const shuffle = (array, limit = 8) => {
   let currentIndex = array.length,

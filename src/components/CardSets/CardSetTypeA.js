@@ -41,7 +41,7 @@ export default function CardSetTypeA({
               document.getElementById(id).classList.remove("smoothScroll");
             }}
           ></i>
-          <div>See More</div>
+          <div onClick={() => router.push(`/section/featured`)}>See More</div>
         </div>
       </div>
       <div id={id} ref={scrollContainer.ref} className="card-list">
