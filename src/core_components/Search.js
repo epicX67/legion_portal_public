@@ -43,6 +43,12 @@ export default function Search({ games = [], isEmbed }) {
     <div className="inputBox">
       <i className="ri-search-line"></i>
       {/* <i className="ri-close-line"></i> */}
+      <div
+        className="searchButton"
+        onClick={() => router.push(`/search/${searchStr}`)}
+      >
+        <i className="ri-search-line"></i>
+      </div>
       <input
         onClick={() => setSearchMode(true)}
         value={searchStr}

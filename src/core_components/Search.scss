@@ -72,7 +72,7 @@
         }
     }
 
-    i {
+    & > i {
         z-index: 111111111;
         position: absolute;
         color: var(--text);
@@ -87,6 +87,29 @@
             font-size: 1.2rem;
         }
     }
+
+    .searchButton {
+        position: absolute;
+        right: 0rem;
+        top: 0;
+        bottom: 0;
+        width: 4rem;
+        height: 100%;
+        background: var(--sub-outline);
+        filter: contrast(.8);
+        z-index: 111111111;
+        display: grid;
+        place-items: center;
+        border-radius: 7px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        cursor: pointer;
+
+        &:hover {
+            filter: contrast(.7);
+        }
+    }
+
     input {
         z-index: 11111111;
         width: 100%;
@@ -98,6 +121,7 @@
         font-weight: 400;
         font-family: var(--font);
         padding: .5rem 2.5rem;
+        padding-right: 5rem;
         border-radius: 7px;
         filter: contrast(.9);
         color: var(--text);
