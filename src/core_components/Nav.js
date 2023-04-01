@@ -20,6 +20,7 @@ export default function Nav({
   const { isScrollingUp, isScrollingDown } = useScrollDirection();
   const [hide, setHide] = useState(false);
   const [glow, setGlow] = useState(false);
+  const [hideSearch, setHideSearch] = useState(false);
 
   const handleScroll = () => {
     if (pathName.includes("/game/") && window.pageYOffset < 20) {
@@ -40,6 +41,7 @@ export default function Nav({
 
   useEffect(() => {
     setGlow(pathName.includes("/game/") ? true : false);
+    setHideSearch(pathName.includes("/search") ? true : false);
   }, [pathName]);
 
   const openStat = (value) => {
@@ -57,13 +59,21 @@ export default function Nav({
   if (isEmbed) return null;
 
   return (
-    <div className={`desktop-nav ${hide && "hide"}`}>
+    <div
+      className={`desktop-nav ${hide && "hide"} ${
+        hideSearch && "disableInMobile"
+      }`}
+    >
       <a onClick={() => router.push("/")} className="nav-logo">
         <div className={`logo-ico ${glow && "glow"}`} alt="" />
         <div className={`logo-name ${glow && "glow"}`}>LEGiON</div>
       </a>
       <div className="right-cont">
-        <Search games={games} />
+        {!hideSearch ? (
+          <Search games={games} />
+        ) : (
+          <div style={{ marginLeft: "auto" }}> </div>
+        )}
         {/* <div className="nav-btn" onClick={() => openStat("Most played")}>
           Most Played
         </div>

@@ -1,0 +1,167 @@
+.searchPageContainer {
+    min-height: calc(100vh - 19rem);
+}
+
+.searchBox {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // z-index: 99999999999999999;
+    
+
+    .touchBlocker {
+        position: fixed;
+        inset: 0;
+        
+    }
+
+    i {
+        z-index: 2;
+        position: absolute;
+        color: var(--text);
+        opacity: .5;
+
+        &.ri-search-line {
+            left: .8rem;
+        }
+
+        &.ri-close-line {
+            right: .8rem;
+            font-size: 1.2rem;
+        }
+    }
+    input {
+        z-index: 1;
+        width: 100%;
+        max-width: 30rem;
+        background: transparent;
+        border: 0;
+        background: var(--sub-outline);
+        font-size: 1rem;
+        font-weight: 400;
+        font-family: var(--font);
+        padding: .7rem 2.5rem;
+        border-radius: 7px;
+        filter: contrast(.9);
+        color: var(--text);
+        letter-spacing: 1px;
+
+        &:focus-within {
+            outline: 0;
+            filter: brightness(1.5);
+        }
+
+        &::placeholder {
+            color: var(--text);
+            opacity: .3;
+            letter-spacing: 1px;
+        }
+    }
+
+    .searchInputMode {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
+.resultsBox {
+    margin-top: 2rem;
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .box {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        width: 18rem;
+
+        .imageCont {
+            min-width: 4.5rem;
+            min-height: 4.5rem;
+            // background: rgb(226, 226, 226);
+            aspect-ratio: 1 / 1;
+            border-radius: 10px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            display: grid;
+            place-content: center;
+
+            i {
+                padding: .9rem;
+                font-size: 2rem;
+                background: var(--sub-background);
+            }
+
+            .category {
+                border-bottom-left-radius: 20px;
+                border-top-right-radius: 20px;
+                color: var(--accent);
+            }
+
+            .collection {
+                border-radius: 100px;
+                border-top-right-radius: 0px;
+                color: var(--sub-accent);
+            }
+
+            .section {
+                border-radius: 100px;
+                color: var(--light-accent);
+            }
+        }
+
+        .rCont {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: .1rem;
+        }
+
+        .cardTitle {
+            // margin-top: .5rem;
+            font-size: 1.15rem;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-transform: capitalize;
+            width: 12rem;
+
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+
+        .cardType {
+            margin-top: -.2rem;
+            font-weight: 600;
+            font-size: .9rem;
+            opacity: .4;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: .3rem;
+            font-size: .8rem;
+        }
+    }
+}
+
+@media screen and (max-width: 652px) {
+    .searchPageContainer {
+        margin-top: -5rem;
+        min-height: calc(100vh - 21rem);
+    }
+}
