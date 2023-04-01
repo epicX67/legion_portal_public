@@ -2,6 +2,16 @@
     min-height: calc(100vh - 19rem);
 }
 
+.resultInfo {
+    max-width: 500px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-weight: 500;
+}
+
 .searchBox {
     position: relative;
     margin: auto;

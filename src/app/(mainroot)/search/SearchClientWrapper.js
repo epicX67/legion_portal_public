@@ -56,6 +56,16 @@ export default function SearchClientWrapper({ params, games = [] }) {
           className="search"
         ></input>
       </div>
+      {searchStr !== "" && (
+        <div className="resultInfo">
+          We found{" "}
+          {findCategory.length +
+            findCollection.length +
+            findSection.length +
+            findGames.length}{" "}
+          Results from this search
+        </div>
+      )}
       <div className="resultsBox">
         {findCategory.map((item, key) => (
           <div key={"category" + key} className="box">
