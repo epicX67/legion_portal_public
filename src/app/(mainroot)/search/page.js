@@ -9,7 +9,11 @@ async function getGames() {
   return games;
 }
 
-export default async function Categories({ params }) {
+export const metadata = {
+  title: "Search - LEGiON Portal",
+};
+
+export default async function Search({ params }) {
   const games = await getGames();
 
   return <SearchClientWrapper params={params} games={games} />;
