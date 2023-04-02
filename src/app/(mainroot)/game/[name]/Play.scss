@@ -128,8 +128,8 @@
         }
         
         .play-logo {
-            width: 2rem;
-            height: 2rem;
+            min-width: 2rem;
+            min-height: 2rem;
             border-radius: 4px;
             background-size: cover;
             background-position: center;
@@ -142,6 +142,10 @@
             padding-left: 1rem;
             font-family: var(--font);
             color: var(--text);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 20rem;
         }
 
         .play-actions {
@@ -613,6 +617,10 @@
 @media screen and (max-width: 652px) {
     .legionStamp, .back-btn {
         display: none !important;
+    }
+
+    .play-info {
+        width: 12rem !important;
     }
 
     .mobile-back-btn {
