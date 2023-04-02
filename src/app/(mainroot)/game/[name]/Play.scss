@@ -668,3 +668,16 @@
         }
     }
 }
+
+@media screen and (max-width: 530px) {
+    .play-info {
+        width: 9rem !important;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .play-info {
+        width: 6rem !important;
+    }
+}
