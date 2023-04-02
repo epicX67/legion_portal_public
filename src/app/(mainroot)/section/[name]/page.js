@@ -16,6 +16,31 @@ async function getGames() {
   return games;
 }
 
+export async function generateMetadata({ params }) {
+  const section = sections.find(
+    (item) =>
+      item.name.toLowerCase().replaceAll(" ", "%20") ===
+      params.name.toLowerCase()
+  );
+
+  return {
+    title: section.name.charAt(0).toUpperCase() + section.name.slice(1),
+    robots: {
+      index: false,
+      follow: true,
+      nocache: true,
+      googleBot: {
+        index: true,
+        follow: false,
+        noimageindex: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+  };
+}
+
 export default async function Sections({ params }) {
   const games = await getGames();
 
