@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./SplashGameScreen.scss";
 
 export default function SplashGameScreen({
@@ -25,6 +25,10 @@ export default function SplashGameScreen({
       }, 700);
     }, 5000);
   };
+
+  useEffect(() => {
+    setAnimating(false);
+  }, [game]);
 
   return (
     <div className={`splash-game-screen ${disable && "hide"}`}>

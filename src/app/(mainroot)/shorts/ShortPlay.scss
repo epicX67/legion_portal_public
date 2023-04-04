@@ -40,7 +40,6 @@
         height: 100%;
         display: flex;
         gap: 1rem;
-        overflow: hidden;
     }
 
     .game-wrapper {
@@ -205,24 +204,29 @@
                 }
             }
 
-            .up-btn {
-                transition: transform 400ms, opacity 400ms;
-                transform-origin: bottom center;
+            // .up-btn {
+            //     transition: transform 400ms, opacity 400ms;
+            //     transform-origin: bottom center;
 
-                &:active {
-                    opacity: 0;
-                    transform: translateY(-20rem) scale(0);
-                }
-            }
+            //     &:active {
+            //         opacity: 0;
+            //         transform: translateY(-20rem) scale(0);
+            //     }
+            // }
 
-            .down-btn {
-                transition: transform 400ms, opacity 400ms;
-                transform-origin: bottom center;
+            // .down-btn {
+            //     transition: transform 400ms, opacity 400ms;
+            //     transform-origin: bottom center;
 
-                &:active {
-                    opacity: 0;
-                    transform: translateY(20rem) scale(0);
-                }
+            //     &:active {
+            //         opacity: 0;
+            //         transform: translateY(20rem) scale(0);
+            //     }
+            // }
+
+            .disabled {
+                pointer-events: none;
+                opacity: .2;
             }
 
             // For tooltips

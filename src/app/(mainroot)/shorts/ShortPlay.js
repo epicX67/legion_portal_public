@@ -11,8 +11,14 @@ import { shuffle } from "@/res/data";
 export default function ShortPlay({ games }) {
   const data = useMemo(() => shuffle(games), []);
   const [fullscreen, setFullscreen] = useState(false);
-  const [gameInfo, setGameInfo] = useState(() => data[0]);
+  // const [gameInfo, setGameInfo] = useState(() => data[0]);
+  const [currPoint, setCurrPoint] = useState(0);
+  const gameInfo = useMemo(() => data[currPoint], [currPoint]);
   const router = useRouter();
+
+  // useEffect(() => {
+  //   setGameInfo(data[currPoint]);
+  // }, [currPoint]);
 
   //loading states
   const [initiateLoading, setInitiateLoading] = useState(false);
@@ -168,8 +174,24 @@ export default function ShortPlay({ games }) {
                 ></i>
               </div>
               <div>
-                <i className="ri-arrow-up-line tooltip up-btn"></i>
-                <i className="ri-arrow-down-line tooltip down-btn"></i>
+                <i
+                  onClick={() => {
+                    resetPlayState();
+                    setCurrPoint(currPoint - 1);
+                  }}
+                  className={`ri-arrow-up-line tooltip up-btn ${
+                    currPoint === 0 && "disabled"
+                  }`}
+                ></i>
+                <i
+                  onClick={() => {
+                    resetPlayState();
+                    setCurrPoint(currPoint + 1);
+                  }}
+                  className={`ri-arrow-down-line tooltip down-btn ${
+                    currPoint === data.length && "disabled"
+                  }`}
+                ></i>
               </div>
               <div>
                 {yourFavourite ? (
