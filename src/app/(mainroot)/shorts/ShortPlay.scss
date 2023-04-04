@@ -407,8 +407,9 @@
 
     .mobile-back-btn {
         display: block;
-        position: absolute;
+        position: fixed;
         top: 10%;
+        left: 0;
         z-index: 111111;
 
         height: 3rem;
