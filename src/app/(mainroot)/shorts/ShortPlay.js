@@ -86,8 +86,8 @@ export default function ShortPlay({ games }) {
   };
   return (
     <>
-      <div className="play">
-        <div className={`play-cont ${fullscreen && "fullscreen"}`}>
+      <div className="play-shorts">
+        <div className={`play-shorts-cont ${fullscreen && "fullscreen"}`}>
           <div className="game-cont">
             <div className="game-wrapper">
               <SplashGameScreen
@@ -120,18 +120,18 @@ export default function ShortPlay({ games }) {
                 </>
               )}
 
-              <div className="play-down-bar">
+              <div className="play-shorts-down-bar">
                 <div className="expander">
                   <div className="pill"></div>
                 </div>
                 <div className="lCont">
                   <div
-                    className="play-logo"
+                    className="play-shorts-logo"
                     style={{
                       backgroundImage: `url('${gameInfo.squareImage}')`,
                     }}
                   ></div>
-                  <div className="play-info">{gameInfo.name}</div>
+                  <div className="play-shorts-info">{gameInfo.name}</div>
                 </div>
 
                 <p className="legionStamp">
@@ -145,54 +145,12 @@ export default function ShortPlay({ games }) {
                   Portal
                 </p>
 
-                <div className="play-actions">
-                  <i
-                    onClick={() => {
-                      toggleFullscreen(false);
-                      router.back();
-                    }}
-                    className="ri-arrow-left-s-line tooltip back-btn"
-                    // title="Go Back"
-                  ></i>
-                  {!fullscreen && (
-                    <i
-                      onClick={() => {
-                        setShowShareModal(true);
-                      }}
-                      className="ri-share-line tooltip share-btn"
-                      // title="Share"
-                    ></i>
-                  )}
-                  {yourFavourite ? (
-                    <i
-                      onClick={() => {
-                        makeFavourite(gameInfo.name, false);
-                      }}
-                      style={{ color: "#E886B5" }}
-                      className="ri-heart-2-fill tooltip rfevorite-btn"
-                      // title="Remove from favorites"
-                    ></i>
-                  ) : (
-                    <i
-                      onClick={() => {
-                        makeFavourite(gameInfo.name, true);
-                      }}
-                      className="ri-heart-2-line tooltip afevorite-btn"
-                      // title="Add to favorites"
-                    ></i>
-                  )}
-
-                  {/* <i
-                  onClick={() => goto(gameInfo.url)}
-                  className="bx bxs-window-alt"
-                ></i> */}
-
+                <div className="play-shorts-actions">
                   <i
                     onClick={() => toggleFullscreen(true)}
                     className={`ri-fullscreen-line tooltip fullscreen-btn ${
                       !showGame && "disabled"
                     }`}
-                    // title="Fullscreen"
                   ></i>
                   <i
                     onClick={() => toggleFullscreen(true)}
@@ -202,7 +160,44 @@ export default function ShortPlay({ games }) {
                 </div>
               </div>
             </div>
-            <div className="action">Action Panel</div>
+            <div className="actionPanel">
+              <div>
+                <i
+                  className="ri-close-fill tooltip close-btn"
+                  onClick={() => router.back()}
+                ></i>
+              </div>
+              <div>
+                <i className="ri-arrow-up-line tooltip up-btn"></i>
+                <i className="ri-arrow-down-line tooltip down-btn"></i>
+              </div>
+              <div>
+                {yourFavourite ? (
+                  <i
+                    onClick={() => {
+                      makeFavourite(gameInfo.name, false);
+                    }}
+                    style={{ color: "#E886B5" }}
+                    className="ri-heart-2-fill tooltip rfevorite-btn"
+                    // title="Remove from favorites"
+                  ></i>
+                ) : (
+                  <i
+                    onClick={() => {
+                      makeFavourite(gameInfo.name, true);
+                    }}
+                    className="ri-heart-2-line tooltip afevorite-btn"
+                    // title="Add to favorites"
+                  ></i>
+                )}
+                <i
+                  onClick={() => {
+                    setShowShareModal(true);
+                  }}
+                  className="ri-share-line tooltip share-btn"
+                ></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>
