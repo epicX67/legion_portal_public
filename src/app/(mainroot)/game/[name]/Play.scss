@@ -86,6 +86,7 @@
         left: 0;
         right: 0;
         background: var(--sub-background);
+        backdrop-filter: var(--blur);
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -219,6 +220,16 @@
     z-index: 111111111;
     .game-cont {
         all: unset;
+    }
+
+    .gameDescMain {
+        display: none;
+    }
+
+    .game-wrapper {
+        height: 100%;
+        max-height: calc(100vh - 3.2rem);
+
     }
 
    
