@@ -43,6 +43,10 @@ export default function Sidebar({
         <i className="ri-bell-line"></i>
         <p>Random Game</p>
       </div>
+      <div onClick={() => router.push("/shorts")} className="sidebar-item">
+        <i className="ri-exchange-line"></i>
+        <p>LEGiON Shorts</p>
+      </div>
       <div onClick={() => openStat("Most played")} className="sidebar-item">
         <i className="ri-trophy-line"></i>
         <p>Most played</p>
