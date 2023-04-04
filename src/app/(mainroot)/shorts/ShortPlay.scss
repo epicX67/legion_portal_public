@@ -375,6 +375,22 @@
 }
 
 @media screen and (max-width: 652px) {
+    .play-shorts-cont {
+        position: relative;
+        inset: 0;
+        width: 100%;
+        height: calc(100vh - 15rem);
+    }
+
+    .actionPanel {
+        & > div {
+            i {
+                padding: .7rem !important;
+                font-size: 1.2rem !important;
+            }
+        }
+    }
+
     .legionStamp, .back-btn {
         display: none !important;
     }
