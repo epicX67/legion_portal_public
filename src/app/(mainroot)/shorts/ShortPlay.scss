@@ -73,6 +73,7 @@
         left: 0;
         right: 0;
         background: var(--sub-background);
+        backdrop-filter: var(--blur);
         display: flex;
         flex-direction: row;
         justify-content: space-between;

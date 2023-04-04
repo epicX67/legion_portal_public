@@ -126,7 +126,7 @@ export default function ShortPlay({ games }) {
                 </>
               )}
 
-              <div className="play-shorts-down-bar">
+              <div className="play-shorts-down-bar blur">
                 <div className="expander">
                   <div className="pill"></div>
                 </div>
