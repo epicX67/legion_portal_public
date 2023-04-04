@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 
 export default function Footer() {
   const [hide, setHide] = useState(true);
+  const [disable, setDisable] = useState(false);
   const pathName = usePathname();
 
   useEffect(() => {
@@ -18,8 +19,17 @@ export default function Footer() {
     }
   }, [pathName]);
 
+  useEffect(() => {
+    if (pathName.includes("/shorts")) {
+      setDisable(true);
+    } else {
+      setDisable(false);
+    }
+  }, [pathName]);
+
   return (
-    !hide && (
+    !hide &&
+    !disable && (
       <footer>
         <div className="logo">
           <img
