@@ -275,6 +275,11 @@
     width: 100vw;
     height: calc(100vh - 3.2rem);
     z-index: 111111111;
+
+    .actionPanel {
+        display: none;
+    }
+
     .game-cont {
         all: unset;
     }
