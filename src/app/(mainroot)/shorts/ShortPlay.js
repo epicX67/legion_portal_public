@@ -190,7 +190,6 @@ export default function ShortPlay({ games }) {
                   onClick={() => {
                     resetPlayState();
                     setCurrPoint(currPoint + 1);
-                    console.log(data[currPoint + 1]);
                   }}
                   className={`ri-arrow-down-line tooltip down-btn ${
                     currPoint === data.length - 1 && "disabled"
