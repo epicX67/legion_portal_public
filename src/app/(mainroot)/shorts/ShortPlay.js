@@ -9,7 +9,10 @@ import ShareModal from "@/dynamic_pages/ShareModal";
 import { shuffle } from "@/res/data";
 
 export default function ShortPlay({ games }) {
-  const data = useMemo(() => shuffle(games), []);
+  const data = useMemo(() => {
+    return shuffle(games, 100);
+  }, []);
+
   const [fullscreen, setFullscreen] = useState(false);
   // const [gameInfo, setGameInfo] = useState(() => data[0]);
   const [currPoint, setCurrPoint] = useState(0);
@@ -187,9 +190,10 @@ export default function ShortPlay({ games }) {
                   onClick={() => {
                     resetPlayState();
                     setCurrPoint(currPoint + 1);
+                    console.log(data[currPoint + 1]);
                   }}
                   className={`ri-arrow-down-line tooltip down-btn ${
-                    currPoint === data.length && "disabled"
+                    currPoint === data.length - 1 && "disabled"
                   }`}
                 ></i>
               </div>
