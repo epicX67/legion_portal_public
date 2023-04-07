@@ -128,7 +128,7 @@ export default function MobileNav({
           )}
           Recent
         </button>
-        <button
+        {/* <button
           className={theme ? "enabled" : ""}
           onClick={() => themeToggle(true)}
         >
@@ -138,6 +138,20 @@ export default function MobileNav({
             <i className="ri-palette-line"></i>
           )}
           Theme
+        </button> */}
+        <button
+          className={pathName.includes("/shorts") ? "enabled" : ""}
+          onClick={() => router.push("/shorts")}
+        >
+          {!pathName.includes("/shorts") ? (
+            <i
+              className="ri-exchange-line"
+              style={{ fontWeight: "normal" }}
+            ></i>
+          ) : (
+            <i className="ri-exchange-fill"></i>
+          )}
+          Shorts
         </button>
         <button onClick={() => router.push("/")}>
           <img
