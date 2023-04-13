@@ -187,123 +187,126 @@ export default function Play({ games, game }) {
       <div className="play">
         <div className={`play-cont ${fullscreen && "fullscreen"}`}>
           <div className="game-cont">
-            <div className="game-wrapper">
-              <SplashGameScreen
-                game={gameInfo}
-                disable={disableSplash}
-                setDisableSplash={setDisableSplash}
-                autoFullScreen={autoFullScreen}
-                setAutoFullScreen={setAutoFullScreen}
-                toggleFullscreen={toggleFullscreen}
-                showGame={setShowGame}
-              />
+            <div className="gameplaySection">
+              <div className="game-wrapper">
+                <SplashGameScreen
+                  game={gameInfo}
+                  disable={disableSplash}
+                  setDisableSplash={setDisableSplash}
+                  autoFullScreen={autoFullScreen}
+                  setAutoFullScreen={setAutoFullScreen}
+                  toggleFullscreen={toggleFullscreen}
+                  showGame={setShowGame}
+                />
 
-              {disableSplash && (
-                <>
-                  {fullscreen && (
+                {disableSplash && (
+                  <>
+                    {fullscreen && (
+                      <div
+                        className="mobile-back-btn"
+                        onClick={() => toggleFullscreen(true)}
+                      >
+                        <i className="ri-arrow-left-s-line"></i>
+                        <img src="https://cdn.discordapp.com/attachments/961665882671677493/1084136104409714688/logo.png"></img>
+                      </div>
+                    )}
+                    <iframe
+                      title={gameInfo.name}
+                      src={gameInfo.link}
+                      className="game fullscreen"
+                      allowFullScreen={true}
+                    ></iframe>
+                  </>
+                )}
+
+                <div
+                  // style={{ display: "none" }}
+                  className="play-down-bar"
+                >
+                  <div className="expander">
+                    <div className="pill"></div>
+                  </div>
+                  <div className="lCont">
                     <div
-                      className="mobile-back-btn"
-                      onClick={() => toggleFullscreen(true)}
-                    >
-                      <i className="ri-arrow-left-s-line"></i>
-                      <img src="https://cdn.discordapp.com/attachments/961665882671677493/1084136104409714688/logo.png"></img>
-                    </div>
-                  )}
-                  <iframe
-                    title={gameInfo.name}
-                    src={gameInfo.link}
-                    className="game fullscreen"
-                    allowFullScreen={true}
-                  ></iframe>
-                </>
-              )}
+                      className="play-logo"
+                      style={{
+                        backgroundImage: `url('${gameInfo.squareImage}')`,
+                      }}
+                    ></div>
+                    <div className="play-info">{gameInfo.name}</div>
+                  </div>
 
-              <div
-                // style={{ display: "none" }}
-                className="play-down-bar"
-              >
-                <div className="expander">
-                  <div className="pill"></div>
-                </div>
-                <div className="lCont">
-                  <div
-                    className="play-logo"
-                    style={{
-                      backgroundImage: `url('${gameInfo.squareImage}')`,
-                    }}
-                  ></div>
-                  <div className="play-info">{gameInfo.name}</div>
-                </div>
+                  {/* {disableSplash && ( */}
+                  <p className="legionStamp">
+                    <span>
+                      <img
+                        src="https://cdn.discordapp.com/attachments/961665882671677493/1084136104409714688/logo.png"
+                        alt=""
+                      />
+                      LEGiON
+                    </span>
+                    Portal
+                  </p>
+                  {/* )} */}
 
-                {/* {disableSplash && ( */}
-                <p className="legionStamp">
-                  <span>
-                    <img
-                      src="https://cdn.discordapp.com/attachments/961665882671677493/1084136104409714688/logo.png"
-                      alt=""
-                    />
-                    LEGiON
-                  </span>
-                  Portal
-                </p>
-                {/* )} */}
-
-                <div className="play-actions">
-                  <i
-                    onClick={() => {
-                      toggleFullscreen(false);
-                      router.back();
-                    }}
-                    className="ri-arrow-left-s-line tooltip back-btn"
-                    // title="Go Back"
-                  ></i>
-                  {!fullscreen && (
+                  <div className="play-actions">
                     <i
                       onClick={() => {
-                        setShowShareModal(true);
+                        toggleFullscreen(false);
+                        router.back();
                       }}
-                      className="ri-share-line tooltip share-btn"
-                      // title="Share"
+                      className="ri-arrow-left-s-line tooltip back-btn"
+                      // title="Go Back"
                     ></i>
-                  )}
-                  {yourFavourite ? (
-                    <i
-                      onClick={() => {
-                        makeFavourite(gameInfo.name, false);
-                      }}
-                      style={{ color: "#E886B5" }}
-                      className="ri-heart-2-fill tooltip rfevorite-btn"
-                      // title="Remove from favorites"
-                    ></i>
-                  ) : (
-                    <i
-                      onClick={() => {
-                        makeFavourite(gameInfo.name, true);
-                      }}
-                      className="ri-heart-2-line tooltip afevorite-btn"
-                      // title="Add to favorites"
-                    ></i>
-                  )}
+                    {!fullscreen && (
+                      <i
+                        onClick={() => {
+                          setShowShareModal(true);
+                        }}
+                        className="ri-share-line tooltip share-btn"
+                        // title="Share"
+                      ></i>
+                    )}
+                    {yourFavourite ? (
+                      <i
+                        onClick={() => {
+                          makeFavourite(gameInfo.name, false);
+                        }}
+                        style={{ color: "#E886B5" }}
+                        className="ri-heart-2-fill tooltip rfevorite-btn"
+                        // title="Remove from favorites"
+                      ></i>
+                    ) : (
+                      <i
+                        onClick={() => {
+                          makeFavourite(gameInfo.name, true);
+                        }}
+                        className="ri-heart-2-line tooltip afevorite-btn"
+                        // title="Add to favorites"
+                      ></i>
+                    )}
 
-                  {/* <i
+                    {/* <i
                   onClick={() => goto(gameInfo.url)}
                   className="bx bxs-window-alt"
                 ></i> */}
 
-                  <i
-                    onClick={() => toggleFullscreen(true)}
-                    className={`ri-fullscreen-line tooltip fullscreen-btn ${
-                      !showGame && "disabled"
-                    }`}
-                    // title="Fullscreen"
-                  ></i>
-                  <i
-                    onClick={() => toggleFullscreen(true)}
-                    className="bx ri-fullscreen-exit-line"
-                    title="Exit Fullscreen"
-                  ></i>
+                    <i
+                      onClick={() => toggleFullscreen(true)}
+                      className={`ri-fullscreen-line tooltip fullscreen-btn ${
+                        !showGame && "disabled"
+                      }`}
+                      // title="Fullscreen"
+                    ></i>
+                    <i
+                      onClick={() => toggleFullscreen(true)}
+                      className="bx ri-fullscreen-exit-line"
+                      title="Exit Fullscreen"
+                    ></i>
+                  </div>
                 </div>
               </div>
+              <div className="gameplay-info"></div>
             </div>
 
             <CardSetTypeA

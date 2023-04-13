@@ -45,16 +45,26 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         // border-radius: 7px;
         gap: .5rem;
     }
 
+    .gameplaySection {
+        all:inherit;
+        // margin-top: 1.5rem;
+        width: 100%;
+        gap: 1rem;
+        align-items: flex-start;
+        flex-direction: row;
+    }
+
     .game-wrapper {
         position: relative;
-        width: fit-content;
         // max-width: calc(100% - 2.2rem);
         max-width: 100%;
-        aspect-ratio: 16 / 9;
+        width: 100%;
+        // aspect-ratio: 16 / 9;
         height: 100%;
         max-height: calc(100vh - 10rem);
         background: var(--sub-background);
@@ -74,6 +84,15 @@
             border-top-left-radius: 7px;
             border-top-right-radius: 7px;
         }
+    }
+
+    .gameplay-info {
+        justify-content: center;
+        max-width: 20rem;
+        width: 100%;
+        height: 100%;
+        background: var(--sub-background);
+        border-radius: 7px;
     }
 
     .expander {
@@ -616,6 +635,12 @@
             width: 1.8rem;
             filter: brightness(0) invert(0) drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.473)) !important;
         }
+    }
+}
+
+@media screen and (max-width: 1070px) {
+    .gameplay-info {
+        display: none !important;
     }
 }
 
