@@ -306,7 +306,52 @@ export default function Play({ games, game }) {
                   </div>
                 </div>
               </div>
-              <div className="gameplay-info"></div>
+              <div className="gameplay-info">
+                <div className="top-cont">
+                  <div className="game-details">
+                    <img src={gameInfo.squareImage} alt="game"></img>
+                    <div>
+                      <div className="subtitle">About</div>
+                      <div className="title">{gameInfo.name}</div>
+                    </div>
+                  </div>
+                  <div className="sub-info">
+                    Lorem ipsum dolor vendi vici greek fon don lorem ipsum
+                  </div>
+                  <div className="rating-info">
+                    <ReactStars
+                      value={4.5}
+                      count={5}
+                      onChange={ratingChanged}
+                      size={18}
+                      isHalf={true}
+                      emptyIcon={<i className="ri-star-s-line"></i>}
+                      halfIcon={<i className="ri-star-half-line"></i>}
+                      fullIcon={<i className="ri-star-s-fill"></i>}
+                      activeColor="#ffd700"
+                    />
+
+                    {`(4.5/5)`}
+                  </div>
+                </div>
+                <div className="bottom-cont">
+                  <div className="grid-container">
+                    <div className="grid-title"></div>
+                    <div className="grid-main">
+                      <div className="card"></div>
+                      <div className="card"></div>
+                      <div className="card"></div>
+                      <div className="card"></div>
+                      <div className="card"></div>
+                      <div className="card"></div>
+                      <div className="card"></div>
+                      <div className="card"></div>
+                      <div className="card"></div>
+                    </div>
+                  </div>
+                </div>
+                <button>View More</button>
+              </div>
             </div>
 
             <CardSetTypeA
