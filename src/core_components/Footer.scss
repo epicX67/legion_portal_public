@@ -47,6 +47,41 @@ footer {
             }
         }
     }
+
+    .version {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        .type {
+            display: grid;
+            place-content: center;
+            padding: .15rem 0rem;
+            padding-left: 7px;
+            background: var(--sub-background2);
+            text-transform: uppercase;
+            letter-spacing: 7px;
+            font-weight: 700;
+            text-align: center;
+            border-radius: 4px;
+            font-size: .6rem;
+        }
+        .no {
+            position: relative;
+            font-size: .8rem;
+            font-family: monospace;
+
+            &::after {
+                position: absolute;
+                left: -1rem;
+                content: '';
+                width: 1px;
+                height: 15px;
+                background: var(--text);
+                transform: rotate(15deg);
+            }
+        }
+    }
 }
 
 

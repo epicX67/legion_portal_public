@@ -49,6 +49,10 @@ export default function Footer() {
           <div>FAQ</div>
           <div>Contact</div>
         </div>
+        <div className="version">
+          <div className="type">ALPHA</div>
+          <div className="no">v 0.14.0423</div>
+        </div>
       </footer>
     )
   );
