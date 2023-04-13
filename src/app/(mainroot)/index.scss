@@ -3,6 +3,7 @@
 :root {
     --background: #1D1D1D;
     --sub-background: #242424de;
+    --sub-background2: #303030de;
     --sub-outline: #444;
   
     --accent: #ffb502;
@@ -22,6 +23,7 @@
 [data-theme="dark-orange"] {
     --background: #0E0E0E;
     --sub-background: #161616;
+    --sub-background2: #202020;
     --sub-outline: #1C1C1C;
 
     --accent: #fd8d2b;
@@ -36,6 +38,7 @@
 [data-theme="white"] {
     --background: #FFFFFF;
     --sub-background: #f7f7f7;
+    --sub-background2: #e7e7e77;
     --sub-outline: #eeeeee;
 
     --accent: #ff7700;
@@ -50,6 +53,7 @@
 [data-theme="white-2"] {
     --background: #CDCDCD;
     --sub-background: #e4e4e4;
+    --sub-background2: #d6d6d6;
     --sub-outline: #b6b6b6;
 
     --accent: #4340ff;
@@ -64,6 +68,7 @@
 [data-theme="dark-green"] {
     --background: #242424;
     --sub-background: #282934;
+    --sub-background2: #2c2e3a;
     --sub-outline: #393a4b;
 
     --accent: #33c017;
@@ -78,6 +83,7 @@
 [data-theme="deepblue"] {
     --background: #0a0a2b;
     --sub-background: #1b1b47;
+    --sub-background2: #1d1d4d;
     --sub-outline: #262664;
 
     --accent: #7790ff;
@@ -92,6 +98,7 @@
 [data-theme="pinky"] {
     --background: #F0AAD8;
     --sub-background: #efbadc;
+    --sub-background2: #e2b0d0;
     --sub-outline: #f2a0d5;
 
     --accent: #9e0d6e;

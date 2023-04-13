@@ -336,7 +336,7 @@ export default function Play({ games, game }) {
                 </div>
                 <div className="bottom-cont">
                   <div className="grid-container">
-                    <div className="grid-title"></div>
+                    <div className="grid-title">Games For You</div>
                     <div className="grid-main">
                       <div className="card"></div>
                       <div className="card"></div>
@@ -349,10 +349,14 @@ export default function Play({ games, game }) {
                       <div className="card"></div>
                     </div>
                   </div>
+                  <button>
+                    <i className="ri-arrow-down-s-line"></i>View More
+                  </button>
                 </div>
-                <button>View More</button>
               </div>
             </div>
+
+            <div style={{ marginTop: "1rem" }}></div>
 
             <CardSetTypeA
               call={() => resetPlayState()}
