@@ -49,6 +49,10 @@ export default function Play({ games, game }) {
     () => shuffle(filterByValue("row", "Row 1", games), 3),
     []
   );
+  const sampleGamesForSidebar = useMemo(
+    () => shuffle(filterByValue("row", "Row 3", games), 9),
+    []
+  );
 
   const resetPlayState = () => {
     setInitiateLoading(false);
@@ -349,15 +353,16 @@ export default function Play({ games, game }) {
                   <div className="grid-container">
                     <div className="grid-title">Games For You</div>
                     <div className="grid-main">
-                      <div className="card"></div>
-                      <div className="card"></div>
-                      <div className="card"></div>
-                      <div className="card"></div>
-                      <div className="card"></div>
-                      <div className="card"></div>
-                      <div className="card"></div>
-                      <div className="card"></div>
-                      <div className="card"></div>
+                      {sampleGamesForSidebar.map((item, key) => (
+                        <div key={key} className="card">
+                          <div
+                            className="imageCont"
+                            style={{
+                              backgroundImage: `url('${item.squareImage}')`,
+                            }}
+                          ></div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                   <button>

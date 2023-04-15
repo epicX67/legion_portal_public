@@ -164,9 +164,27 @@
                         gap: .5rem;
 
                         .card {
+                            position: relative;
                             background: var(--sub-background);
                             border-radius: 7px;
                             aspect-ratio: 1 / 1;
+                            overflow: hidden;
+                            
+                            .imageCont {
+                                position: absolute;
+                                inset: 0;
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                transition: transform 400ms;
+                                cursor: pointer;
+                            }
+
+                            &:hover {
+                                .imageCont {
+                                    transform: scale(1.2);
+                                }
+                            }
 
 
                             &:nth-child(3) {
