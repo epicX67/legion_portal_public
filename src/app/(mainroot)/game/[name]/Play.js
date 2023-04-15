@@ -333,6 +333,17 @@ export default function Play({ games, game }) {
 
                     {`(4.5/5)`}
                   </div>
+                  <div className="row">
+                    <div className="key">Legion Score</div>
+                    <div className="value">
+                      <div className="bar">
+                        <div
+                          style={{ width: `${(75 / 100) * 100}%` }}
+                          className="size"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div className="bottom-cont">
                   <div className="grid-container">
