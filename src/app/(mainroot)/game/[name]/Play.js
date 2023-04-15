@@ -49,10 +49,7 @@ export default function Play({ games, game }) {
     () => shuffle(filterByValue("row", "Row 1", games), 3),
     []
   );
-  const sampleGamesForSidebar = useMemo(
-    () => shuffle(filterByValue("row", "Row 3", games), 9),
-    []
-  );
+  const sampleGamesForSidebar = useMemo(() => shuffle(games, 18), []);
 
   const resetPlayState = () => {
     setInitiateLoading(false);

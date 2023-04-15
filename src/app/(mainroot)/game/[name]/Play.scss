@@ -191,6 +191,18 @@
                                 grid-column: 3 / span 2;
                                 grid-row: 1 / span 2;
                             }
+
+                            &:nth-child(10),
+                            &:nth-child(11),
+                            &:nth-child(12),
+                            &:nth-child(13),
+                            &:nth-child(14),
+                            &:nth-child(15),
+                            &:nth-child(16),
+                            &:nth-child(17),
+                            &:nth-child(18) {
+                                display: none;
+                            }
                         }
                     }
                 }
@@ -798,6 +810,109 @@
         img {
             width: 1.8rem;
             filter: brightness(0) invert(0) drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.473)) !important;
+        }
+    }
+}
+
+@media screen and (min-height: 830px) {
+    .gameplay-info {
+        .grid-main {
+            grid-template-rows: repeat(5, 1fr) !important;
+        }
+
+        .card {
+            &:nth-child(14),
+            &:nth-child(15),
+            &:nth-child(16),
+            &:nth-child(17) {
+                display: block !important;
+            }
+        }
+    }
+}
+
+@media screen and (min-height: 750px) {
+    .gameplay-info {
+        .grid-main {
+            grid-template-rows: repeat(4, 1fr) !important;
+        }
+
+        .card {
+            &:nth-child(10),
+            &:nth-child(11),
+            &:nth-child(12),
+            &:nth-child(13) {
+                display: block !important;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-height: 699px) {
+    .gameplay-info {
+        .row {
+            display: none !important;
+        }
+    }
+}
+
+@media screen and (max-height: 643px) {
+    .gameplay-info {
+        .rating-info {
+            display: none !important;
+        }
+    }
+}
+
+@media screen and (max-height: 613px) {
+    .gameplay-info {
+        .sub-info {
+            display: none !important;
+        }
+    }
+}
+
+@media screen and (max-height: 557px) {
+    .gameplay-info {
+        .grid-main {
+            grid-template-rows: repeat(2, 1fr) !important;
+        }
+
+        .card {
+            &:nth-child(6),
+            &:nth-child(7),
+            &:nth-child(8),
+            &:nth-child(9) {
+                display: none !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 485px) {
+    .gameplay-info {
+        .grid-main {
+            grid-template-rows: repeat(1, 1fr) !important;
+        }
+
+        .card {
+            &:nth-child(3) {
+                grid-row: unset !important;
+                grid-column: unset !important;
+            }
+
+            &:nth-child(4) {
+                display: block !important;
+            }
+
+            &:nth-child(5),
+            &:nth-child(6),
+            &:nth-child(7),
+            &:nth-child(8),
+            &:nth-child(9) {
+                display: none !important;
+            }
         }
     }
 }
