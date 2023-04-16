@@ -342,6 +342,9 @@ export default function Play({ games, game }) {
                               backgroundImage: `url('${item.squareImage}')`,
                             }}
                           ></div>
+                          <div className="titleHolder">
+                            <div className="title">{item.name}</div>
+                          </div>
                         </div>
                       ))}
                     </div>
