@@ -2,6 +2,7 @@
 import { categories, collections } from "@/res/data";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
+import ShareModal from "@/dynamic_pages/ShareModal";
 
 export default function CategoryClientWrapper({ params, games = [] }) {
   const router = useRouter();
@@ -9,6 +10,7 @@ export default function CategoryClientWrapper({ params, games = [] }) {
   const [collectionBackground, setCollectionBackground] = useState(null);
   const [collectionTarget, setCollectionTarget] = useState(null);
   const [yourFavourite, setYourFavourite] = useState(false);
+  const [showShareModal, setShowShareModal] = useState(false);
   const data = useMemo(() => games, [games]);
 
   const handleItemClick = (url) => {
@@ -103,98 +105,108 @@ export default function CategoryClientWrapper({ params, games = [] }) {
   }, [collectionName]);
 
   return (
-    <div className="collection-main">
-      <div className="collection-hero">
-        <div
-          className="bg"
-          style={
-            collectionBackground && {
-              backgroundImage: `url('${collectionBackground}')`,
-            }
-          }
-        ></div>
-        <p className="subtitle">Collection ● {total} Games Total</p>
-        <p className="title">{collectionName}</p>
-        <p className="desc">
-          But also the leap into electronic typesetting, remaining essentially
-          unchanged. It was popularised in the 1960s with the release of
-          Letraset sheets containing Lorem Ipsum passages, and more recently wit
-        </p>
-      </div>
-
-      <div className="actions">
-        <div
-          className="action"
-          onClick={() =>
-            handleItemClick(`/game/${firstGame.name.toLowerCase()}`)
-          }
-        >
-          <i className="ri-play-fill"></i>
-        </div>
-        <div
-          className={`action ${yourFavourite ? "active" : ""}`}
-          onClick={() => makeFavourite(collectionName, !yourFavourite)}
-        >
-          {yourFavourite ? (
-            <i className="ri-heart-fill"></i>
-          ) : (
-            <i
-              className="ri-heart-line"
-              style={
-                yourFavourite
-                  ? { background: `var(--sub-background) !important` }
-                  : {}
+    <>
+      <div className="collection-main">
+        <div className="collection-hero">
+          <div
+            className="bg"
+            style={
+              collectionBackground && {
+                backgroundImage: `url('${collectionBackground}')`,
               }
-            ></i>
+            }
+          ></div>
+          <p className="subtitle">Collection ● {total} Games Total</p>
+          <p className="title">{collectionName}</p>
+          <p className="desc">
+            But also the leap into electronic typesetting, remaining essentially
+            unchanged. It was popularised in the 1960s with the release of
+            Letraset sheets containing Lorem Ipsum passages, and more recently
+            wit
+          </p>
+        </div>
+
+        <div className="actions">
+          <div
+            className="action"
+            onClick={() =>
+              handleItemClick(`/game/${firstGame.name.toLowerCase()}`)
+            }
+          >
+            <i className="ri-play-fill"></i>
+          </div>
+          <div
+            className={`action ${yourFavourite ? "active" : ""}`}
+            onClick={() => makeFavourite(collectionName, !yourFavourite)}
+          >
+            {yourFavourite ? (
+              <i className="ri-heart-fill"></i>
+            ) : (
+              <i
+                className="ri-heart-line"
+                style={
+                  yourFavourite
+                    ? { background: `var(--sub-background) !important` }
+                    : {}
+                }
+              ></i>
+            )}
+          </div>
+          <div className="pill-action" onClick={() => setShowShareModal(true)}>
+            Share
+          </div>
+        </div>
+
+        <div className="collections">
+          <div className="header row">
+            <div className="column">#</div>
+            <div className="column">Game</div>
+            <div className="column c-name"></div>
+            <div className="column c-desc">Description</div>
+            <div className="column c-rating">Rating</div>
+            <div className="column c-score">Score</div>
+            <div className="column c-play">Play Game</div>
+          </div>
+          {data.map(
+            (item, key) =>
+              tagFound(item.category ? item.category.split(",") : []) && (
+                <div key={key} className="collection row">
+                  <div className="serial">{x++}.</div>
+                  <div
+                    style={{
+                      backgroundImage: "url(" + item.wideImage + ")",
+                    }}
+                    className="card-cover"
+                  ></div>
+                  <div
+                    className="card-info c-name"
+                    onClick={() =>
+                      handleItemClick(`/game/${item.name.toLowerCase()}`)
+                    }
+                  >
+                    {item.name}
+                  </div>
+                  <div className="c-desc">3D Pirate Game</div>
+                  <div className="c-rating">4.5/5</div>
+                  <div className="c-score">860/865</div>
+                  <div
+                    className="pill-action c-play"
+                    onClick={() =>
+                      handleItemClick(`/game/${item.name.toLowerCase()}`)
+                    }
+                  >
+                    Play
+                  </div>
+                </div>
+              )
           )}
         </div>
-        <div className="pill-action">Share</div>
       </div>
-
-      <div className="collections">
-        <div className="header row">
-          <div className="column">#</div>
-          <div className="column">Game</div>
-          <div className="column c-name"></div>
-          <div className="column c-desc">Description</div>
-          <div className="column c-rating">Rating</div>
-          <div className="column c-score">Score</div>
-          <div className="column c-play">Play Game</div>
-        </div>
-        {data.map(
-          (item, key) =>
-            tagFound(item.category ? item.category.split(",") : []) && (
-              <div key={key} className="collection row">
-                <div className="serial">{x++}.</div>
-                <div
-                  style={{
-                    backgroundImage: "url(" + item.wideImage + ")",
-                  }}
-                  className="card-cover"
-                ></div>
-                <div
-                  className="card-info c-name"
-                  onClick={() =>
-                    handleItemClick(`/game/${item.name.toLowerCase()}`)
-                  }
-                >
-                  {item.name}
-                </div>
-                <div className="c-desc">3D Pirate Game</div>
-                <div className="c-rating">4.5/5</div>
-                <div className="c-score">860/865</div>
-                <div
-                  className="pill-action c-play"
-                  onClick={() =>
-                    handleItemClick(`/game/${item.name.toLowerCase()}`)
-                  }
-                >
-                  Play
-                </div>
-              </div>
-            )
-        )}
-      </div>
-    </div>
+      <ShareModal
+        show={showShareModal}
+        toggle={setShowShareModal}
+        url={"https://legion-portal.vercel.app/collection/" + collectionName}
+      />
+    </>
   );
 }
