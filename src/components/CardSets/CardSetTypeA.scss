@@ -137,6 +137,22 @@
             z-index: 2;
             border-radius: inherit;
             overflow: hidden;
+
+            &::before {
+                z-index: 111;
+                position: absolute;
+                inset: 0;
+                content: '';
+                background: linear-gradient(to right, #000000b0, #00000000);
+                opacity: 0;
+                transition: opacity 300ms;
+            }
+
+            &:hover {
+                &::before {
+                    opacity: 1;
+                }
+            }
         }
     }
 
