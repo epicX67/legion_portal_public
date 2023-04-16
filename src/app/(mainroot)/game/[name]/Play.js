@@ -346,9 +346,9 @@ export default function Play({ games, game }) {
                       ))}
                     </div>
                   </div>
-                  <button>
+                  <a id="contentStart" href="#contentStart">
                     <i className="ri-arrow-down-s-line"></i>View More
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

@@ -14,6 +14,10 @@
     }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .play {
     z-index: 1111111;
     // margin-left: 4.5rem;
@@ -207,11 +211,12 @@
                     }
                 }
 
-                button {
+                a {
+                    text-decoration: none;
                     background: transparent;
                     border: none;
                     color: var(--text);
-                    width: 100%;
+                    width: calc(100% - 4rem);
                     padding: .85rem 2rem;
                     // background: red;
                     border-bottom-left-radius: 7px;
