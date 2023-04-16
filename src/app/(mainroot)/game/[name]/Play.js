@@ -296,7 +296,7 @@ export default function Play({ games, game }) {
                   <div className="game-details">
                     <img src={gameInfo.squareImage} alt="game"></img>
                     <div>
-                      <div className="subtitle">About</div>
+                      <div className="subtitle">You Are Playing</div>
                       <div className="title">{gameInfo.name}</div>
                     </div>
                   </div>
