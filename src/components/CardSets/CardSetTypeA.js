@@ -57,7 +57,14 @@ export default function CardSetTypeA({
                   onClick={handleItemClick(`/game/${item.name.toLowerCase()}`)}
                 >
                   <div className="bgCont">
-                    <VideoCont />
+                    <VideoCont
+                      enabled={item.name === "Plundur.io"}
+                      url={
+                        item.name === "Plundur.io"
+                          ? "https://cdn.discordapp.com/attachments/1097110860297674752/1097135664757219388/giphy.mp4"
+                          : ""
+                      }
+                    />
                     <div
                       style={{ backgroundImage: "url(" + item.wideImage + ")" }}
                       className="imageCont"
