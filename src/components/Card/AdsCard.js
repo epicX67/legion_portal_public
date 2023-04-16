@@ -12,7 +12,7 @@ export default function AdsCard({ onAdClick, item }) {
         <div className="title" onClick={() => onAdClick()}>
           {item.name}
         </div>
-        <div className="info">The Online Pool Game</div>
+        <div className="info">Advertisement</div>
       </div>
     </div>
   );
