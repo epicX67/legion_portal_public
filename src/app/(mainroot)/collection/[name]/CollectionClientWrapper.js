@@ -8,6 +8,7 @@ export default function CategoryClientWrapper({ params, games = [] }) {
   const [collectionName, setCollectionName] = useState("");
   const [collectionBackground, setCollectionBackground] = useState(null);
   const [collectionTarget, setCollectionTarget] = useState(null);
+  const [yourFavourite, setYourFavourite] = useState(false);
   const data = useMemo(() => games, [games]);
 
   const handleItemClick = (url) => {
@@ -53,6 +54,54 @@ export default function CategoryClientWrapper({ params, games = [] }) {
     );
   }, [collectionTarget]);
 
+  //Handle fevourite
+  const makeFavourite = (name, action) => {
+    if (!action && !localStorage.getItem("collection_favourites")) {
+      setYourFavourite(false);
+    }
+
+    const favourites = JSON.parse(
+      localStorage.getItem("collection_favourites")
+    );
+
+    if (!action) {
+      const newFavourites = favourites.filter(
+        (item) => item.toLowerCase() !== name.toLowerCase()
+      );
+      localStorage.setItem(
+        "collection_favourites",
+        JSON.stringify(newFavourites)
+      );
+      setYourFavourite(false);
+      return;
+    }
+
+    setYourFavourite(true);
+    if (!favourites) {
+      localStorage.setItem("collection_favourites", JSON.stringify([name]));
+      return;
+    }
+
+    favourites.push(name);
+    localStorage.setItem("collection_favourites", JSON.stringify(favourites));
+  };
+  useEffect(() => {
+    const favourites = JSON.parse(
+      localStorage.getItem("collection_favourites")
+    );
+    if (!favourites) {
+      // localStorage.setItem("collection_favourites", JSON.stringify([]));
+      setYourFavourite(false);
+    } else {
+      const isThisYourFavourite = favourites.find(
+        (item) => item === collectionName
+      );
+      setYourFavourite(isThisYourFavourite ? true : false);
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [collectionName]);
+
   return (
     <div className="collection-main">
       <div className="collection-hero">
@@ -82,8 +131,22 @@ export default function CategoryClientWrapper({ params, games = [] }) {
         >
           <i className="ri-play-fill"></i>
         </div>
-        <div className="action">
-          <i className="ri-heart-fill"></i>
+        <div
+          className={`action ${yourFavourite ? "active" : ""}`}
+          onClick={() => makeFavourite(collectionName, !yourFavourite)}
+        >
+          {yourFavourite ? (
+            <i className="ri-heart-fill"></i>
+          ) : (
+            <i
+              className="ri-heart-line"
+              style={
+                yourFavourite
+                  ? { background: `var(--sub-background) !important` }
+                  : {}
+              }
+            ></i>
+          )}
         </div>
         <div className="pill-action">Share</div>
       </div>
