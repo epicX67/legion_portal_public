@@ -21,7 +21,11 @@ export default function HeroCard({ key, item, onPlay }) {
         ></div>
         <HeroVideo
           show={show}
-          url="https://v.poki.com/2043a94c-1d69-4aff-a740-4e1510b1b4d0/thumbnail.3x3.vp9.mp4"
+          url={
+            item.name === "Plundur.io"
+              ? "https://cdn.discordapp.com/attachments/1097110860297674752/1097135664757219388/giphy.mp4"
+              : ""
+          }
         />
       </div>
 
