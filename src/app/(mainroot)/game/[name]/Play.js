@@ -63,15 +63,7 @@ export default function Play({ games, game }) {
   };
 
   //Recommended card states
-  const content1 = useMemo(
-    () =>
-      shuffle(
-        games.filter((item) =>
-          !item.section ? false : item.section.includes("Most played")
-        )
-      ),
-    [games, gameInfo]
-  );
+  const content1 = useMemo(() => shuffle(games, 15), [games, gameInfo]);
   const content2 = useMemo(
     () => shuffle(filterByValue("row", "Row 3", games)),
     [games, gameInfo]
@@ -80,15 +72,7 @@ export default function Play({ games, game }) {
     () => shuffle(games.filter((item) => item.category.includes("Action"))),
     [games, gameInfo]
   );
-  const content4 = useMemo(
-    () =>
-      shuffle(
-        games.filter((item) =>
-          !item.section ? false : item.section.includes("Trending")
-        )
-      ),
-    [games, gameInfo]
-  );
+  const content4 = useMemo(() => shuffle(games, 15), [games, gameInfo]);
 
   const makeFavourite = (name, action) => {
     if (!action && !localStorage.getItem("favourites")) {
