@@ -11,6 +11,7 @@ import dynamic from "next/dynamic";
 import ShareModal from "@/dynamic_pages/ShareModal";
 import ReactStars from "react-rating-stars-component";
 import AdsCard from "@/components/Card/AdsCard";
+import EmbedModal from "@/dynamic_pages/EmbedModal";
 
 const CardSetTypeA = dynamic(
   () => import("@/components/CardSets/CardSetTypeA"),
@@ -44,6 +45,7 @@ export default function Play({ games, game }) {
   const [showGame, setShowGame] = useState(false);
   const [yourFavourite, setYourFavourite] = useState(false);
   const [showShareModal, setShowShareModal] = useState(false);
+  const [showEmbedModal, setShowEmbedModal] = useState(false);
 
   const legionAds = useMemo(
     () => shuffle(filterByValue("row", "Row 1", games), 3),
@@ -406,7 +408,7 @@ export default function Play({ games, game }) {
                     <div
                       className="pill-action"
                       onClick={() => {
-                        router.push(`/embed/${gameInfo.name.toLowerCase()}`);
+                        setShowEmbedModal(true);
                       }}
                     >
                       Embed
@@ -515,6 +517,11 @@ export default function Play({ games, game }) {
         show={showShareModal}
         toggle={setShowShareModal}
         url={"https://legion-portal.vercel.app" + pathName}
+      />
+      <EmbedModal
+        show={showEmbedModal}
+        toggle={setShowEmbedModal}
+        url={`https://legion-portal.vercel.app/embed/${gameInfo?.name?.toLowerCase()}`}
       />
     </>
   );
