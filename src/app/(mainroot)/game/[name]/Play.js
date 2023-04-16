@@ -335,7 +335,13 @@ export default function Play({ games, game }) {
                     <div className="grid-title">Games For You</div>
                     <div className="grid-main">
                       {sampleGamesForSidebar.map((item, key) => (
-                        <div key={key} className="card">
+                        <div
+                          key={key}
+                          className="card"
+                          onClick={() =>
+                            router.push(`/game/${item.name.toLowerCase()}`)
+                          }
+                        >
                           <div
                             className="imageCont"
                             style={{
