@@ -481,16 +481,27 @@ export default function Play({ games, game }) {
                     allowFullScreen={true}
                   ></iframe>
                 </div>
-                <div className="categories">
-                  {categories.map((item, key) => (
-                    <div
-                      onClick={() => router.push(`/category/${item.title}`)}
-                      key={key}
-                    >
-                      {item.title}
-                    </div>
-                  ))}
-                </div>
+                {gameInfo?.tags && (
+                  <div className="categories">
+                    {gameInfo.tags.split(";").map((item, key) => (
+                      <div
+                        onClick={() => router.push(`/tag/${item}`)}
+                        key={"tag" + key}
+                      >
+                        #{item}
+                      </div>
+                    ))}
+
+                    {gameInfo.category.split(",").map((item, key) => (
+                      <div
+                        onClick={() => router.push(`/category/${item.trim()}`)}
+                        key={"cat" + key}
+                      >
+                        {item.trim()}
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
               <div className="adsCont">
                 <div className="titleBar">

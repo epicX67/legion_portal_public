@@ -654,6 +654,8 @@ html {
     display: flex;
     margin-top: 1rem;
     gap: 1rem;
+    width: 100%;
+    max-width: 1366px;
 
     .adsCont {
         min-width: 15rem;
