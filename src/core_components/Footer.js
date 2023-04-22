@@ -51,7 +51,7 @@ export default function Footer() {
         </div>
         <div className="version">
           <div className="type">ALPHA</div>
-          <div className="no">v 0.16.0423</div>
+          <div className="no">v 0.22.0423</div>
         </div>
       </footer>
     )
