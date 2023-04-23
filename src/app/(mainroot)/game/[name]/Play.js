@@ -51,7 +51,7 @@ export default function Play({ games, game }) {
     () => shuffle(filterByValue("row", "Row 1", games), 3),
     []
   );
-  const sampleGamesForSidebar = useMemo(() => shuffle(games, 18), []);
+  const sampleGamesForSidebar = useMemo(() => shuffle(games, 40), []);
 
   const resetPlayState = () => {
     setInitiateLoading(false);
@@ -337,7 +337,7 @@ export default function Play({ games, game }) {
                     <div className="grid-title">Games For You</div>
                     <div className="grid-scrollwrapper">
                       <div className="grid-main">
-                        {sampleGamesForSidebar.map((item, key) => (
+                        {sampleGamesForSidebar.slice(0, 18).map((item, key) => (
                           <div
                             key={key}
                             className="card"
@@ -358,25 +358,27 @@ export default function Play({ games, game }) {
                         ))}
                       </div>
                       <div className="grid-main">
-                        {sampleGamesForSidebar.map((item, key) => (
-                          <div
-                            key={key}
-                            className="card"
-                            onClick={() =>
-                              router.push(`/game/${item.name.toLowerCase()}`)
-                            }
-                          >
+                        {sampleGamesForSidebar
+                          .slice(19, 40)
+                          .map((item, key) => (
                             <div
-                              className="imageCont"
-                              style={{
-                                backgroundImage: `url('${item.squareImage}')`,
-                              }}
-                            ></div>
-                            <div className="titleHolder">
-                              <div className="title">{item.name}</div>
+                              key={key}
+                              className="card diffcard"
+                              onClick={() =>
+                                router.push(`/game/${item.name.toLowerCase()}`)
+                              }
+                            >
+                              <div
+                                className="imageCont"
+                                style={{
+                                  backgroundImage: `url('${item.squareImage}')`,
+                                }}
+                              ></div>
+                              <div className="titleHolder">
+                                <div className="title">{item.name}</div>
+                              </div>
                             </div>
-                          </div>
-                        ))}
+                          ))}
                       </div>
                     </div>
                   </div>
