@@ -393,21 +393,25 @@ export default function Play({ games, game }) {
               call={() => resetPlayState()}
               title="Recommended For You"
               data={content1}
+              see_more={false}
             />
             <CardSetTypeSquare
               call={() => resetPlayState()}
               title="Legacy Games"
               data={content2}
+              see_more={false}
             />
             <CardSetTypeCircle
               call={() => resetPlayState()}
               title="Action Games"
               data={content3}
+              see_more={false}
             />
             <CardSetTypeSuperWide
               call={() => resetPlayState()}
               title="Big Shot Games"
               data={content4}
+              see_more={false}
             />
             <div className="gameDescMain">
               <div
