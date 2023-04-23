@@ -41,7 +41,7 @@ export default function CardSetTypeGridA({
               document.getElementById(id).classList.remove("smoothScroll");
             }}
           ></i>
-          <div>See More</div>
+          {/* <div>See More</div> */}
         </div>
       </div>
       <div
