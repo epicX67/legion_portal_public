@@ -110,39 +110,39 @@ html {
                     font-size: .8rem;
                 }
 
-                .row {
-                    display: flex;
-                    gap: 1rem;
-                    margin-top: 1rem;
+                // .row {
+                //     display: flex;
+                //     gap: 1rem;
+                //     margin-top: 1rem;
     
-                    .key {
-                        opacity: .7;
-                        min-width: 9rem;
-                        font-weight: 700;
-                        text-transform: uppercase;
-                    }
+                //     .key {
+                //         opacity: .7;
+                //         min-width: 9rem;
+                //         font-weight: 700;
+                //         text-transform: uppercase;
+                //     }
     
-                    .value {
-                        display: flex;
-                        align-items: center;
-                        font-weight: 500;
+                //     .value {
+                //         display: flex;
+                //         align-items: center;
+                //         font-weight: 500;
     
-                        .bar {
-                            position: relative;
-                            width: 6rem;
-                            background: var(--exp);
-                            border-radius: 100px;
-                            overflow: hidden;
+                //         .bar {
+                //             position: relative;
+                //             width: 6rem;
+                //             background: var(--exp);
+                //             border-radius: 100px;
+                //             overflow: hidden;
                             
-                            .size {
-                                width: 10%;
-                                height: .7rem;
-                                background: linear-gradient(to right, rgb(255, 117, 53), rgb(241, 32, 213));
-                                border-radius: 100px;
-                            }
-                        }
-                    }
-                }
+                //             .size {
+                //                 width: 10%;
+                //                 height: .7rem;
+                //                 background: linear-gradient(to right, rgb(255, 117, 53), rgb(241, 32, 213));
+                //                 border-radius: 100px;
+                //             }
+                //         }
+                //     }
+                // }
             }
 
             .bottom-cont {
