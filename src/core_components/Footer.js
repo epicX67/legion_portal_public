@@ -1,12 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 import "./Footer.scss";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Footer() {
   const [hide, setHide] = useState(true);
   const [disable, setDisable] = useState(false);
   const pathName = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     if (pathName.includes("/game")) {
@@ -44,7 +45,7 @@ export default function Footer() {
         <div className="footer-links">
           <div>About</div>
           <div>Developers</div>
-          <div>Kids Edition</div>
+          <div onClick={() => router.push("/kids")}>Kids Edition</div>
           <div>Terms</div>
           <div>FAQ</div>
           <div>Contact</div>
