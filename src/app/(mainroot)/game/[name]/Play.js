@@ -335,26 +335,49 @@ export default function Play({ games, game }) {
                 <div className="bottom-cont">
                   <div className="grid-container">
                     <div className="grid-title">Games For You</div>
-                    <div className="grid-main">
-                      {sampleGamesForSidebar.map((item, key) => (
-                        <div
-                          key={key}
-                          className="card"
-                          onClick={() =>
-                            router.push(`/game/${item.name.toLowerCase()}`)
-                          }
-                        >
+                    <div className="grid-scrollwrapper">
+                      <div className="grid-main">
+                        {sampleGamesForSidebar.map((item, key) => (
                           <div
-                            className="imageCont"
-                            style={{
-                              backgroundImage: `url('${item.squareImage}')`,
-                            }}
-                          ></div>
-                          <div className="titleHolder">
-                            <div className="title">{item.name}</div>
+                            key={key}
+                            className="card"
+                            onClick={() =>
+                              router.push(`/game/${item.name.toLowerCase()}`)
+                            }
+                          >
+                            <div
+                              className="imageCont"
+                              style={{
+                                backgroundImage: `url('${item.squareImage}')`,
+                              }}
+                            ></div>
+                            <div className="titleHolder">
+                              <div className="title">{item.name}</div>
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
+                      <div className="grid-main">
+                        {sampleGamesForSidebar.map((item, key) => (
+                          <div
+                            key={key}
+                            className="card"
+                            onClick={() =>
+                              router.push(`/game/${item.name.toLowerCase()}`)
+                            }
+                          >
+                            <div
+                              className="imageCont"
+                              style={{
+                                backgroundImage: `url('${item.squareImage}')`,
+                              }}
+                            ></div>
+                            <div className="titleHolder">
+                              <div className="title">{item.name}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                   <a id="contentStart" href="#contentStart">
