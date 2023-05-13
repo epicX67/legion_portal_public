@@ -851,6 +851,12 @@ html {
             border-radius: 7px;
             padding: .5rem 1rem;
             background: var(--sub-outline);
+            transition: background 300ms, color 300ms;
+
+            &:hover {
+                background: var(--text);
+                color: var(--background);
+            }
         }
     }
 
