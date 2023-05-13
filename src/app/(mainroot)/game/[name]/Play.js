@@ -169,6 +169,31 @@ export default function Play({ games, game }) {
       document.exitFullscreen();
     }
   };
+
+  const exitHandler = () => {
+    if (
+      !document.webkitIsFullScreen &&
+      !document.mozFullScreen &&
+      !document.msFullscreenElement
+    ) {
+      setFullscreen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("webkitfullscreenchange", exitHandler, false);
+    document.addEventListener("mozfullscreenchange", exitHandler, false);
+    document.addEventListener("fullscreenchange", exitHandler, false);
+    document.addEventListener("MSFullscreenChange", exitHandler, false);
+
+    return () => {
+      document.removeEventListener("webkitfullscreenchange");
+      document.removeEventListener("mozfullscreenchange");
+      document.removeEventListener("fullscreenchange");
+      document.removeEventListener("MSFullscreenChange");
+    };
+  }, []);
+
   return (
     <>
       <div className="play">
