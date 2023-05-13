@@ -857,6 +857,21 @@ html {
                 background: var(--text);
                 color: var(--background);
             }
+
+            &.categoryItem {
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+
+
+                img {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    object-position: center;
+                    object-fit: cover;
+                    border-radius: 5px;
+                }
+            }
         }
     }
 

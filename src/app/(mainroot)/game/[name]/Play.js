@@ -523,9 +523,14 @@ export default function Play({ games, game }) {
 
                     {gameInfo.category.split(",").map((item, key) => (
                       <div
+                        className="categoryItem"
                         onClick={() => router.push(`/category/${item.trim()}`)}
                         key={"cat" + key}
                       >
+                        <img
+                          className="categoryImage"
+                          src="https://images.unsplash.com/photo-1536759808958-bcc29b661ec6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                        />
                         {item.trim()}
                       </div>
                     ))}
