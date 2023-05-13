@@ -37,6 +37,12 @@ export default function Search({ games = [], isEmbed }) {
     setSearchStr("");
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      router.push(`/search/${searchStr}`);
+    }
+  };
+
   if (isEmbed) return null;
 
   return (
@@ -51,6 +57,7 @@ export default function Search({ games = [], isEmbed }) {
       </div>
       <input
         onClick={() => setSearchMode(true)}
+        onKeyDown={(e) => handleKeyDown(e)}
         value={searchStr}
         onChange={(e) => setSearchStr(e.target.value)}
         type="text"
