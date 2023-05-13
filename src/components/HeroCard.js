@@ -7,7 +7,7 @@ export default function HeroCard({ key, item, onPlay }) {
   return (
     <div
       key={key}
-      className="heroCard"
+      className={`heroCard ${item.name === "Plundur.io" && "enabledVideo"}`}
       onMouseEnter={() => {
         setShow(true);
       }}
