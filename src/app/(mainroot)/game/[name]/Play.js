@@ -187,10 +187,10 @@ export default function Play({ games, game }) {
     document.addEventListener("MSFullscreenChange", exitHandler, false);
 
     return () => {
-      document.removeEventListener("webkitfullscreenchange");
-      document.removeEventListener("mozfullscreenchange");
-      document.removeEventListener("fullscreenchange");
-      document.removeEventListener("MSFullscreenChange");
+      document.removeEventListener("webkitfullscreenchange", () => {});
+      document.removeEventListener("mozfullscreenchange", () => {});
+      document.removeEventListener("fullscreenchange", () => {});
+      document.removeEventListener("MSFullscreenChange", () => {});
     };
   }, []);
 
