@@ -629,6 +629,95 @@
         }  
     }
 
+    .grid-set6 {
+        padding: 3rem 1rem;
+        padding-top: 1.2rem;
+        margin: -1rem;
+        padding-bottom: 3rem;
+        overflow-y: unset;
+        max-width: 100%;
+        overflow-x: auto;
+        margin-bottom: -1rem;
+        padding-left: 1rem !important;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        display: grid;
+        grid-gap: 10px;
+        padding: 10px;
+        
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        // aspect-ratio: 16 / 7;
+        width: 100%;
+        gap: 1rem;
+
+        .grid-card-wrapper {
+            & > * {
+                aspect-ratio: 1 / 1;
+            }
+
+            &:nth-child(5),
+            &:nth-child(12),
+            &:nth-child(13),
+            &:nth-child(16),
+            &:nth-child(19),
+            &:nth-child(23),
+            &:nth-child(28),
+            &:nth-child(33),
+            &:nth-child(36)  {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+            
+        }
+
+        .grid-card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-position: center !important;
+            background-size: cover !important;
+            transition: transform 300ms ease;
+            cursor: pointer;
+            background: var(--sub-background);
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            overflow: hidden;
+
+            &:hover {
+                .titleHolder {
+                    opacity: 1;
+                }
+            }
+
+            .titleHolder {
+                font-weight: 600;
+                opacity: 0;
+                position: absolute;
+                inset: 0;
+                text-align: center;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                padding: 0rem 1rem;
+                padding-bottom: .5rem;
+                box-shadow: inset 0px -20px 30px rgba(0, 0, 0, 0.589);
+                transition: opacity 300ms;
+                word-break: break-all;
+                color: white;
+                text-shadow: 0px 3px 5px black;
+            }
+        }  
+    }
+
     .circle {
         gap: .5rem;
     }
