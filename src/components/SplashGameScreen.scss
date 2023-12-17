@@ -170,8 +170,8 @@
         }
 
          p {
-            height: .2rem;
-            font-size: 1.5vmax;
+            // height: .2rem;
+            font-size: 1.4vmax;
             font-weight: 200;
             letter-spacing: 1px;
             display: flex;
@@ -179,6 +179,10 @@
             gap: .2rem;
             color: white;
             text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.473);
+            background: rgba(0, 0, 0, 0.384);
+            height: 2vmax;
+            padding: .8vmax 1.5vmax;
+            border-radius: 100px;
             
 
             span {
