@@ -65,7 +65,7 @@ html {
         .gameplay-info {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            // justify-content: space-between;
             height: calc(100% + 3.25rem);
 
             .top-cont {
@@ -149,6 +149,7 @@ html {
                 .grid-container {
                     background: var(--sub-background2);
                     width: calc(100% - 2rem);
+                    height: calc(100% - 5.25rem);
                     // aspect-ratio: 1 / 1;
                     padding: 1rem;
 
@@ -163,7 +164,8 @@ html {
                         overflow-x: hidden;
                         overflow-y: auto;
                         min-height: 13rem;
-                        height: calc(100vh - 40rem);
+                        // height: calc(100vh - 40rem);
+                        height: calc(100vh - 27rem);
 
                         &::-webkit-scrollbar {
                             display: none;
