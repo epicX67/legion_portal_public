@@ -23,7 +23,9 @@ export async function generateMetadata({ params }) {
 
   return {
     title: game.name,
-    icons: [{ url: game.squareImage }],
+    // icons: [{ url: game.squareImage }],
+    keywords:
+      "Online Games, Free Online Games, Browser Games, Play Games, Web Games, HTML5 Games, Flash Games, Casual Games, Arcade Games, Adventure Games, Puzzle Games, Action Games, Multiplayer Games, Mobile Games, Fun Games, Addictive Games, Skill Games, Strategy Games, Simulation Games, Racing Games, Shooting Games, Sports Games, Board Games, Card Games, Kids Games, Educational Games, Girls Games, Boys Games, Best Online Games, Top Online Games, Game Collection, Game Portal, Gaming Platform",
     robots: {
       index: false,
       follow: true,
@@ -36,6 +38,26 @@ export async function generateMetadata({ params }) {
         "max-image-preview": "large",
         "max-snippet": -1,
       },
+    },
+    openGraph: {
+      title: game.name + " 🕹️ Play on LEGiON Portal for free!",
+      description: game.description,
+      url: "https://legion-portal.vercel.app/game/" + game.name,
+      siteName: "Legion Portal",
+      images: [
+        {
+          url: game.squareImage,
+          width: 600,
+          height: 600,
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+      keywords:
+        "Online Games, Free Online Games, Browser Games, Play Games, Web Games, HTML5 Games, Flash Games, Casual Games, Arcade Games, Adventure Games, Puzzle Games, Action Games, Multiplayer Games, Mobile Games, Fun Games, Addictive Games, Skill Games, Strategy Games, Simulation Games, Racing Games, Shooting Games, Sports Games, Board Games, Card Games, Kids Games, Educational Games, Girls Games, Boys Games, Best Online Games, Top Online Games, Game Collection, Game Portal, Gaming Platform",
+    },
+    twitter: {
+      card: game.wideImage,
     },
   };
 }
