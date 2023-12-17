@@ -116,7 +116,7 @@ export default function HomeClientWrapper({ games }) {
         data={getSectionData("most popular")}
         sectionName="most popular"
       />
-      <CardSetTypeSuperWide title="Big Shot Games" data={contents[12]} />
+      <CardSetTypeA title="Big Shot Games" data={contents[12]} />
       <PortableRowTypeB title="Popular" data={contents[15]} />
       <Collections title="Collections" data={collections} />
       <CardSetTypeCircle
