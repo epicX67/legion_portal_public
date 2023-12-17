@@ -56,7 +56,10 @@ export default function CardSetTypeGridB({
             <div
               className="grid-card"
               style={{
-                backgroundImage: "url(" + item.squareImage + ")",
+                backgroundImage:
+                  "url(" +
+                  (extraWide ? item.wideImage : item.squareImage) +
+                  ")",
                 borderRadius: circle ? "500px" : "7px",
               }}
               onClick={handleItemClick(`/game/${item.name.toLowerCase()}`)}
