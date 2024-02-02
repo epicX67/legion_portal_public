@@ -109,7 +109,7 @@ export default function HomeClientWrapper({ games }) {
           }
         }}
       />
-      <PortableRowTypeA title="Popular" data={contents[15]} />
+      {/* <PortableRowTypeA title="Popular" data={contents[15]} /> */}
       <Categories title="Categories" data={categories} />
       <CardSetTypeB
         title="Most Popular"
