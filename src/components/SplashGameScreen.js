@@ -7,6 +7,7 @@ export default function SplashGameScreen({
   setDisableSplash,
   toggleFullscreen,
   showGame,
+  headless = true,
 }) {
   // const [hide, setHide] = useState(false);
   // const [disable, setDisable] = useState(false);
@@ -28,7 +29,12 @@ export default function SplashGameScreen({
 
   useEffect(() => {
     setAnimating(false);
+    if (headless) {
+      startGame(false);
+    }
   }, [game]);
+
+  if (headless) return null;
 
   return (
     <div className={`splash-game-screen ${disable && "hide"}`}>
