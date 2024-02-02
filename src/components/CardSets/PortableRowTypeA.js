@@ -33,7 +33,7 @@ export default function PortableRowTypeA({
               ></div>
               <div className="bCont">
                 <div className="title">{item.name}</div>
-                <div className="info">The Online Pool Game</div>
+                {/* <div className="info">The Online Pool Game</div> */}
                 <div
                   className="playBtn"
                   onClick={handleItemClick(`/game/${item.name.toLowerCase()}`)}
