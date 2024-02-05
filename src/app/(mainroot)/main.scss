@@ -3,11 +3,16 @@ body {
     color: var(--text);
     // overflow-x: hidden;
     max-width: 100vw;
-    margin-left: 5.5rem !important;
+    // margin-left: 5.5rem !important;
+    margin-left: 4.5rem !important;
     margin-top: 6rem;
     margin-right: 1rem;
     scroll-behavior: smooth;
     // text-align: right;
+}
+
+.homePage {
+    padding-left: 1rem;
 }
 
 .smoothScroll {
@@ -46,7 +51,7 @@ body {
 
 @media screen and (max-width: 925px) {
     body {
-        margin-left: 1rem !important;
+        margin-left: 0rem !important;
     }
 }
 

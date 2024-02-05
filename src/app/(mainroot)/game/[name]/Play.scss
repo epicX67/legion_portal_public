@@ -22,7 +22,10 @@ html {
     z-index: 1111111;
     // margin-left: 4.5rem;
     // width: calc(100% - 4.5rem);
-    width: 100%;
+    // width: 100%;
+    width: calc(100% - 1rem);
+    margin-left: 1rem;
+
 }
 
 .mobile-back-btn {
@@ -1001,8 +1004,8 @@ html {
 
 @media screen and (max-width: 925px) {
     .play {
-        margin-left: unset;
-        width: 100%;
+        // margin-left: unset;
+        // width: 100%;
     }
 }
 
