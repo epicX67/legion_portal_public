@@ -13,7 +13,7 @@ export default async function KidsPage() {
   const games = await getGames();
 
   return (
-    <div className="kidsPanel">
+    <div className="teensPanel">
       <TeensPageClientWrapper games={games} />
     </div>
   );

@@ -2,3 +2,17 @@
 //     height:auto;
 //     min-height: calc(100vw - 41.5rem);
 // }
+
+.kidsPanel {
+    width: calc(100% - 1rem);
+    margin-left: 1rem;
+    margin-top: -2rem;
+}
+
+
+@media screen and (max-width: 652px) {
+    .kidsPanel {
+        margin-top: -1rem;
+    }
+
+}
