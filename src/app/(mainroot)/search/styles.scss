@@ -1,5 +1,7 @@
 .searchPageContainer {
     min-height: calc(100vh - 19.8rem);
+    margin-left: 1rem;
+    margin-top: -5rem;
 }
 
 .resultInfo {
@@ -15,7 +17,7 @@
 .searchBox {
     position: relative;
     margin: auto;
-    width: 100%;
+    width: calc(100% - 1rem);
     max-width: 500px;
     display: flex;
     align-items: center;
