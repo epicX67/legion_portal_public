@@ -586,12 +586,12 @@ export default function Play({ games, game }) {
       <ShareModal
         show={showShareModal}
         toggle={setShowShareModal}
-        url={"https://legion-portal.vercel.app" + pathName}
+        url={"https://legionportal.netlify.app/" + pathName}
       />
       <EmbedModal
         show={showEmbedModal}
         toggle={setShowEmbedModal}
-        url={`https://legion-portal.vercel.app/embed/${gameInfo?.name?.toLowerCase()}`}
+        url={`https://legionportal.netlify.app//embed/${gameInfo?.name?.toLowerCase()}`}
       />
     </>
   );
