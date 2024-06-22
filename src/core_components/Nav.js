@@ -64,10 +64,10 @@ export default function Nav({
         hideSearch && "disableInMobile"
       }`}
     >
-      <a onClick={() => router.push("/")} className="nav-logo">
+      <div onClick={() => router.push("/")} className="nav-logo">
         <div className={`logo-ico ${glow && "glow"}`} alt="" />
         <div className={`logo-name ${glow && "glow"}`}>LEGiON</div>
-      </a>
+      </div>
       <div className="right-cont">
         {!hideSearch ? (
           <Search games={games} />
