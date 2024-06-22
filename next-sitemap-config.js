@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://localhost:3000', // Replace with your domain
+  siteUrl: process.env.SITE_URL || 'https://localhost:3000', // Replace with your domain
   generateRobotsTxt: true, // Optional: create robots.txt file
   // exclude: ['/admin'], // Optional: exclude paths from sitemap
   // Optional: additional configurations
