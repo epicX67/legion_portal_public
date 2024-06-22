@@ -219,7 +219,7 @@ export default function Play({ games, game }) {
                         onClick={() => toggleFullscreen(true)}
                       >
                         <i className="ri-arrow-left-s-line"></i>
-                        <img src="https://cdn.discordapp.com/attachments/961665882671677493/1084136104409714688/logo.png"></img>
+                        <img src="/res/logo.png"></img>
                       </div>
                     )}
                     <iframe
@@ -252,7 +252,7 @@ export default function Play({ games, game }) {
                   <p className="legionStamp">
                     <span>
                       <img
-                        src="https://cdn.discordapp.com/attachments/961665882671677493/1084136104409714688/logo.png"
+                        src="/res/logo.png"
                         alt=""
                       />
                       LEGiON

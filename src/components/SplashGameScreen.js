@@ -23,8 +23,8 @@ export default function SplashGameScreen({
       setTimeout(() => {
         setDisableSplash(true);
         showGame(true);
-      }, 700);
-    }, 5000);
+      }, 0);
+    }, 0);
   };
 
   useEffect(() => {
