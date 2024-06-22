@@ -9,7 +9,6 @@ export const metadata = {
   title: "LEGiON Portal",
   description: "LEGiON Portal",
   manifest: "/manifest.json",
-  themeColor: "#CCFFAD",
   icons: {
     icon: "/ico_128.png",
     shortcut: "/ico_128.png",
@@ -20,6 +19,10 @@ export const metadata = {
     },
   },
 };
+ 
+export const viewport= {
+  themeColor: "#CCFFAD",
+}
 
 async function getGames() {
   const res = await fetch(
