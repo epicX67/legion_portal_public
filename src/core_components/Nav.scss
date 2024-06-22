@@ -43,6 +43,7 @@
             height: 2.2rem;
             image-rendering: optimizeQuality;
             background-image: url("https://cdn.discordapp.com/attachments/961665882671677493/1084136104409714688/logo.png");
+            background-image: url("/res/logo.png");
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
@@ -151,6 +152,7 @@
 [data-theme="pinky"] {
     .logo-ico {
         background-image: url("https://cdn.discordapp.com/attachments/961665882671677493/1089985518164529162/logo_white.png") !important;
+        background-image: url("/res/logo_white.png") !important;
     }
 }
 
@@ -159,6 +161,10 @@
 [data-theme="white-2"] {
     .logo-name {
         color: black !important;
+    }
+
+    .logo-ico {
+        background-image: url("/res/logo_black.png") !important;
     }
 }
 
