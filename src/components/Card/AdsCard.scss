@@ -15,6 +15,7 @@
 
     .cover {
         aspect-ratio: 16 / 9;
+        height: 8.5rem;
         width: 100%;
         background: var(--sub-outline);
         border-radius: inherit;
@@ -49,8 +50,11 @@
 }
 
 @media screen and (max-width: 652px) {
+    .cover {
+        height: 100% !important;
+    }
     .ads-card {
-        min-width: calc(100% - 1rem);
+        min-width: calc(100% - 1.5rem);
     }
 
 }
