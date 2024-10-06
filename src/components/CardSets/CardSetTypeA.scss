@@ -80,6 +80,11 @@
             display: none;
         }
 
+        & > div:first-child > div:hover  {
+            transform: scale(1.02) translateX(10px) !important;
+            z-index: 2;
+        }
+
 
     }
 
