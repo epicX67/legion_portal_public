@@ -33,13 +33,7 @@ export default function Footer() {
     !disable && (
       <footer>
         <div className="logo">
-          <img
-            className={`logo`}
-            src={
-              "https://cdn.discordapp.com/attachments/961665882671677493/1084136104409714688/logo.png"
-            }
-            alt=""
-          />
+          <img className={`logo`} src={"/res/logo.png"} alt="" />
           <div className={`logo-name`}>LEGiON Portal</div>
         </div>
         <div className="footer-links">
