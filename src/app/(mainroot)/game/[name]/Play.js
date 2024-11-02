@@ -251,10 +251,7 @@ export default function Play({ games, game }) {
                   {/* {disableSplash && ( */}
                   <p className="legionStamp">
                     <span>
-                      <img
-                        src="/res/logo.png"
-                        alt=""
-                      />
+                      <img src="/res/logo.png" alt="" />
                       LEGiON
                     </span>
                     Portal
@@ -328,7 +325,7 @@ export default function Play({ games, game }) {
                     </div>
                   </div>
                   <div className="sub-info">
-                    Lorem ipsum dolor vendi vici greek fon don lorem ipsum
+                    Play the best free online games on the Legion Portal
                   </div>
                   <div className="rating-info">
                     <ReactStars
