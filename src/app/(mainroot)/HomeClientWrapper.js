@@ -89,14 +89,14 @@ export default function HomeClientWrapper({ games }) {
     return filterByValue(section.target, section.value, games);
   };
 
-  const heroGames = useMemo(
-    () => filterByValue("featured (Y or N)", "Y", games),
-    [games]
-  );
+  // const heroGames = useMemo(
+  //   () => filterByValue("featured (Y or N)", "Y", games),
+  //   [games]
+  // );
 
   return (
     <div className="homePage">
-      <Hero data={heroGames} />
+      {/* <Hero data={heroGames} /> */}
       <CardSetTypeA
         title="Featured"
         data={getSectionData("featured")}
