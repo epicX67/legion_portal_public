@@ -34,7 +34,7 @@ export default function PortableRowTypeB({
                 >
                   {item.name}
                 </div>
-                <div className="info">The Online Pool Game</div>
+                <div className="info">Play on Legion Games</div>
               </div>
             </div>
           ))}
