@@ -14,17 +14,12 @@ import heroGameTitle from "./plundur/title.png";
 const loadingAnimation = null;
 
 export const flags = {
-  Featured:
-    "https://cdn.discordapp.com/attachments/961665882671677493/1084479034227970058/featured.png",
-  "Most played":
-    "https://cdn.discordapp.com/attachments/961665882671677493/1084479034488008704/mostPlayed.png",
-  Trending:
-    "https://cdn.discordapp.com/attachments/961665882671677493/1084479035595304980/trending.png",
-  "Top rated":
-    "https://cdn.discordapp.com/attachments/961665882671677493/1084479035297517568/topRated.png",
-  New: "https://cdn.discordapp.com/attachments/961665882671677493/1084479034869682317/new.png",
-  Updated:
-    "https://media.discordapp.net/attachments/961665882671677493/1084479035956006932/updated.png?width=870&height=402",
+  Featured: "/res/flags/featured.png",
+  "Most played": "/res/flags/mostPlayed.png",
+  Trending: "/res/flags/trending.png",
+  "Top rated": "/res/flags/topRated.png",
+  New: "/res/flags/new.png",
+  Updated: "/res/flags/updated.png",
 };
 
 export const categories = [
