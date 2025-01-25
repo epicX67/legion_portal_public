@@ -97,6 +97,7 @@ export default function HomeClientWrapper({ games }) {
   return (
     <div className="homePage">
       {/* <Hero data={heroGames} /> */}
+      <hr className="hero_disable_helper"></hr>
       <CardSetTypeA
         title="Featured"
         data={getSectionData("featured")}
