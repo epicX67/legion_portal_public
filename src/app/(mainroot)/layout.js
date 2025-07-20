@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import Pwa from "./Pwa";
 import "./index.scss";
 import "./main.scss";
@@ -19,10 +20,10 @@ export const metadata = {
     },
   },
 };
- 
-export const viewport= {
+
+export const viewport = {
   themeColor: "#CCFFAD",
-}
+};
 
 async function getGames() {
   const res = await fetch(
@@ -41,6 +42,7 @@ export default async function RootLayout({ children }) {
         {children}
         <Footer />
         <Pwa />
+        <Analytics />
       </body>
     </html>
   );
